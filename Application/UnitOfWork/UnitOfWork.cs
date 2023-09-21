@@ -45,7 +45,7 @@ public sealed class UnitOfWork : IUnitOfWork, IDisposable{
     //-Singletons
     public IRolRepository Rols => _Role ??= _Role = new Rolrepository(_Context);
     public IUserRepository Users => _User ??= _User = new UserRepository(_Context);
-    public IAddressRepository Address => _Addreess ??= _Addreess = new AddressRep(_Context);
+    public IAddressRepository Address => _Addreess ??= _Addreess = new AddressRepository(_Context);
 
     
 
