@@ -28,7 +28,11 @@ public interface IUnitOfWork{
     IStateRepository States {get;}
     IType_epsRepository Type_epss {get;}
     IType_personRepository Type_Persons {get;}
-    
+    IContact_typeRepository Contact_Types {get;}
+    IChargeRepository ChangeRepositories {get;}
+    IProvider Providers {get;}
+    IDetail_saleRepository Detail_Sales {get;}
+
     
     Task<int> SaveChanges();
 }

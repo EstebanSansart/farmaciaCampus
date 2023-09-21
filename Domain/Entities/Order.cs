@@ -8,7 +8,10 @@ public class Order : BaseEntityA
     public DateTime  Date {get;set;}
     public string  Detail {get;set;}
     public DateTime  Date_expiration {get;set;}
-    public int  Id_venta {get;set;}
+
+    public int  Id_sale {get;set;}
+    public Sale Sale {get;set;}
+    
     
     
 }

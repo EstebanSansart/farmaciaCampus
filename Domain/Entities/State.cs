@@ -5,4 +5,5 @@ namespace Domain.Entities;
 public class State : BaseEntityA
 {
     public string  Name {get;set;}
+    ICollection<Medicine> Medicines {get;set;}
 }

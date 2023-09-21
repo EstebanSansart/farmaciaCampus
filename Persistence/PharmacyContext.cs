@@ -16,7 +16,6 @@ public class PharmacyContex: DbContext{
     public DbSet<Sale> Sales {get;set;}
     public DbSet<Role_user> Role_Users {get;set;}
     public DbSet<Presentation> Presentations {get;set;}
-    public DbSet<Post> Posts {get;set;}
     public DbSet<Person> People {get;set;}
     public DbSet<Order> Orders {get;set;}
     public DbSet<Medicine_info> Medicine_Infos {get;set;}
@@ -37,7 +36,10 @@ public class PharmacyContex: DbContext{
     public DbSet<Buy> Buys {get;set;}
     public DbSet<Rol> Roles { get; set; }
     public DbSet<User> Users { get; set; }
-    
+    public DbSet<Contact_Type> Contact_Types {get;set;}
+    public DbSet<Charge> Charges {get;set;}
+    public DbSet<Detail_sale> Detail_Sales {get;set;}
+
     //-Configurations
     protected override void OnModelCreating(ModelBuilder modelBuilder){  
 

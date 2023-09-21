@@ -35,13 +35,17 @@ public sealed class UnitOfWork : IUnitOfWork, IDisposable{
     private IStateRepository _State;
     private IType_epsRepository _Type_eps;
     private IType_personRepository _Type_person;
+    private IContact_typeRepository _Contact_Types;
+    private IChargeRepository _ChangesRepository;
+    private IProvider _Provider;
+    private IDetail_saleRepository _Detail_sale;
 
     public UnitOfWork(PharmacyContex context)=>_Context = context;
 
     //-Singletons
     public IRolRepository Rols => _Role ??= _Role = new Rolrepository(_Context);
     public IUserRepository Users => _User ??= _User = new UserRepository(_Context);
-    public IAddressRepository Address => _Addreess ??= _Addreess = new AddressRepository(_Context);
+    public IAddressRepository Address => _Addreess ??= _Addreess = new AddressRep(_Context);
 
     
 

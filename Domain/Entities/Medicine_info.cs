@@ -9,6 +9,15 @@ public class Medicine_info : BaseEntityA
     public string  Img {get;set;}
     public bool  Need_prescription {get;set;}
     public int  Id_medicine_name {get;set;}
+
+    public Category Category {get;set;}
+    public Presentation Presentation {get;set;}
+
     public int  Id_medicine_brand {get;set;}
+    public Medicine_brand Medicine_Brand {get;set;}
+    
+    ICollection<Medicine> Medicines {get;set;}
+    ICollection<Inventory> Inventories {get;set;}
+
 
 }
