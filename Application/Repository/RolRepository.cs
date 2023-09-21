@@ -4,7 +4,7 @@ using Domain.Enums;
 using Domain.Interfaces;
 using Persistence;
 
-namespace Application.Repositories;
+namespace Application.Repository;
 public sealed class Rolrepository : GenericRepositoryA<Rol>, IRolRepository{
     public Rolrepository(PharmacyContex context) : base(context){}
 
