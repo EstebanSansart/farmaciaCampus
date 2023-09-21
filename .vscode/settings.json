@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "base jwt"
+        "base jwt",
+        "base web api"
     ]
 }
