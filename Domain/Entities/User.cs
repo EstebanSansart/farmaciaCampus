@@ -4,6 +4,7 @@ namespace Domain.Entities;
 
     public class User : BaseEntityA
     {
+    public int  Id_person {get;set;}
     public string Username { get; set; } = String.Empty;
     public string Email { get; set; } = String.Empty;
     public string Password { get; set; } = String.Empty;
