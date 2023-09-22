@@ -8,5 +8,5 @@ public class Detail_buy : BaseEntityA
   public Medicine Medicine { get; set; }
 
   public int Buy_Id { get; set; }
-  public Buy Buys { get; set; }
+  public Buy Buy { get; set; }
 }

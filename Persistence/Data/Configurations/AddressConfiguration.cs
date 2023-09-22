@@ -27,12 +27,12 @@ public class AddressConfiguration : IEntityTypeConfiguration<Address>
 
 
         builder.HasOne(x => x.Person)
-      .WithMany(x => x.Addresses)
-      .HasForeignKey(x => x.Id_person);
+        .WithMany(x => x.Addresses)
+        .HasForeignKey(x => x.Id_person);
 
 
         builder.HasOne(x => x.City)
-            .WithMany(x => x.Addresses)
-            .HasForeignKey(x => x.Id_City);
+        .WithMany(x => x.Addresses)
+        .HasForeignKey(x => x.Id_City);
     }
 }

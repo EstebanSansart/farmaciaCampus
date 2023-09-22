@@ -2,7 +2,7 @@ using Domain.Entities.Generics;
 
 namespace Domain.Entities;
 
-public class Departament : BaseEntityA
+public class Department : BaseEntityA
 {
     public string  Name {get;set;}
 

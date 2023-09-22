@@ -3,7 +3,8 @@ using Domain.Interfaces.Generics.GenericId;
 
 namespace Domain.Interfaces;
 
-public interface IChargeRepository : IGenericRepositoryA<Contact_category>
+public interface IDepartmentRepository : IGenericRepositoryA<Department>
 {
     
 }
+

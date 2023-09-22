@@ -2,7 +2,8 @@ using Domain.Entities.Generics;
 
 namespace Domain.Entities;
 
-public class Buy : BaseEntityA {
+public class Buy : BaseEntityA 
+{
   public DateTime BuyDate { get; set; }
 
   public int Provider_Id { get; set; }

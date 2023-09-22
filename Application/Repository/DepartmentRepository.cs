@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Persistence;
 
 namespace Application.Repository;
-public sealed class DepartamentRepository : GenericRepositoryA<Departament>, IDepartamentRepository{
-    public DepartamentRepository(PharmacyContex context) : base(context){}
+public sealed class DepartmentRepository : GenericRepositoryA<Department>, IDepartmentRepository{
+    public DepartmentRepository(PharmacyContex context) : base(context){}
 
    
 
