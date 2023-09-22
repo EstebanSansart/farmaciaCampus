@@ -15,7 +15,7 @@ public interface IUnitOfWork{
     IEpsRepository Epss {get;}
     IInventoryRepository Inventories {get;}
     IMedicine_brandRepository Medicine_Brands {get;}
-    IMedicine_infoRepository Medicine_Info {get;}
+    IMedicine_infoRepository Medicine_Infos {get;}
     IMedicineRepository Medicines {get;}
     IOrderRepository Orders {get;}
     IPersonRepository Persons {get;}
@@ -23,10 +23,9 @@ public interface IUnitOfWork{
     IProviderRepository Providers {get;}
     IPositionRepository Positions {get;}
     IRolRepository Rols { get; }  
-    IRole_userRepository Role_Users {get;}
     ISaleRepository Sales {get;}
     IStateRepository States {get;}
-    IType_epsRepository Type_epss {get;}
+    IType_epsRepository Type_Epses {get;}
     IType_personRepository Type_Persons {get;}
     IUserRepository Users {get;}
     Task<int> SaveChanges();

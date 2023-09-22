@@ -29,7 +29,6 @@ public sealed class UnitOfWork : IUnitOfWork, IDisposable{
     private IPersonRepository _Person;
     private IProviderRepository _Provider;
     private IPresentationRepository _Presentation;
-    private IRole_userRepository _Role_user;
     private IRolRepository _Rol;
     private ISaleRepository _Sale;
     private IStateRepository _State;
@@ -51,7 +50,7 @@ public sealed class UnitOfWork : IUnitOfWork, IDisposable{
     public IContactRepository Contacts => _Contact ??= new ContactRepository(_Context);
     public ICountryRepository Countries => _Country ??= new CountryRepository(_Context);
     public IDepartmentRepository Departments  => _Department ??= new DepartmentRepository(_Context);
-    public IDetail_buyRepository Detail_Buys => _Detail_buy ??= new Detail_buyRepository(_Context);
+    public IDetail_buyRepository Detail_buys => _Detail_buy ??= new Detail_buyRepository(_Context);
     public IDetail_saleRepository Detail_Sales => _Detail_sale ??= new Detail_saleRepository(_Context);
     public ISaleRepository Sales => _Sale ??= new SaleRepository(_Context);
     public IDocument_typeRepository Document_Types => _Document_type ??= new Document_typeRepository(_Context);
@@ -66,10 +65,9 @@ public sealed class UnitOfWork : IUnitOfWork, IDisposable{
     public IProviderRepository Providers => _Provider ??= new ProviderRepository(_Context);
     public IPresentationRepository Presentations => _Presentation ??= new PresentationRepository(_Context);
     public IRolRepository Rols => _Rol ??= new Rolrepository(_Context);
-    public IRole_userRepository Role_UserRepository => _Role_user ??= new Role_userRepository(_Context);
     public IStateRepository States => _State ??=  new StateRepository(_Context);
-    public IType_epsRepository Type_Epss => _Type_eps ??= new Type_epsRepository(_Context);
-    public IType_personRepository Type_Person => _Type_person ??= new Type_PersonRepository(_Context);
+    public IType_epsRepository Type_Epses => _Type_eps ??= new Type_epsRepository(_Context);
+    public IType_personRepository Type_Persons => _Type_person ??= new Type_PersonRepository(_Context);
     public IUserRepository Users => _User ??= new UserRepository(_Context);
 
     //-Other Properties
