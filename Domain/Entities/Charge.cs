@@ -10,6 +10,6 @@ namespace Domain.Entities
     {
         public string Name {get;set;}
         
-        ICollection<Employee> Employees {get;set;}
+        public ICollection<Employee> Employees {get;set;}
     }
 }

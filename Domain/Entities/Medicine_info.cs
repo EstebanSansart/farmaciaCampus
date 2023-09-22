@@ -16,8 +16,8 @@ public class Medicine_info : BaseEntityA
     public int  Id_medicine_brand {get;set;}
     public Medicine_brand Medicine_Brand {get;set;}
     
-    ICollection<Medicine> Medicines {get;set;}
-    ICollection<Inventory> Inventories {get;set;}
+    public ICollection<Medicine> Medicines {get;set;}
+    public ICollection<Inventory> Inventories {get;set;}
 
 
 }

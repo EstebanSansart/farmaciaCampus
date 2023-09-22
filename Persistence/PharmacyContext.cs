@@ -26,6 +26,7 @@ public class PharmacyContex: DbContext{
     public DbSet<Employee> Employees {get;set;}
     public DbSet<Document_type> Document_Types {get;set;}
     public DbSet<Detail_buy> Detail_Buys {get;set;}
+    public DbSet<Detail_sale> Detail_Sales {get;set;}
     public DbSet<Departament> Departaments {get;set;}
     public DbSet<Country> Countries {get;set;}
     public DbSet<Contact> Contacts {get;set;}
@@ -38,7 +39,7 @@ public class PharmacyContex: DbContext{
     public DbSet<User> Users { get; set; }
     public DbSet<Contact_Type> Contact_Types {get;set;}
     public DbSet<Charge> Charges {get;set;}
-    public DbSet<Detail_sale> Detail_Sales {get;set;}
+    
 
     //-Configurations
     protected override void OnModelCreating(ModelBuilder modelBuilder){  

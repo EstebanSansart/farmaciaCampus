@@ -4,10 +4,9 @@ namespace Domain.Entities;
 
 public class Detail_buy : BaseEntityA
 {
-    public int  Id_medicine {get;set;}
-    public Medicine Medicine {get;set;}
-    
-    public int  Id_bill {get;set;}
+  public int MedicineId { get; set; }
+  public Medicine Medicine { get; set; }
 
-    public Buy Buy {get;set;}
+  public int Buy_Id { get; set; }
+  public Buy Buys { get; set; }
 }

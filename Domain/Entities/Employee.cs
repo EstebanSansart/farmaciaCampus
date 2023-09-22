@@ -11,9 +11,9 @@ public class Employee : BaseEntityA
 
     public Charge Charge {get;set;}
 
-    ICollection<Sale> Sales {get;set;}
-    ICollection<Buy> Buys {get;set;}
-    ICollection<Employee_eps> Employee_Epss {get;set;}
+    public ICollection<Sale> Sales {get;set;}
+    public ICollection<Buy> Buys {get;set;}
+    public ICollection<Employee_eps> Employee_Epss {get;set;}
     
     
     

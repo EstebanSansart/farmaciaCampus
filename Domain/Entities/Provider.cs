@@ -2,13 +2,13 @@ using Domain.Entities.Generics;
 
 namespace Domain.Entities;
 
-public class Provider : BaseEntityA
-{
-    public int Id_type_Provider {get;set;}
-    public Type_provider Type_Provider {get;set;}
+public class Provider: BaseEntityA {
+  public int Buy_type_id { get; set; }
+  public Type_provider Type_Provider { get; set; }
 
-    public int Id_person {get;set;}
-    public Person Person {get;set;}
+  public int PersonId { get; set; }
+  public Person Person { get; set; }
 
-    ICollection<Buy> Buys {get;set;}
+  public ICollection<Buy> Buys {get; set;}
+
 }

@@ -10,5 +10,5 @@ public class Eps : BaseEntityA
     public Type_eps Type_Eps {get;set;}
     public Person Person {get;set;}
 
-    ICollection<Employee_eps> Employee_Eps {get;set;}
+    public ICollection<Employee_eps> Employee_Eps {get;set;}
 }

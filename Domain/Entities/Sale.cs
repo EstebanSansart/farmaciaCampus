@@ -9,9 +9,9 @@ public class Sale : BaseEntityA
 
     public Employee Employee {get;set;}
     
-    ICollection<Order> Orders {get;set;}
-    ICollection<Person> People {get;set;}
-    ICollection<Detail_sale> Detail_Sales {get;set;}
+    public ICollection<Order> Orders {get;set;}
+    public ICollection<Person> People {get;set;}
+    public ICollection<Detail_sale> Detail_Sales {get;set;}
    
     
 }

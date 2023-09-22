@@ -16,7 +16,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>{
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("idPk");
         
-        builder.Property(x => x.Username)
+        builder.Property(x => x.UserName)
             .IsRequired()
             .HasColumnName("usernameUser")
             .HasMaxLength(50);
@@ -39,7 +39,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>{
             .HasMaxLength(500);
         
         builder.HasIndex(p => new{
-            p.Username,p.Email
+            p.UserName,p.Email
         })
         .HasDatabaseName("IX_Username_Email")
         .IsUnique();

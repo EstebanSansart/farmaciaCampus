@@ -7,5 +7,5 @@ public class Contact_Type : BaseEntityA
     //Corporativo Personal O Emergencia
     public string Name {get;set;}
     
-    ICollection<Contact> Contacts {get;set;}
+    public ICollection<Contact> Contacts {get;set;}
 }

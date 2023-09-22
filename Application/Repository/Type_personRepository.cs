@@ -5,8 +5,8 @@ using Domain.Interfaces;
 using Persistence;
 
 namespace Application.Repository;
-public sealed class TypePersonRepository : GenericRepositoryA<Type_person>, IType_personRepository{
-    public TypePersonRepository(PharmacyContex context) : base(context){}
+public sealed class Type_PersonRepository : GenericRepositoryA<Type_person>, IType_personRepository{
+    public Type_PersonRepository(PharmacyContex context) : base(context){}
 
    
 
