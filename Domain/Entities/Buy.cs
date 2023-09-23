@@ -9,7 +9,7 @@ public class Buy : BaseEntityA
   public int Provider_Id { get; set; }
   public Provider Provider { get; set; }
 
-  public int EmployeeId { get; set; }
+  public int Employee_Id { get; set; }
   public Employee Employee { get; set; }
 
   public ICollection<Detail_buy> Detail_Buys {get; set;}

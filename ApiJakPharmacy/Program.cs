@@ -38,7 +38,7 @@ builder.Services.AddAuthentication(x => {
 builder.Services.AddAuthentication();
 
 //-Add Sql Connection
-builder.Services.AddDbContext<PharmacyContex>(opts =>{
+builder.Services.AddDbContext<PharmacyContext>(opts =>{
     string connection = builder.Configuration["ConnectionStrings:ConnectionAngel}"]?? throw new Exception("Error: Invalid Connection");
     opts.UseMySql(connection, ServerVersion.AutoDetect(connection));
 });

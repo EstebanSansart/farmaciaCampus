@@ -9,7 +9,7 @@ public class RolConfiguration : IEntityTypeConfiguration<Rol>{
         builder.ToTable("rol");
         builder.HasKey(x => x.Id);
         
-        //--Properties
+        // Properties
         builder.Property(x => x.Id)
             .IsRequired()
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)

@@ -5,8 +5,8 @@ using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistence;
-public class PharmacyContex: DbContext{
-    public PharmacyContex(DbContextOptions<PharmacyContex> conf):base(conf){}
+public class PharmacyContext: DbContext{
+    public PharmacyContext(DbContextOptions<PharmacyContext> conf):base(conf){}
 
 
     //-Dbset

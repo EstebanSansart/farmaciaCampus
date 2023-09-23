@@ -3,7 +3,7 @@ using Domain.Entities.Generics;
 namespace Domain.Entities;
 
 public class Provider: BaseEntityA {
-  public int Buy_type_id { get; set; }
+  public int ProviderTypeId { get; set; }
   public Type_provider Type_Provider { get; set; }
 
   public int PersonId { get; set; }

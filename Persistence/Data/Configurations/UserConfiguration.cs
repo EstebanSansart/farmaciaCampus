@@ -10,7 +10,8 @@ public class UserConfiguration : IEntityTypeConfiguration<User>{
         builder.ToTable("user");
         builder.HasKey(x => x.Id);
 
-        //--Properties
+        // Properties
+        
         builder.Property(x => x.Id)
             .IsRequired()
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
@@ -44,7 +45,8 @@ public class UserConfiguration : IEntityTypeConfiguration<User>{
         .HasDatabaseName("IX_Username_Email")
         .IsUnique();
         
-        //-Relations
+        // Keys
+
         builder.HasOne(x => x.Rol)
             .WithMany(x => x.Users)
             .HasForeignKey(x => x.RolId);   

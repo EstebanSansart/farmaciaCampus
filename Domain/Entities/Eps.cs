@@ -5,13 +5,13 @@ namespace Domain.Entities;
 public class Eps : BaseEntityA
 {
     //Entidad Prestadora de Servicios
-    public int Id_typo_eps {get;set;}
+    public int Id_type_eps {get;set;}
     public Type_eps Type_Eps { get; set; }
 
     public int PersonId { get; set; }
     public Person Person {get;set;}
 
     public ICollection<Order> Orders {get; set;}
-    public ICollection<Employee> Employees {get; set;}
-    public ICollection<Employee_eps> Employee_Eps {get;set;}
+    public ICollection<Employee> Employees {get; set;} = new HashSet<Employee>();
+    public ICollection<Employee_eps> Employee_Epss {get;set;}
 }

@@ -5,31 +5,28 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Persistence.Data.Configurations;
 
-public class CityConfiguAddressConfiguration : IEntityTypeConfiguration<Address>
+public class DocumentTypeConfiguration : IEntityTypeConfiguration<Document_type>
 {
-    public void Configure(EntityTypeBuilder<Address> builder){
-
-        builder.ToTable("Address");
+    public void Configure(EntityTypeBuilder<Document_type> builder){
+        builder.ToTable("Document_type");
         builder.HasKey(x => x.Id);
-
-         //--Properties
+        
+        // Properties
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-            .HasColumnName("Id_Address")
+            .HasColumnName("Id_Document_type")
             .IsRequired();
-
+    
         builder.Property(x => x.Description)
             .HasColumnName("Description")
-            .HasMaxLength(200)
+            .HasMaxLength(60)
             .IsRequired();
 
-        builder.HasOne(x => x.City)
-        .WithMany(x => x.Addresses)
-        .HasForeignKey(x => x.Id_City);
-
+        // Keys
         builder.HasOne(x => x.Person)
-        .WithMany(x => x.Addresses)
-        .HasForeignKey(x => x.Id_person);
-    }
+            .WithMany(x => x.Document_types)
+            .HasForeignKey(x => x.Id_Person);  
 
+    }
+    
 }

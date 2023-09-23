@@ -1,38 +1,37 @@
-/* using System.IO.Compression;
+using System.IO.Compression;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Persistence.Configurations;
+namespace Persistence.Data.Configurations;
 public class BuyConfiguration : IEntityTypeConfiguration<Buy>
 {
     public void Configure(EntityTypeBuilder<Buy> builder)
     {
-        builder.ToTable("Buys");
+        builder.ToTable("Buy");
         builder.HasKey(x => x.Id);
 
-        //--Properties
+        // Properties
+
         builder.Property(x => x.Id)
-            .IsRequired()
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-            .HasColumnName("idPk");
+            .HasColumnName("Id_buy")
+            .IsRequired();
 
-        builder.Property(x => x.Description)
-            .IsRequired()
-            .HasColumnName("description")
-            .HasMaxLength(50);
+        builder.Property(x => x.BuyDate)
+            .HasColumnName("Buy_date")
+            .HasColumnType("DateTime")
+            .IsRequired();
+            
+        // Keys
 
-      
+        builder.HasOne(x => x.Provider)
+            .WithMany(x => x.Buys   )
+            .HasForeignKey(x => x.Provider_Id);
 
-
-        builder.HasOne(x => x.Person)
-      .WithMany(x => x.Addresses)
-      .HasForeignKey(x => x.Id_person);
-
-
-        builder.HasOne(x => x.City)
-            .WithMany(x => x.Addresses)
-            .HasForeignKey(x => x.Id_City);
+        builder.HasOne(x => x.Employee)
+            .WithMany(x => x.Buys)
+            .HasForeignKey(x => x.Employee_Id);
     }
-} */
+} 
