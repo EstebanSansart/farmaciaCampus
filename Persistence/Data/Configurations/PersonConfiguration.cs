@@ -35,9 +35,9 @@ public class PersonConfiguration : IEntityTypeConfiguration<Person>
 
         // Keys
 
-        builder.HasOne(x => x.Employee)
-            .WithMany(x => x.Persons)
-            .HasForeignKey(x => x.Id_Employee);  
+        /*builder.HasOne(x => x.Employee)
+            .WithOne(x => x.Person)
+            .HasForeignKey(x => x.Id_Employee);  */
 
     }
     

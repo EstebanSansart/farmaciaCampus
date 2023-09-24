@@ -20,12 +20,6 @@ public class PositionConfiguration : IEntityTypeConfiguration<Position>
         builder.Property(x => x.Name)
             .HasMaxLength(200)
             .IsRequired();
-
-        // keys
-
-        builder.HasOne(x => x.Medicine_info)
-            .WithMany(x => x.Presentations)
-            .HasForeignKey(x => x.Id_medicine_info);
     }
     
 }

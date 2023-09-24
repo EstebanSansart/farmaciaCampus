@@ -14,5 +14,5 @@ public class Contact : BaseEntityA
     public Contact_Type Contact_Type {get;set;} 
 
     public int Id_contact_category {get;set;}
-    public Contact_category Contact_Categories {get;set;}
+    public Contact_category Contact_Category {get;set;}
 }
