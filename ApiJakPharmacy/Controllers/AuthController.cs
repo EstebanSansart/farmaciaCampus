@@ -1,4 +1,3 @@
-using ApiJakPharmacy.Controllers;
 using ApiJakPharmacy.Dtos;
 using ApiJakPharmacy.Services;
 using Domain.Entities;
@@ -26,7 +25,7 @@ public class AuthController:BaseApiController{
         _TokenManager = new TokenManager(PasswordHasher,conf);
     }
     
-    [HttpPost("register")]
+   [HttpPost("register")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult> RegisterAsync(UserSignup model){        
@@ -37,9 +36,9 @@ public class AuthController:BaseApiController{
             return BadRequest($"El usuario {model.Username} ya se encuentra registrado.");
         }
         
-        var defaultRol =  (await _UnitOfWork.Rols.GetRolByRoleName( Rols.Employee ))!;        
+        var defaultRol =  (await _UnitOfWork.Roles.GetRoleByRoleName( UserRoles.Employee ))!;        
         try{
-            user.Rol = defaultRol;
+            user.Roles.Add(defaultRol);
             _UnitOfWork.Users.Add(user);
             await _UnitOfWork.SaveChanges();
             return Ok($"El usuario  {model.Username} ha sido registrado exitosamente");
@@ -50,6 +49,7 @@ public class AuthController:BaseApiController{
         }
         
     }
+
 
     [HttpPost("Token")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -90,7 +90,7 @@ public class AuthController:BaseApiController{
     }
 
     [HttpPost("changeRol")]
-    [Authorize]
+    [Authorize(Roles = "Administator")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult> ChangeRolAsync(AddRole model){
@@ -113,14 +113,14 @@ public class AuthController:BaseApiController{
             );
         }        
         //-Obtener rol solicitado
-        Rol  existingRol = await _UnitOfWork.Rols.GetRolByRoleName(model.RoleName);
+        Role existingRol = await _UnitOfWork.Roles.GetRoleByRoleName(model.RoleName);
         if (existingRol == null){//-Validar rol
             return BadRequest($"Rol {model.RoleName} agregado a la cuenta {user.UserName} de forma exitosa.");
         }
                 
         //-Agregar nuevo rol
-        if (user.Rol == existingRol){
-            user.Rol = existingRol;
+        if (user.Roles.Any(role => role == existingRol) ){
+            user.Roles.Add(existingRol);
             _UnitOfWork.Users.Update(user);
             await _UnitOfWork.SaveChanges();
         }

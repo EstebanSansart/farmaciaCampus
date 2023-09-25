@@ -47,8 +47,31 @@ public class UserConfiguration : IEntityTypeConfiguration<User>{
         
         // Keys
 
-        builder.HasOne(x => x.Rol)
+         builder
+       .HasMany(p => p.Roles)
+       .WithMany(r => r.Users)
+       .UsingEntity<Role_user>(
+
+           j => j
+           .HasOne(pt => pt.Role)
+           .WithMany(t => t.Role_Users)
+           .HasForeignKey(ut => ut.Id_role),
+
+
+           j => j
+           .HasOne(et => et.User)
+           .WithMany(et => et.Role_users)
+           .HasForeignKey(el => el.Id_user),
+
+           j =>
+           {
+               j.HasKey(t => new { t.Id_user, t.Id_role });
+
+           });
+
+           
+    builder.HasOne(x => x.Person)
             .WithMany(x => x.Users)
-            .HasForeignKey(x => x.RolId);   
+            .HasForeignKey(x => x.PersonId);  
     }
 }

@@ -19,17 +19,17 @@ public sealed class TokenManager : ITokenManager{
         _PasswordHasher = passwordHasher;
         //--Token duration
         _ = int.TryParse(conf["JWTSettings:AccessTokenTimeInMinutes"], out _AccessTokenDuration);
-        _ = int.TryParse(conf["JWTSettings:RefreshTokenTimeInHours"], out _RefreshTokenTokenDuration); 
+        _ = int.TryParse(conf["JWTSettings:RefreshTokenTimeInHours"], out _RefreshTokenTokenDuration);
 
     }
     //Validar contraseña
-    public  bool ValidatePassword(User user, string password){        
+    public  bool ValidatePassword(User user, string password){
         return _PasswordHasher.VerifyHashedPassword(
-                    user, 
-                    user.Password, 
+                    user,
+                    user.Password,
                     password
                 ) == PasswordVerificationResult.Success;
-    }    
+    }
     public User CreateUser(UserSignup model){
         //-Crear Usuario
         User user = new(){
@@ -42,28 +42,33 @@ public sealed class TokenManager : ITokenManager{
 
         //-Retornar usuario
         return user;
-    }    
-    
+    }
+
     private SymmetricSecurityKey GetSecurityKey(){
         //-Obterner Key
         var key = new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(
                     _Conf["JWTSettings:Key"] ??
                     throw new Exception("Error: key not found"
-                )));         
-        return key;   
+                )));
+        return key;
     }
 
 
 
-    public  string CreateAccessToken(User user){        
+    public  string CreateAccessToken(User user){
         //-Define Claims
         var claims = new List<Claim>(){
             new(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
             new(ClaimTypes.Name,user.UserName),
-            new(ClaimTypes.Email,user.Email!),
-            new(ClaimTypes.Role,user.Rol!.Description)
-        };        
+            new(ClaimTypes.Email,user.Email!),            
+        };
+
+        foreach (var role in user.Roles){
+            claims.Add(
+                new(ClaimTypes.Role,role.Description)
+            );            
+        }
 
         var date = new DateTime();
         date = DateTime.Now.AddMinutes(_AccessTokenDuration);
@@ -75,16 +80,16 @@ public sealed class TokenManager : ITokenManager{
         //-Define Claims
         var claims = new List<Claim>(){
                 new(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString())};
-        
+
         var date = new DateTime();
         date = DateTime.Now.AddHours(_RefreshTokenTokenDuration);
         //-Return Token
         return CreateToken(claims,date);
     }
-    
-    private string CreateToken(IEnumerable<Claim> claims, DateTime expireTime){        
+
+    private string CreateToken(IEnumerable<Claim> claims, DateTime expireTime){
         //-Firmar Credenciales
-        var credentials = new SigningCredentials(GetSecurityKey(), SecurityAlgorithms.HmacSha512Signature);            
+        var credentials = new SigningCredentials(GetSecurityKey(), SecurityAlgorithms.HmacSha512Signature);
 
         //-Agregar descripcion
         var tokenDescription = new SecurityTokenDescriptor{
@@ -101,8 +106,8 @@ public sealed class TokenManager : ITokenManager{
         var token = tokenHandler.CreateToken(tokenDescription);
 
         //-Retornar token como string
-        return tokenHandler.WriteToken(token);        
-    }    
+        return tokenHandler.WriteToken(token);
+    }
 
-    
+
 }

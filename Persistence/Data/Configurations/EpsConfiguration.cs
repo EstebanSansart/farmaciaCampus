@@ -20,11 +20,9 @@ public class EpsConfiguration : IEntityTypeConfiguration<Eps>
         // Keys
         builder.HasOne(x => x.Type_Eps)
             .WithMany(x => x.Epss)
-            .HasForeignKey(x => x.Id_typo_eps); 
+            .HasForeignKey(x => x.Id_type_eps); 
 
-        builder.HasOne(x => x.Person)
-            .WithMany(x => x.Epss)
-            .HasForeignKey(x => x.PersonId); 
+       
             
         
         

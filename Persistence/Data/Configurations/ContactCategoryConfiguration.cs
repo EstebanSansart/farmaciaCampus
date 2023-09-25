@@ -15,7 +15,7 @@ public class ContactCategoryConfiguration : IEntityTypeConfiguration<Contact_cat
 
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-            .HasColumnName("Id_contact")
+            .HasColumnName("Id_contactCategory")
             .IsRequired();
     
         builder.Property(x => x.Name)

@@ -15,7 +15,7 @@ public class ContactTypeConfiguration : IEntityTypeConfiguration<Contact_Type>
 
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-            .HasColumnName("Id_contact")
+            .HasColumnName("Id_contactType")
             .IsRequired();
     
         builder.Property(x => x.Name)
@@ -23,9 +23,7 @@ public class ContactTypeConfiguration : IEntityTypeConfiguration<Contact_Type>
             .IsRequired();
 
         // Keys
-        builder.HasOne(x => x.Contact)
-            .WithMany(x => x.Contact_types)
-            .HasForeignKey(x => x.Id_contact);
+      
 
     
     }

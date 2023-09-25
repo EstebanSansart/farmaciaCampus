@@ -8,13 +8,13 @@ namespace Persistence.Data.Configurations;
 public class CountryConfiguration : IEntityTypeConfiguration<Country>
 {
     public void Configure(EntityTypeBuilder<Country> builder){
-        builder.ToTable("City");
+        builder.ToTable("Country");
         builder.HasKey(x => x.Id);
         
         // Properties
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-            .HasColumnName("Id_city")
+            .HasColumnName("Id_country")
             .IsRequired();
     
         builder.Property(x => x.Name)
@@ -23,10 +23,8 @@ public class CountryConfiguration : IEntityTypeConfiguration<Country>
             .IsRequired();
 
         // Keys
-
-        builder.HasOne(x => x.Department)
-            .WithMany(x => x.Cities)
-            .HasForeignKey(x => x.Id_department);  
+        
+       
 
     }
     

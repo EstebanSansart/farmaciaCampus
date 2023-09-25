@@ -28,6 +28,7 @@ public class CityConfiguration : IEntityTypeConfiguration<City>
             .WithMany(x => x.Cities)
             .HasForeignKey(x => x.Id_department);  
 
+
     }
     
 }

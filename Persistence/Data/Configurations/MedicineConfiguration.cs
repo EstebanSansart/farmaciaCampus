@@ -32,16 +32,11 @@ public class MedicineConfiguration : IEntityTypeConfiguration<Medicine>
             .HasColumnType("int")
             .IsRequired();
         
-        builder.Property(x => x.Id_medicine_info)
-            .HasColumnName("Id_medicine_info")
-            .HasColumnType("int")
-            .IsRequired();
-
         // Keys
 
-        builder.HasOne(x => x.Medicine_info)
+        builder.HasOne(x => x.Inventory)
             .WithMany(x => x.Medicines)
-            .HasForeignKey(x => x.Id_medicine_info); 
+            .HasForeignKey(x => x.Id_Inventory); 
         
         builder.HasOne(x => x.State)
             .WithMany(x => x.Medicines)

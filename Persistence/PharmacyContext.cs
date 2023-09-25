@@ -34,7 +34,6 @@ public class PharmacyContext: DbContext{
     public DbSet<Presentation> Presentations {get;set;}
     public DbSet<Provider> Providers {get;set;}
     public DbSet<Role> Roles {get;set;}
-    public DbSet<Role_user> Role_Users {get;set;}
     public DbSet<Sale> Sales {get;set;}
     public DbSet<State> States {get;set;}
     public DbSet<Type_eps> Type_Eps {get;set;}

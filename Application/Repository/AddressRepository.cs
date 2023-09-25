@@ -9,5 +9,4 @@ public sealed class AddressRepository : GenericRepositoryA<Address>, IAddressRep
     public AddressRepository(PharmacyContext context) : base(context){}
 
    
-
 }

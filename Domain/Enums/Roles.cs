@@ -1,7 +1,6 @@
 namespace Domain.Enums;
-public enum Roles{
+public enum UserRoles{
     Administator,
-    Provider,
-    Customer,
-    Employee,
+    Manager,
+    Employee
 }

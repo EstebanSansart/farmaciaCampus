@@ -24,12 +24,6 @@ public class MedicineBrandConfiguration : IEntityTypeConfiguration<Medicine_bran
             .IsRequired();
 
         // Keys
-
-        builder.HasOne(x => x.Medicine_info)
-            .WithMany(x => x.Medicine_brands)
-            .HasForeignKey(x => x.Id_medicine_info); 
-
-
     }
     
 }

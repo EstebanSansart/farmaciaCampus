@@ -25,6 +25,10 @@ public class MedicineInfoConfiguration : IEntityTypeConfiguration<Medicine_info>
             .WithMany(x => x.Medicine_Infos)
             .HasForeignKey(x => x.Id_Presentation);
 
+             builder.HasOne(x => x.Medicine_brand)
+            .WithMany(x => x.Medicine_Infos)
+            .HasForeignKey(x => x.Id_MedicineBrand); 
+
     }
     
 }

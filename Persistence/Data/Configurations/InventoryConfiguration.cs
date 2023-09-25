@@ -29,9 +29,9 @@ public class InventoryConfiguration : IEntityTypeConfiguration<Inventory>
 
         // Keys
 
-        builder.HasOne(x => x.Medicine_info)
+        builder.HasOne(x => x.Medicine_Info)
             .WithMany(x => x.Inventories)
-            .HasForeignKey(x => x.MedicineId); 
+            .HasForeignKey(x => x.Id_medicine_info); 
 
 
     }

@@ -21,12 +21,6 @@ public class DocumentTypeConfiguration : IEntityTypeConfiguration<Document_type>
             .HasColumnName("Description")
             .HasMaxLength(60)
             .IsRequired();
-
-        // Keys
-        builder.HasOne(x => x.Person)
-            .WithMany(x => x.Document_types)
-            .HasForeignKey(x => x.Id_Person);  
-
     }
     
 }

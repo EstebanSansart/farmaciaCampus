@@ -33,6 +33,9 @@ public class ContactConfiguration : IEntityTypeConfiguration<Contact>
             .WithMany(x => x.Contacts)
             .HasForeignKey(x => x.Id_contact_category);   
 
+
+            
+
     }
     
 }

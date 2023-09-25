@@ -50,7 +50,6 @@ public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
                     j.HasKey(t => new{t.EpsId, t.EmployeeId});
                 }
             );
-
     }
     
 }
