@@ -5,9 +5,9 @@ using Persistence;
 namespace Application.Repository.Generics;
 public abstract class GenericRepository<T> where T : class{
     protected readonly DbSet<T> _Entity;
-    protected readonly PharmacyContex _Context;
+    protected readonly PharmacyContext _Context;
 
-    public GenericRepository(PharmacyContex context){
+    public GenericRepository(PharmacyContext context){
         _Context = context;
         _Entity = context.Set<T>();
     }

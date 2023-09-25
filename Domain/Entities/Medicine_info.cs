@@ -1,4 +1,6 @@
-namespace Domain.Entities.Generics;
+using Domain.Entities.Generics;
+
+namespace Domain.Entities;
 
 public class Medicine_info : BaseEntityA
 {
@@ -9,8 +11,11 @@ public class Medicine_info : BaseEntityA
     public bool  Need_order {get;set;}
     public int  Id_medicine_name {get;set;}
     
+    public int Id_Category {get;set;}
     public Category Category {get;set;}
+    public int Id_Presentation {get;set;}
     public Presentation Presentation {get;set;}
+    public int Id_MedicineBrand {get;set;}
     public Medicine_brand Medicine_brand {get;set;}
     
     public ICollection<Medicine> Medicines {get;set;}

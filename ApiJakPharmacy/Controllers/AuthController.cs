@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api.Controllers;
+namespace ApiJakPharmacy.Controllers;
 public class AuthController:BaseApiController{
     private readonly IUnitOfWork _UnitOfWork;
     private readonly ILogger<AuthController> _Logger;
@@ -40,7 +40,7 @@ public class AuthController:BaseApiController{
         var defaultRol =  (await _UnitOfWork.Rols.GetRolByRoleName( Rols.Employee ))!;        
         try{
             user.Rol = defaultRol;
-            await _UnitOfWork.Users.Add(user);
+            _UnitOfWork.Users.Add(user);
             await _UnitOfWork.SaveChanges();
             return Ok($"El usuario  {model.Username} ha sido registrado exitosamente");
 

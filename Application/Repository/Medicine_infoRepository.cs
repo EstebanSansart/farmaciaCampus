@@ -7,7 +7,7 @@ using Persistence;
 
 namespace Application.Repository;
 public sealed class Medicine_infoRepository : GenericRepositoryA<Medicine_info>, IMedicine_infoRepository{
-    public Medicine_infoRepository(PharmacyContex context) : base(context){}
+    public Medicine_infoRepository(PharmacyContext context) : base(context){}
 
    
 

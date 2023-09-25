@@ -3,7 +3,7 @@ using Domain.Interfaces.Generics.GenericId;
 
 namespace Domain.Interfaces;
 
-public interface IDetail_saleRepository : IGenericRepositoryA<Detail_sale>
+public interface IType_providerRepository : IGenericRepositoryA<Type_provider>
 {
     
 }

@@ -1,6 +1,6 @@
 namespace Domain.Interfaces;
 public interface IUnitOfWork{
-    IAddressRepository Address { get; }
+    IAddressRepository Addresses { get; }
     IBuyRepository Buys {get;}
     ICategoryRepository Categories {get;}
     IContact_typeRepository Contact_Types {get;}
@@ -8,8 +8,6 @@ public interface IUnitOfWork{
     IContact_categoryRepository Contact_Categories { get; }
     ICountryRepository Countries {get;}
     IDepartmentRepository Departments {get;}
-    IDetail_saleRepository Detail_Sales {get;}
-    IDetail_buyRepository Detail_buys {get;}
     IDocument_typeRepository Document_Types {get;}
     IEmployeeRepository Employees {get;}
     IEpsRepository Epss {get;}
@@ -22,11 +20,12 @@ public interface IUnitOfWork{
     IPresentationRepository Presentations {get;}
     IProviderRepository Providers {get;}
     IPositionRepository Positions {get;}
-    IRolRepository Rols { get; }  
+    IRoleRepository Roles { get; }  
     ISaleRepository Sales {get;}
     IStateRepository States {get;}
-    IType_epsRepository Type_Epses {get;}
+    IType_epsRepository Type_Epss {get;}
     IType_personRepository Type_Persons {get;}
+    IType_providerRepository Type_Providers {get;}
     IUserRepository Users {get;}
     Task<int> SaveChanges();
 }

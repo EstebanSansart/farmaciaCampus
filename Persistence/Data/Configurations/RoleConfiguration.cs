@@ -4,8 +4,8 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Persistence.Configurations;
-public class RolConfiguration : IEntityTypeConfiguration<Rol>{
-    public void Configure(EntityTypeBuilder<Rol> builder){
+public class RoleConfiguration : IEntityTypeConfiguration<Role>{
+    public void Configure(EntityTypeBuilder<Role> builder){
         builder.ToTable("rol");
         builder.HasKey(x => x.Id);
         

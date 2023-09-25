@@ -7,7 +7,7 @@ using Persistence;
 
 namespace Application.Repository;
 public sealed class DepartmentRepository : GenericRepositoryA<Department>, IDepartmentRepository{
-    public DepartmentRepository(PharmacyContex context) : base(context){}
+    public DepartmentRepository(PharmacyContext context) : base(context){}
 
    
 

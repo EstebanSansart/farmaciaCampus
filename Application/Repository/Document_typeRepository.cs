@@ -6,7 +6,7 @@ using Persistence;
 
 namespace Application.Repository;
 public sealed class Document_typeRepository : GenericRepositoryA<Document_type>, IDocument_typeRepository{
-    public Document_typeRepository(PharmacyContex context) : base(context){}
+    public Document_typeRepository(PharmacyContext context) : base(context){}
 
    
 

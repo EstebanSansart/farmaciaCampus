@@ -7,7 +7,7 @@ using Persistence;
 
 namespace Application.Repository;
 public sealed class CountryRepository : GenericRepositoryA<Country>, ICountryRepository{
-    public CountryRepository(PharmacyContex context) : base(context){}
+    public CountryRepository(PharmacyContext context) : base(context){}
 
    
 

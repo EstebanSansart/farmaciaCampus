@@ -33,7 +33,7 @@ public class PharmacyContext: DbContext{
     public DbSet<Person> Persons {get;set;}
     public DbSet<Presentation> Presentations {get;set;}
     public DbSet<Provider> Providers {get;set;}
-    public DbSet<Rol> Roles {get;set;}
+    public DbSet<Role> Roles {get;set;}
     public DbSet<Role_user> Role_Users {get;set;}
     public DbSet<Sale> Sales {get;set;}
     public DbSet<State> States {get;set;}
@@ -45,16 +45,16 @@ public class PharmacyContext: DbContext{
     protected override void OnModelCreating(ModelBuilder modelBuilder){  
 
 
-        modelBuilder.Entity<Rol>().HasData(new[]{
-            new Rol{
+        modelBuilder.Entity<Role>().HasData(new[]{
+            new Role{
                 Id= 1,
                 Description = "Administrator"
             },            
-            new Rol{
+            new Role{
                 Id= 2,
                 Description = "Manager"
             },
-            new Rol{                
+            new Role{                
                 Id= 3,
                 Description = "Employee"
             }

@@ -6,6 +6,6 @@ using Persistence;
 
 namespace Application.Repository;
 public sealed class EpsRepository : GenericRepositoryA<Eps>, IEpsRepository{
-    public EpsRepository(PharmacyContex context) : base(context){}
+    public EpsRepository(PharmacyContext context) : base(context){}
 
 }

@@ -6,7 +6,7 @@ using Persistence;
 
 namespace Application.Repository;
 public sealed class InventoryRepository : GenericRepositoryA<Inventory>, IInventoryRepository{
-    public InventoryRepository(PharmacyContex context) : base(context){}
+    public InventoryRepository(PharmacyContext context) : base(context){}
 
 
 }

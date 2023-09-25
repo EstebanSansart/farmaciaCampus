@@ -1,4 +1,6 @@
-namespace Domain.Entities.Generics;
+using Domain.Entities.Generics;
+
+namespace Domain.Entities;
 
 public class Medicine_brand : BaseEntityA
 {
