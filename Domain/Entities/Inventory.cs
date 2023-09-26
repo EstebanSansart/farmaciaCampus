@@ -4,6 +4,8 @@ namespace Domain.Entities;
 
 public class Inventory : BaseEntityA
 {
+    
+    public string Name_medicine {get;set;}
     public int Ubication {get;set;}
     public int Total_stock {get;set;}
 

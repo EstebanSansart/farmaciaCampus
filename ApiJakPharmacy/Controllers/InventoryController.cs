@@ -7,9 +7,14 @@ using Domain.Interfaces.Params;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using ApiJakPharmacy.Dtos.MedicineDtos;
 
 namespace ApiJakPharmacy.Controllers;
 [ApiVersion("1.0")]
+[ApiVersion("1.1")]
+[ApiVersion("1.2")]
+
+
 public class InventoryController : BaseApiController{
     private readonly IUnitOfWork _UnitOfWork;
     private readonly IMapper _Mapper;
@@ -95,4 +100,23 @@ public class InventoryController : BaseApiController{
        await _UnitOfWork.SaveChanges();
        return NoContent();
     }
+
+    /* [HttpGet]
+    [MapToApiVersion("1.2")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<Pager<InventoryDto>>> Get22([FromQuery] Params conf){
+       var param = new Param(conf);
+       var records = await _UnitOfWork.Inventories.GetAllAsync(param);
+       var recordDtos = _Mapper.Map<List<InventoryDto>>(records);
+       IPager<InventoryDto> pager = new Pager<InventoryDto>(recordDtos,records?.Count(),param) ;
+       return Ok(pager);
+    } */
+
+    
+
+
+    
 }
+
+

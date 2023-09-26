@@ -5,6 +5,6 @@ namespace Domain.Interfaces;
 
 public interface IMedicineRepository : IGenericRepositoryA<Medicine>
 {
-    
+   
 }
 
