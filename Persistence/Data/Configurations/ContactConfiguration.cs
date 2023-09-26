@@ -11,15 +11,18 @@ public class ContactConfiguration : IEntityTypeConfiguration<Contact>
         builder.ToTable("Contact");
         builder.HasKey(x => x.Id);
         
-        //--Properties
+        // Properties
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("Id_contact")
             .IsRequired();
     
         builder.Property(x => x.Description)
+            .HasColumnName("Description")
             .HasMaxLength(60)
             .IsRequired();
+
+        // Keys 
 
         builder.HasOne(x => x.Person)
             .WithMany(x => x.Contacts)

@@ -11,3 +11,4 @@ public class Department : BaseEntityA
     
     public ICollection<City> Cities {get;set;}
 }
+

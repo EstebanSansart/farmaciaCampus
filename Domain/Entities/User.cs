@@ -12,7 +12,7 @@ public class User: BaseEntityA{
 
     public int PersonId { get; set; }
     public Person Person {get; set; }
+
     public ICollection<Role> Roles { get; set; } = new HashSet<Role>();
     public ICollection<Role_user> Role_users { get; set; } 
-
 }

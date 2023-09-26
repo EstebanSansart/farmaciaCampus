@@ -12,7 +12,7 @@ public class CityConfiguAddressConfiguration : IEntityTypeConfiguration<Address>
         builder.ToTable("Address");
         builder.HasKey(x => x.Id);
 
-         //--Properties
+         // Properties
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("Id_Address")
@@ -23,13 +23,15 @@ public class CityConfiguAddressConfiguration : IEntityTypeConfiguration<Address>
             .HasMaxLength(200)
             .IsRequired();
 
+        // Keys
+
         builder.HasOne(x => x.City)
-        .WithMany(x => x.Addresses)
-        .HasForeignKey(x => x.Id_City);
+            .WithMany(x => x.Addresses)
+            .HasForeignKey(x => x.Id_City);
 
         builder.HasOne(x => x.Person)
-        .WithMany(x => x.Addresses)
-        .HasForeignKey(x => x.Id_person);
+            .WithMany(x => x.Addresses)
+            .HasForeignKey(x => x.Id_person);
     }
 
 }

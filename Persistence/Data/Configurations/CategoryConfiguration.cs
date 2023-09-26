@@ -12,7 +12,8 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
         builder.ToTable("Category");
         builder.HasKey(x => x.Id);
 
-        //--Properties
+        // Properties
+        
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("Id_category")
@@ -22,7 +23,5 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
             .HasColumnName("Name")
             .HasMaxLength(60)
             .IsRequired();
-    
-
     }
 } 

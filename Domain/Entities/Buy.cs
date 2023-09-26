@@ -12,5 +12,6 @@ public class Buy : BaseEntityA
   public int Employee_Id { get; set; }
   public Employee Employee { get; set; }
 
+  public ICollection<Medicine> Medicines {get; set;} = new HashSet<Medicine>();
   public ICollection<Detail_buy> Detail_Buys {get; set;}
 }

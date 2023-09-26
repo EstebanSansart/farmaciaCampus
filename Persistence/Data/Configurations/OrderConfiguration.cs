@@ -11,13 +11,15 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
         builder.ToTable("Order");
         builder.HasKey(x => x.Id);
         
-        //--Properties
+        // Properties
+
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("Id_Order")
             .IsRequired();
     
         builder.Property(x => x.Order_Date)
+            .HasColumnName("Order_Date")
             .HasColumnType("DateTime")
             .IsRequired();
         
@@ -26,11 +28,11 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
             .IsRequired();
         
         builder.Property(x => x.Date_expiration)
+            .HasColumnName("Expire_Date")
             .HasColumnType("DateTime")
             .IsRequired();
 
-        // keys
-
+        // Keys
         builder.HasOne(x => x.Sale)
             .WithMany(x => x.Orders)
             .HasForeignKey(x => x.Id_sale);
@@ -38,7 +40,6 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
         builder.HasOne(x => x.Eps)
             .WithMany(x => x.Orders)
             .HasForeignKey(x => x.EpsId);    
-
     }
     
 }

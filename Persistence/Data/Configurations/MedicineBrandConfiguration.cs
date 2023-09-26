@@ -22,8 +22,5 @@ public class MedicineBrandConfiguration : IEntityTypeConfiguration<Medicine_bran
             .HasColumnName("Name")
             .HasMaxLength(60)
             .IsRequired();
-
-        // Keys
     }
-    
 }

@@ -12,6 +12,7 @@ public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
         builder.HasKey(x => x.Id);
         
         // Properties
+
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("Id_Employee")
@@ -21,11 +22,11 @@ public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
 
         builder.HasOne(x => x.Position)
             .WithMany(x => x.Employees)
-            .HasForeignKey(x => x.PositionId); 
+            .HasForeignKey(x => x.PositionId);
 
-        /*builder.HasOne(y => y.Person)
-            .WithOne(y => y.Employee)
-            .HasForeignKey(y => y.PersonId);*/
+        builder.HasOne(x => x.Person)
+            .WithMany(x => x.Employees)
+            .HasForeignKey(x => x.PersonId); 
         
         // Employee - Eps
     
@@ -46,10 +47,9 @@ public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
 
                 j =>
                 {
-                    j.ToTable("employee_eps");
+                    j.ToTable("Employee_Eps");
                     j.HasKey(t => new{t.EpsId, t.EmployeeId});
                 }
             );
-    }
-    
+    }   
 }

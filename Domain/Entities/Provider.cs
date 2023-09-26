@@ -4,9 +4,10 @@ namespace Domain.Entities;
 
 public class Provider: BaseEntityA {
 
+  public string Name { get; set; }
+
   public int ProviderTypeId { get; set; }
   public Type_provider Type_Provider { get; set; }
-
   public int PersonId { get; set; }
   public Person Person { get; set; }
 

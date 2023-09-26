@@ -12,6 +12,7 @@ public class CountryConfiguration : IEntityTypeConfiguration<Country>
         builder.HasKey(x => x.Id);
         
         // Properties
+
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("Id_country")
@@ -21,11 +22,6 @@ public class CountryConfiguration : IEntityTypeConfiguration<Country>
             .HasColumnName("Name")
             .HasMaxLength(60)
             .IsRequired();
-
-        // Keys
-        
-       
-
     }
     
 }

@@ -4,5 +4,6 @@ namespace Domain.Entities;
 
 public class Type_provider : BaseEntityA {
   public string Name { get; set; }
-  public ICollection<Provider> Provider{ get; set; }
+
+  public ICollection<Provider> Providers { get; set; }
 }

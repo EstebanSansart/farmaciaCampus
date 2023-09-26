@@ -12,18 +12,16 @@ public class StateConfiguration : IEntityTypeConfiguration<State>
         builder.ToTable("State");
         builder.HasKey(x => x.Id);
 
-        //--Properties
+        // Properties
+
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("Id_State")
             .IsRequired();
 
         builder.Property(x => x.Name)
-            .HasColumnName("Name_state")
+            .HasColumnName("Name")
             .HasMaxLength(60)
             .IsRequired();
-
-
     }
-
 }

@@ -27,11 +27,35 @@ public class BuyConfiguration : IEntityTypeConfiguration<Buy>
         // Keys
 
         builder.HasOne(x => x.Provider)
-            .WithMany(x => x.Buys   )
+            .WithMany(x => x.Buys)
             .HasForeignKey(x => x.Provider_Id);
 
         builder.HasOne(x => x.Employee)
             .WithMany(x => x.Buys)
             .HasForeignKey(x => x.Employee_Id);
+
+        // Buy - Medicine
+
+        builder
+            .HasMany(r => r.Medicines)
+            .WithMany(p => p.Buys)
+            .UsingEntity<Detail_buy>(
+
+                j => j
+                .HasOne(pt => pt.Medicine)
+                .WithMany(t => t.Detail_Buys)
+                .HasForeignKey(ut => ut.MedicineId),
+
+                j => j
+                .HasOne(et => et.Buy)
+                .WithMany(e => e.Detail_Buys)
+                .HasForeignKey(te => te.Buy_Id),
+
+                j =>
+                {
+                    j.ToTable("Detail_Buy");
+                    j.HasKey(t => new{t.MedicineId, t.Buy_Id});
+                }
+            );
     }
 } 

@@ -12,6 +12,7 @@ public class CityConfiguration : IEntityTypeConfiguration<City>
         builder.HasKey(x => x.Id);
         
         // Properties
+        
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("Id_city")
@@ -27,8 +28,6 @@ public class CityConfiguration : IEntityTypeConfiguration<City>
         builder.HasOne(x => x.Department)
             .WithMany(x => x.Cities)
             .HasForeignKey(x => x.Id_department);  
-
-
     }
     
 }

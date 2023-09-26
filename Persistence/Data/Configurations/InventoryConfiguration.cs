@@ -12,6 +12,7 @@ public class InventoryConfiguration : IEntityTypeConfiguration<Inventory>
         builder.HasKey(x => x.Id);
         
         // Properties
+
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("Id_Inventory")
@@ -22,18 +23,16 @@ public class InventoryConfiguration : IEntityTypeConfiguration<Inventory>
             .HasColumnType("int")
             .IsRequired();
 
-        builder.Property(x => x.Stock_total)
-            .HasColumnName("Stock_total")
+        builder.Property(x => x.Total_stock)
+            .HasColumnName("Total_Stock")
             .HasColumnType("int")
             .IsRequired();
 
         // Keys
 
-        builder.HasOne(x => x.Medicine_Info)
+        builder.HasOne(x => x.Medicine_info)
             .WithMany(x => x.Inventories)
-            .HasForeignKey(x => x.Id_medicine_info); 
-
-
+            .HasForeignKey(x => x.Id_MedicineInfo); 
     }
     
 }

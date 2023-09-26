@@ -27,11 +27,6 @@ public class MedicineConfiguration : IEntityTypeConfiguration<Medicine>
             .HasColumnType("DateTime")
             .IsRequired();
         
-        builder.Property(x => x.Id_Date_expiration)
-            .HasColumnName("Id_Date_expiration")
-            .HasColumnType("int")
-            .IsRequired();
-        
         // Keys
 
         builder.HasOne(x => x.Inventory)
@@ -41,6 +36,8 @@ public class MedicineConfiguration : IEntityTypeConfiguration<Medicine>
         builder.HasOne(x => x.State)
             .WithMany(x => x.Medicines)
             .HasForeignKey(x => x.Id_estate); 
+
+
 
     }
     

@@ -19,13 +19,8 @@ public class ContactTypeConfiguration : IEntityTypeConfiguration<Contact_Type>
             .IsRequired();
     
         builder.Property(x => x.Name)
+            .HasColumnName("Name")
             .HasMaxLength(60)
             .IsRequired();
-
-        // Keys
-      
-
-    
     }
-    
 }

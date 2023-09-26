@@ -9,6 +9,8 @@ public class TypeProviderConfiguration : IEntityTypeConfiguration<Type_provider>
         builder.ToTable("Type_provider");
         builder.HasKey(p => p.Id);
 
+        // Properties
+
         builder.Property(p => p.Id)
             .IsRequired()
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
@@ -16,7 +18,7 @@ public class TypeProviderConfiguration : IEntityTypeConfiguration<Type_provider>
 
         builder.Property(p => p.Name)
             .IsRequired()
-            .HasColumnName("Providertypename")
+            .HasColumnName("Name")
             .HasMaxLength(50);
     }
 }

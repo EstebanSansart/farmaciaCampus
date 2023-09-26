@@ -12,23 +12,21 @@ public class EpsConfiguration : IEntityTypeConfiguration<Eps>
         builder.HasKey(x => x.Id);
         
         // Properties
+
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("Id_Eps")
             .IsRequired();
     
         // Keys
+
         builder.HasOne(x => x.Type_Eps)
             .WithMany(x => x.Epss)
             .HasForeignKey(x => x.Id_type_eps); 
 
-       
-            
-        
-        
-    
-        
-
+        builder.HasOne(x => x.Person)
+            .WithMany(x => x.Epss)
+            .HasForeignKey(x => x.Id_Person); 
     }
     
 }

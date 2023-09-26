@@ -9,6 +9,8 @@ public class TypeEpsConfiguration : IEntityTypeConfiguration<Type_eps>{
         builder.ToTable("Type_eps");
         builder.HasKey(p => p.Id);
 
+        // Properties
+
         builder.Property(p => p.Id)
             .IsRequired()
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
@@ -16,9 +18,7 @@ public class TypeEpsConfiguration : IEntityTypeConfiguration<Type_eps>{
         
         builder.Property(p => p.Name)
             .IsRequired()
-            .HasColumnName("epstypename")
+            .HasColumnName("Name")
             .HasMaxLength(50);
-
-        // Relations
     }
 }

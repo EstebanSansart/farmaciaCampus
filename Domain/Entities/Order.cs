@@ -10,10 +10,6 @@ public class Order : BaseEntityA
 
     public int Id_sale {get;set;}
     public Sale Sale {get;set;}
-    
     public int EpsId { get; set; }
     public Eps Eps { get; set; }
-    
-    
-    
 }

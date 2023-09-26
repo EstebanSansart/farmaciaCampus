@@ -18,18 +18,18 @@ public class PersonConfiguration : IEntityTypeConfiguration<Person>
             .IsRequired();
     
         builder.Property(x => x.Name)
-            .HasColumnName("Description")
+            .HasColumnName("Name")
             .HasMaxLength(60)
             .IsRequired();
 
         builder.Property(x => x.Register_date)
-            .HasColumnName("Register_date")
+            .HasColumnName("Register_Date")
             .HasMaxLength(60)
             .IsRequired();
 
 
         builder.Property(x => x.Birth_date)
-            .HasColumnName("Birth_date")
+            .HasColumnName("Birth_Date")
             .HasColumnType("DateTime")
             .IsRequired();
 
@@ -37,16 +37,11 @@ public class PersonConfiguration : IEntityTypeConfiguration<Person>
 
         builder.HasOne(x => x.Document_type)
             .WithMany(x => x.Persons)
-            .HasForeignKey(x => x.Id_Document_type);  
+            .HasForeignKey(x => x.Id_Document_type);
 
-        builder.HasOne(x => x.Eps)
+        builder.HasOne(x => x.Type_Person)
             .WithMany(x => x.Persons)
-            .HasForeignKey(x => x.Id_Eps);  
-
-        /*builder.HasOne(x => x.Employee)
-            .WithOne(x => x.Person)
-            .HasForeignKey(x => x.Id_Employee);  */
-
+            .HasForeignKey(x => x.Id_Type_Person);
     }
     
 }

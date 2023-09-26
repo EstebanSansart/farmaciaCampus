@@ -22,5 +22,4 @@ public class ContactCategoryConfiguration : IEntityTypeConfiguration<Contact_cat
             .HasMaxLength(60)
             .IsRequired();
     }
-    
 }

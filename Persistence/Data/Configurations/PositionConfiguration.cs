@@ -11,7 +11,8 @@ public class PositionConfiguration : IEntityTypeConfiguration<Position>
         builder.ToTable("Position");
         builder.HasKey(x => x.Id);
         
-        //--Properties
+        // Properties
+
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("Id_Position")
@@ -20,6 +21,5 @@ public class PositionConfiguration : IEntityTypeConfiguration<Position>
         builder.Property(x => x.Name)
             .HasMaxLength(200)
             .IsRequired();
-    }
-    
+    }   
 }

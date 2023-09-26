@@ -12,6 +12,7 @@ public class DocumentTypeConfiguration : IEntityTypeConfiguration<Document_type>
         builder.HasKey(x => x.Id);
         
         // Properties
+        
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("Id_Document_type")
@@ -22,5 +23,4 @@ public class DocumentTypeConfiguration : IEntityTypeConfiguration<Document_type>
             .HasMaxLength(60)
             .IsRequired();
     }
-    
 }
