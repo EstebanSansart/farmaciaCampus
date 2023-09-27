@@ -101,19 +101,26 @@ public class InventoryController : BaseApiController{
        return NoContent();
     }
 
-    /* [HttpGet]
-    [MapToApiVersion("1.2")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<Pager<InventoryDto>>> Get22([FromQuery] Params conf){
-       var param = new Param(conf);
-       var records = await _UnitOfWork.Inventories.GetAllAsync(param);
-       var recordDtos = _Mapper.Map<List<InventoryDto>>(records);
-       IPager<InventoryDto> pager = new Pager<InventoryDto>(recordDtos,records?.Count(),param) ;
-       return Ok(pager);
-    } */
-
     
+
+[HttpGet("medicinasStockMenos50")]
+[MapToApiVersion("1.2")]
+[ProducesResponseType(StatusCodes.Status200OK)]
+[ProducesResponseType(StatusCodes.Status400BadRequest)]
+public async Task<ActionResult<IEnumerable<MedicineDto>>> GetMedicinaStockMenos50()
+{
+        try
+        {
+        var medicinesWithStockLessThan50 = await _UnitOfWork.Inventories.GetMedicinaStockMenos50();
+        var medicineDtos = _Mapper.Map<List<MedicineDto>>(medicinesWithStockLessThan50);
+        return Ok(medicineDtos);
+    }
+    catch (Exception)
+        {
+        return BadRequest();
+    }
+}
+
 
 
     

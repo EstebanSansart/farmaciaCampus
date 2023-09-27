@@ -11,6 +11,6 @@ public sealed class MedicineRepository : GenericRepositoryA<Medicine>, IMedicine
 
     }
    
-
+    
 
 }

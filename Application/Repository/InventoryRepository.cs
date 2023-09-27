@@ -14,24 +14,6 @@ public sealed class InventoryRepository : GenericRepositoryA<Inventory>, IInvent
          _context = context;     
     }
 
-/* protected override async Task<IEnumerable<Inventory>> GetAll(Expression<Func<Inventory, bool>> expression = null)
-    {
-        if (expression is not null)
-        {
-            return await _Entities
-                .Include(x => x.MedicineInfo)
-                .Include(x => x.Medicines)
-                .Where(expression).ToListAsync();
-        }
-        return await _Entities
-            .Include(x => x.MedicineInfo)            
-            .Include(x => x.Medicines)
-            .ToListAsync();
-    }
- */
-  /* public async Task<IEnumerable<Inventory>> GetMedicinaStockMenos50(int quantity) =>
-                    await _context.Inventories
-                    .Where(h => h.Total_stock < 50 ).Join().ToListAsync(); */
     public async Task<IEnumerable<Inventory>> GetMedicinaStockMenos50() =>
                     await _context.Inventories
                     .Join(_context.Medicines, h => h.Id, m => m.Id,

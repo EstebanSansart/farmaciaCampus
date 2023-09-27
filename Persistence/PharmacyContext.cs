@@ -8,8 +8,8 @@ namespace Persistence;
 public class PharmacyContext: DbContext{
     public PharmacyContext(DbContextOptions<PharmacyContext> conf):base(conf){}
 
+    // DbSets
 
-    //-Dbset
     public DbSet<Address> Addresses {get;set;}
     public DbSet<Buy> Buys {get;set;}
     public DbSet<Category> Categories {get;set;}
