@@ -8,4 +8,8 @@ public class PersonDto{
     public DateTime RegisterDate { get; set; }
     [Required]
     public DateTime BirthDate { get; set; }
+    [Required]
+    public int PersonTypeId { get; set; }
+    [Required]
+    public int DocumentTypeId { get; set; }
 }

@@ -95,4 +95,46 @@ public class ProviderController : BaseApiController{
        await _UnitOfWork.SaveChanges();
        return NoContent();
     }
+    [HttpGet]
+    [MapToApiVersion("1.2")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<Pager<ProviderDto>>> Get12([FromQuery] Params conf)
+    {
+        var param = new Param(conf);
+        var records = await _UnitOfWork.Providers.GetAllAsync(param);
+        var recordDtos = _Mapper.Map<List<ProviderDto>>(records);
+        IPager<ProviderDto> pager = new Pager<ProviderDto>(recordDtos, records?.Count(), param);
+
+        // Llamar a la función GetTotalStockPurchasedByProviderAsync para obtener el total de stock comprado por proveedor
+        var totalStockPurchasedByProvider = await GetTotalStockPurchasedByProvider();
+        // Puedes hacer algo con la variable totalStockPurchasedByProvider, como agregarla al pager o devolverla en otro formato.
+
+        return Ok(pager);
+    }
+    [HttpGet]
+    [MapToApiVersion("1.2")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<Pager<ProviderDto>>> Get12([FromQuery] Params conf)
+    {
+        var param = new Param(conf);
+        var records = await _UnitOfWork.Providers.GetAllAsync(param);
+        var recordDtos = _Mapper.Map<List<ProviderDto>>(records);
+
+        // Llamar a la función GetTotalStockPurchasedByProviderAsync para obtener el total de stock comprado por proveedor
+        var totalStockPurchasedByProvider = await GetTotalStockPurchasedByProviderAsync();
+
+        // Puedes hacer algo con la variable totalStockPurchasedByProvider, como agregarla al pager o devolverla en otro formato.
+
+        // Convierte totalStockPurchasedByProvider a una lista de ProviderDto si es necesario
+        var totalStockPurchasedDto = _Mapper.Map<List<ProviderDto>>(totalStockPurchasedByProvider);
+
+        // Combina los datos de records y totalStockPurchasedDto en un solo objeto o haz lo que necesites con ellos
+        // Aquí estoy asumiendo que ProviderDto es la clase que utilizas para representar a los proveedores
+        // Puedes ajustar esto según tu estructura de datos y requisitos específicos
+
+        IPager<ProviderDto> pager = new Pager<ProviderDto>(recordDtos, records?.Count(), param);
+        return Ok(pager);
+    }
 }

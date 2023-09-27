@@ -7,7 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
-
+Console.WriteLine("\n!!!!! La madre pal que dañe el proyecto . -.-  -_- !!!!!!\n");
 // Add services to the container.
 
 builder.Services.AddControllers();

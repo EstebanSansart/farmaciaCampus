@@ -5,6 +5,6 @@ namespace Domain.Interfaces;
 
 public interface IOrderRepository : IGenericRepositoryA<Order>
 {
-    
+    public Task<IEnumerable<Order>> GetAfterDateJanuary();
 }
 

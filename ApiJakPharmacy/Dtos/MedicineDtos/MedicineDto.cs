@@ -7,7 +7,9 @@ public class MedicineDto{
     [Required]
     public DateTime ExpirationDate { get; set; }
     [Required]
-    public int MedicineInfoId { get; set; }
+    public string Name { get; set; }
+    [Required]
+    public int InventoryId { get; set; }
     [Required]
     public int StateId { get; set; }
 }

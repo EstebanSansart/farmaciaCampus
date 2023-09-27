@@ -1,6 +1,8 @@
+using System.Linq.Expressions;
 using Application.Repository.Generics.GenericsId;
 using Domain.Entities;
 using Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Persistence;
 
 namespace Application.Repository;
@@ -16,14 +18,14 @@ protected override async Task<IEnumerable<Buy>> GetAll(Expression<Func<Buy, bool
                 .Include(x => x.Provider)
                 .Include(x => x.Employee)
                 .Include(x => x.Medicines)
-                .Include(x => x.ShoppingDetails)
+                .Include(x => x.Detail_Buys)
                 .Where(expression).ToListAsync();
         }
         return await _Entities
-            .Include(x => x.Supplier)
+            .Include(x => x.Provider)
             .Include(x => x.Employee)
             .Include(x => x.Medicines)
-            .Include(x => x.ShoppingDetails)
+            .Include(x => x.Detail_Buys)
             .ToListAsync();
     }
    

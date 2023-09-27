@@ -13,7 +13,9 @@ public class MedicineInfoDto{
     [Required]
     public bool NeedOrder { get; set; }
     [Required]
-    public int MedicineId { get; set; }
+    public int CategoryId { get; set; }
+    [Required]
+    public int PresentationId { get; set; }
     [Required]
     public int MedicineBrandId { get; set; }
 }

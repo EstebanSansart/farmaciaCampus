@@ -7,6 +7,7 @@ public class Medicine : BaseEntityA
     public DateTime  Date_creation {get;set;}
     public DateTime  Date_expiration {get;set;}
     public string Name_medicine {get;set;}
+    
     public int  Id_Inventory {get;set;}
     public Inventory Inventory {get;set;}
     public int  Id_state {get;set;}

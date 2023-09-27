@@ -12,6 +12,7 @@ public class MedicineConfiguration : IEntityTypeConfiguration<Medicine>
         builder.HasKey(x => x.Id);
         
         // Properties
+        
         builder.Property(x => x.Id)
             .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
             .HasColumnName("Id_Medicine")
@@ -37,5 +38,4 @@ public class MedicineConfiguration : IEntityTypeConfiguration<Medicine>
             .WithMany(x => x.Medicines)
             .HasForeignKey(x => x.Id_state);
     }
-    
 }

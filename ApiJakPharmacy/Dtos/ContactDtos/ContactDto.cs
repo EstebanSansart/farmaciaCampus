@@ -10,5 +10,5 @@ public class ContactDto{
     [Required]
     public int ContactTypeId { get; set; }
     [Required]
-    public int ContactCategory { get; set; }
+    public int ContactCategoryId { get; set; }
 }

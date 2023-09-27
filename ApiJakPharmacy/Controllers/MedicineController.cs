@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ApiJakPharmacy.Controllers;
 [ApiVersion("1.0")]
+[ApiVersion("1.1")]
 public class MedicineController : BaseApiController{
     private readonly IUnitOfWork _UnitOfWork;
     private readonly IMapper _Mapper;
@@ -28,6 +29,18 @@ public class MedicineController : BaseApiController{
        var records = await _UnitOfWork.Medicines.GetAllAsync();
        return _Mapper.Map<List<MedicineDto>>(records);
     }
+
+
+    [HttpGet("ProviderContact")]
+    //[Authorize]
+    [MapToApiVersion("1.1")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IEnumerable<object>> ProviderContact(){
+       return await _UnitOfWork.Medicines.GetProviderMedicineContact();                                                       
+    }
+
+
 
     [HttpGet("{id}")]
     [Authorize]

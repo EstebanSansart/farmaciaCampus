@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ApiJakPharmacy.Controllers;
 [ApiVersion("1.0")]
+[ApiVersion("1.1")]
+[ApiVersion("1.2")]
+
 public class OrderController : BaseApiController{
     private readonly IUnitOfWork _UnitOfWork;
     private readonly IMapper _Mapper;
@@ -95,4 +98,26 @@ public class OrderController : BaseApiController{
        await _UnitOfWork.SaveChanges();
        return NoContent();
     }
+
+//recetas
+
+[HttpGet("recetas-despues-enero-2023")]
+[MapToApiVersion("1.2")]
+[ProducesResponseType(StatusCodes.Status200OK)]
+[ProducesResponseType(StatusCodes.Status400BadRequest)]
+public async Task<ActionResult<IEnumerable<OrderDto>>> GetAfterDate()
+{
+    try
+    {
+        var medicalPrescriptions = await _UnitOfWork.Orders.GetAfterDateJanuary();
+        var medicalPrescriptionDtos = _Mapper.Map<List<OrderDto>>(medicalPrescriptions);
+        return Ok(medicalPrescriptionDtos);
+    }
+    catch (Exception )
+    {
+        return BadRequest("Ocurrió un error al obtener las recetas médicas emitidas después de enero de 2023.");
+    }
+}
+
+
 }
