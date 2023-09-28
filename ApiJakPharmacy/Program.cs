@@ -39,10 +39,9 @@ builder.Services.AddAuthentication();
 
 //-Add Sql Connection
 builder.Services.AddDbContext<PharmacyContext>(opts =>{
-    string connection = builder.Configuration["ConnectionStrings:ConnectionCampus"]?? throw new Exception("Error: Invalid Connection");
+    string connection = builder.Configuration["ConnectionStrings:ConnectionAngel"]?? throw new Exception("Error: Invalid Connection");
     opts.UseMySql(connection, ServerVersion.AutoDetect(connection));
 });
-
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

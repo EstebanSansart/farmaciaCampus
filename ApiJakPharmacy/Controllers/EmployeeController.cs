@@ -95,4 +95,26 @@ public class EmployeeController : BaseApiController{
        await _UnitOfWork.SaveChanges();
        return NoContent();
     }
+   /*  
+    [HttpGet]
+    [MapToApiVersion("1.3")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<Pager<EmployeeDto>>> Get13([FromQuery] Params conf)
+    {
+        var param = new Param(conf);
+        var records = await _UnitOfWork.Employees.GetAllAsync(param);
+        var recordDtos = _Mapper.Map<List<EmployeeDto>>(records);
+        IPager<EmployeeDto> pager = new Pager<EmployeeDto>(recordDtos, records?.Count(), param);
+
+        var EmployeSae = await _UnitOfWork.Employees.GetEmployeSale();
+
+        var response = new
+        {
+            Pager = pager,
+            expiracion = EmployeSae
+        };
+
+        return Ok(response);
+    } */
 }

@@ -11,6 +11,10 @@ using Microsoft.AspNetCore.Authorization;
 namespace ApiJakPharmacy.Controllers;
 [ApiVersion("1.0")]
 [ApiVersion("1.1")]
+[ApiVersion("1.2")]
+[ApiVersion("1.3")]
+[ApiVersion("1.4")]
+
 public class MedicineController : BaseApiController{
     private readonly IUnitOfWork _UnitOfWork;
     private readonly IMapper _Mapper;
@@ -112,27 +116,79 @@ public class MedicineController : BaseApiController{
 
 
 
+    [HttpGet]
+    [MapToApiVersion("1.2")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<Pager<MedicineDto>>> Get12([FromQuery] Params conf)
+    {
+        var param = new Param(conf);
+        var records = await _UnitOfWork.Medicines.GetAllAsync(param);
+        var recordDtos = _Mapper.Map<List<MedicineDto>>(records);
+        IPager<MedicineDto> pager = new Pager<MedicineDto>(recordDtos, records?.Count(), param);
+
+        var expiracionmedicina = await _UnitOfWork.Medicines.GetMedicinesExpiringBefore2024();
+
+        var response = new
+        {
+            Pager = pager,
+            expiracion = expiracionmedicina
+        };
+
+        return Ok(response);
+    }
+    
+    [HttpGet]
+    [MapToApiVersion("1.3")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<Pager<MedicineDto>>> Get13([FromQuery] Params conf)
+        {
+            var param = new Param(conf);
+            var records = await _UnitOfWork.Medicines.GetAllAsync(param);
+            var recordDtos = _Mapper.Map<List<MedicineDto>>(records);
+            IPager<MedicineDto> pager = new Pager<MedicineDto>(recordDtos, records?.Count(), param);
+
+            var providerMedicineContact = await _UnitOfWork.Medicines.GetProviderMedicineContact();
+
+            var response = new
+            {
+                Pager = pager,
+                expiracion = providerMedicineContact
+            };
+
+            return Ok(response);
+        }
+
+
+
 [HttpGet]
-[MapToApiVersion("1.2")]
+[MapToApiVersion("1.4")]
 [ProducesResponseType(StatusCodes.Status200OK)]
 [ProducesResponseType(StatusCodes.Status400BadRequest)]
-public async Task<ActionResult<Pager<MedicineDto>>> Get12([FromQuery] Params conf)
+public async Task<ActionResult<IEnumerable<Medicine>>> GetProviderA()
 {
-    var param = new Param(conf);
-    var records = await _UnitOfWork.Medicines.GetAllAsync(param);
-    var recordDtos = _Mapper.Map<List<MedicineDto>>(records);
-    IPager<MedicineDto> pager = new Pager<MedicineDto>(recordDtos, records?.Count(), param);
-
-    var expiracionmedicina = await _UnitOfWork.Medicines.GetMedicinesExpiringBefore2024();
-
-    var response = new
+    try
     {
-        Pager = pager,
-        expiracion = expiracionmedicina
-    };
-
-    return Ok(response);
+        var medicamentosProveedorA = await _UnitOfWork.Medicines.GetProviderA();
+        if (medicamentosProveedorA != null && medicamentosProveedorA.Any())
+        {
+            return Ok(medicamentosProveedorA);
+        }
+        else
+        {
+            return NotFound("No se encontraron medicamentos para el Proveedor A.");
+        }
+    }
+    catch (Exception)
+    {
+        return BadRequest("Ocurrió un error al obtener los medicamentos del Proveedor A.");
+    }
 }
 
 
-}
+
+
+
+    }
+

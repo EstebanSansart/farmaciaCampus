@@ -13,8 +13,6 @@ public sealed class MedicineRepository : GenericRepositoryA<Medicine>, IMedicine
 
     }
 
-
-
           protected override async Task<IEnumerable<Medicine>> GetAll(Expression<Func<Medicine, bool>> expression = null)
     {
         if (expression is not null)
@@ -69,7 +67,7 @@ public sealed class MedicineRepository : GenericRepositoryA<Medicine>, IMedicine
 
         public async Task<IEnumerable<Medicine>> GetProviderA()
         {
-        string providerName = "A"; 
+        string providerName = "Provider A"; 
 
         var medicamentosProveedorA = await _context.Medicines
                 .Where(medicina => medicina.Detail_Buys
@@ -88,25 +86,7 @@ public sealed class MedicineRepository : GenericRepositoryA<Medicine>, IMedicine
                 .ToListAsync();
         }
 
-        /*public async Task<Provider> GetProviderWithTotalMedicinesSold(int providerId)
-        {
-            return await _context.Providers
-                .Where(provider => provider.Id == providerId)
-                .Select(provider => new Provider
-                {
-                    Id = provider.Id,
-                    Name = provider.Name,
-                    TotalMedicinesSold = provider.Buys.SelectMany(buy => buy.Medicines).Count()
-                })
-                .FirstOrDefaultAsync();
-        }*/
-
-        /*public async Task<decimal> GetTotalMoneyRevenue()
-        {
-            return await _context.Sales
-                .Select(sale => sale.Total)
-                .SumAsync();
-        }*/
+      
 
         
 

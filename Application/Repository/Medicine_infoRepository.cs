@@ -45,7 +45,7 @@ public sealed class Medicine_infoRepository : GenericRepositoryA<Medicine_info>,
             .ToListAsync();
     }
     
-    public async Task<IEnumerable<object>> ProvidersWhoHaveProviderMedications(ProvidersWhoHaveProviderMedications data = null){
+  /*   public async Task<IEnumerable<object>> ProvidersWhoHaveProviderMedications(ProvidersWhoHaveProviderMedications data = null){
         var medicines = await (from detail in _context.Set<Detail_buy>()
             join shopping in _context.Set<Buy>() on detail.Buy_Id equals Buy.id
             join medicineInfo in _context.Set<Medicine_info>() on detail.Medicine.Inventory.MedicineInfo.Id equals medicineInfo.Id
@@ -87,6 +87,6 @@ public sealed class Medicine_infoRepository : GenericRepositoryA<Medicine_info>,
             medicines = medicinesTotals,           
             MoneyInvested = MoneyInvested.ToString("c"),
             TotalPurchases
-        };            
-    }
+        };             
+    }*/
 }

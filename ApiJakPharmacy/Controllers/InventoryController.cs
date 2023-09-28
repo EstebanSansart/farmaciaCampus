@@ -13,6 +13,7 @@ namespace ApiJakPharmacy.Controllers;
 [ApiVersion("1.0")]
 [ApiVersion("1.1")]
 [ApiVersion("1.2")]
+[ApiVersion("1.3")]
 
 
 public class InventoryController : BaseApiController{
@@ -103,7 +104,7 @@ public class InventoryController : BaseApiController{
 
     
 
-[HttpGet("medicinasStockMenos50")]
+[HttpGet]
 [MapToApiVersion("1.2")]
 [ProducesResponseType(StatusCodes.Status200OK)]
 [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -121,29 +122,6 @@ public async Task<ActionResult<IEnumerable<MedicineDto>>> GetMedicinaStockMenos5
     }
 }
 
-
-[HttpGet("providerA")]
-[ProducesResponseType(StatusCodes.Status200OK)]
-[ProducesResponseType(StatusCodes.Status400BadRequest)]
-public async Task<ActionResult<IEnumerable<Medicine>>> GetProviderA()
-{
-    try
-    {
-        var medicamentosProveedorA = await _UnitOfWork.Medicines.GetProviderA();
-        if (medicamentosProveedorA != null && medicamentosProveedorA.Any())
-        {
-            return Ok(medicamentosProveedorA);
-        }
-        else
-        {
-            return NotFound("No se encontraron medicamentos para el Proveedor A.");
-        }
-    }
-    catch (Exception)
-    {
-        return BadRequest("Ocurrió un error al obtener los medicamentos del Proveedor A.");
-    }
-}
 
 
 

@@ -102,7 +102,6 @@ public class SaleController : BaseApiController{
 
     //consulta promedio medicamentos por venta
 
-
 [HttpGet]
 [MapToApiVersion("1.2")]
 [ProducesResponseType(StatusCodes.Status200OK)]
