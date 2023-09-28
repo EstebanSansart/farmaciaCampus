@@ -13,6 +13,22 @@ public sealed class InventoryRepository : GenericRepositoryA<Inventory>, IInvent
     public InventoryRepository(PharmacyContext context) : base(context){
          _context = context;     
     }
+          protected override async Task<IEnumerable<Inventory>> GetAll(Expression<Func<Inventory, bool>> expression = null)
+    {
+        if (expression is not null)
+        {
+            return await _Entities
+                .Include(x => x.Medicine_info)        
+                .Include(x => x.Medicines)        
+                .Where(expression).ToListAsync();
+        }
+        return await _Entities
+                .Include(x => x.Medicine_info)        
+                .Include(x => x.Medicines)        
+            .ToListAsync();
+    }
+
+
 
     public async Task<IEnumerable<Inventory>> GetMedicinaStockMenos50() =>
                     await _context.Inventories

@@ -10,5 +10,22 @@ public sealed class ContactRepository : GenericRepositoryA<Contact>, IContactRep
     public ContactRepository(PharmacyContext context) : base(context){}
 
    
+    protected override async Task<IEnumerable<Contact>> GetAll(Expression<Func<Contact, bool>> expression = null)
+    {
+        if (expression is not null)
+        {
+            return await _Entities
+                .Include(x => x.Person)
+                .Include(x => x.Contact_Category)
+                .Include(x => x.Contact_Type)
+                .Where(expression)
+                .ToListAsync();
+        }
+        return await _Entities   
+                .Include(x => x.Person)
+                .Include(x => x.Contact_Category)
+                .Include(x => x.Contact_Type)
+                .ToListAsync();
+    }
 
 }

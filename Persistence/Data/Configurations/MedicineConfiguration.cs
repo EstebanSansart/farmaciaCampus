@@ -37,5 +37,6 @@ public class MedicineConfiguration : IEntityTypeConfiguration<Medicine>
         builder.HasOne(x => x.State)
             .WithMany(x => x.Medicines)
             .HasForeignKey(x => x.Id_state);
+        
     }
 }

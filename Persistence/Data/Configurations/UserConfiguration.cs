@@ -75,6 +75,14 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
                 j.ToTable("RoleUser");
                j.HasKey(t => new { t.Id_user, t.Id_role });
 
-           }); 
+        }); 
+        builder.HasData(
+            new{
+                Id = 1,
+                UserName = "root",
+                Password = "root",
+                PersonId = 1
+            }
+        );
     }
 }

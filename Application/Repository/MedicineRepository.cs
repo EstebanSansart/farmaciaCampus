@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Application.Repository.Generics.GenericsId;
 using Domain.Entities;
 using Domain.Interfaces;
@@ -11,6 +12,29 @@ public sealed class MedicineRepository : GenericRepositoryA<Medicine>, IMedicine
         _context = context;
 
     }
+
+
+
+          protected override async Task<IEnumerable<Medicine>> GetAll(Expression<Func<Medicine, bool>> expression = null)
+    {
+        if (expression is not null)
+        {
+            return await _Entities
+                .Include(x => x.Inventory)        
+                .Include(x => x.State)        
+                .Include(x => x.Sales)
+                .Include(x => x.Detail_Sales)
+                .Where(expression).ToListAsync();
+        }
+        return await _Entities
+                .Include(x => x.Inventory)        
+                .Include(x => x.State)        
+                .Include(x => x.Sales)
+                .Include(x => x.Detail_Sales)
+            .ToListAsync();
+    }
+
+
    
     public async Task<IEnumerable<object>> GetProviderMedicineContact(){
             

@@ -101,7 +101,7 @@ public class OrderController : BaseApiController{
 
 //recetas
 
-[HttpGet("recetas-despues-enero-2023")]
+[HttpGet]
 [MapToApiVersion("1.2")]
 [ProducesResponseType(StatusCodes.Status200OK)]
 [ProducesResponseType(StatusCodes.Status400BadRequest)]

@@ -22,5 +22,36 @@ public class MedicineBrandConfiguration : IEntityTypeConfiguration<Medicine_bran
             .HasColumnName("Name")
             .HasMaxLength(60)
             .IsRequired();
+            
+        builder.HasData(
+            new{
+                Id=1,
+                Name = "TQ"
+            },
+            new{
+                Id=2,
+                Name = "MK"
+            },
+            new{
+                Id=3,
+                Name = "La Sante"
+            },
+            new{
+                Id=4,
+                Name = "Durafex"
+            },
+            new{
+                Id=5,
+                Name = "Ferrer"
+            },
+            new{
+                Id=6,
+                Name = "Bayer"
+            },
+            new{
+                Id=7,
+                Name = "Genfar"
+            }
+        );
     }
 }

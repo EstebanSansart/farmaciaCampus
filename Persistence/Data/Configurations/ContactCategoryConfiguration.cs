@@ -21,5 +21,20 @@ public class ContactCategoryConfiguration : IEntityTypeConfiguration<Contact_cat
         builder.Property(x => x.Name)
             .HasMaxLength(60)
             .IsRequired();
+            
+        builder.HasData(
+            new{
+                Id=1,
+                Name = "Email"
+            },
+            new{
+                Id=2,
+                Name = "Phone"
+            },
+            new{
+                Id=3,
+                Name = "telepathic"
+            }
+        );
     }
 }

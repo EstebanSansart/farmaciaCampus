@@ -22,6 +22,12 @@ public class CountryConfiguration : IEntityTypeConfiguration<Country>
             .HasColumnName("Name")
             .HasMaxLength(60)
             .IsRequired();
+
+        builder.HasData(
+            new {
+                Id=1,
+                Name = "Colombia"
+            }
+        );
     }
-    
 }

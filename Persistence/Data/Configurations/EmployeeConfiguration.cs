@@ -51,5 +51,27 @@ public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
                     j.HasKey(t => new{t.EpsId, t.EmployeeId});
                 }
             );
+            builder.HasData(
+            new{
+                Id=1,                
+                PositionId = 1,
+                PersonId = 6
+            },
+            new{
+                Id=2,
+                PositionId = 1,
+                PersonId = 8
+            },
+            new{
+                Id=3,
+                PositionId = 2,
+                PersonId = 9
+            },
+            new{
+                Id=4,
+                PositionId = 3,
+                PersonId = 10
+            }
+         );
     }   
 }

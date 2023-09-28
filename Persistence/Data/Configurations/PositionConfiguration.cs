@@ -19,7 +19,22 @@ public class PositionConfiguration : IEntityTypeConfiguration<Position>
             .IsRequired();
         
         builder.Property(x => x.Name)
-            .HasMaxLength(200)
+            .HasMaxLength(60)
             .IsRequired();
+
+        builder.HasData(
+            new{
+                Id=1,
+                Name = "seller"
+            },
+            new{
+                Id=2,
+                Name = "manager"
+            },
+            new{
+                Id=3,
+                Name = "Administrator"
+            }
+        );
     }   
 }

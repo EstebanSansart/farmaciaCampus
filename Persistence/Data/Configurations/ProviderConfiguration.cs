@@ -31,5 +31,26 @@ public class ProviderConfiguration : IEntityTypeConfiguration<Provider>
         builder.HasOne(x => x.Person)
             .WithMany(x => x.Providers)
             .HasForeignKey(x => x.PersonId);
+        
+        builder.HasData(
+            new{
+                Id = 1,
+                PersonId = 2,
+                ProviderTypeId = 1,
+                Name="melissa"
+            },
+            new{
+                Id = 2,
+                PersonId = 3,
+                ProviderTypeId = 2,
+                Name="benito"
+            },
+            new{
+                Id = 3,
+                PersonId = 4,
+                ProviderTypeId = 3,
+                Name="MQ society"
+            }            
+        );
     }
 }

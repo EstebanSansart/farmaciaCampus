@@ -7,7 +7,7 @@ public class Medicine_info : BaseEntityA
     public string  Name {get;set;}
     public string  Description {get;set;}
     public int  Price {get;set;}
-    public string  Discount {get;set;}
+    public int  Discount {get;set;}
     public bool  Need_order {get;set;}
     
     public int Id_Category {get;set;}

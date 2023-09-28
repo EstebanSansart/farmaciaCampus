@@ -22,5 +22,20 @@ public class ContactTypeConfiguration : IEntityTypeConfiguration<Contact_Type>
             .HasColumnName("Name")
             .HasMaxLength(60)
             .IsRequired();
+
+        builder.HasData(
+            new{
+                Id=1,
+                Name = "staff"
+            },
+            new{
+                Id=2,
+                Name="profesional"
+            },
+            new{
+                Id=3,
+                Name="Provider"
+            }
+        );
     }
 }

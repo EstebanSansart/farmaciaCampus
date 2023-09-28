@@ -27,8 +27,15 @@ public class DepartmentConfiguration : IEntityTypeConfiguration<Department>
 
         builder.HasOne(x => x.Country)
             .WithMany(x => x.Departments)
-            .HasForeignKey(x => x.Id_country);  
+            .HasForeignKey(x => x.Id_country); 
 
+        builder.HasData(
+            new {
+                Id=1,
+                Name = "Antioquia",
+                Id_country = 1,                    
+            }
+        ); 
     }
     
 }

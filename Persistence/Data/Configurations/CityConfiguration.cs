@@ -28,6 +28,28 @@ public class CityConfiguration : IEntityTypeConfiguration<City>
         builder.HasOne(x => x.Department)
             .WithMany(x => x.Cities)
             .HasForeignKey(x => x.Id_department);  
+
+        builder.HasData(
+            new {
+                Id=1,
+                Name = "Medellin",
+                Id_department = 1
+            },
+            new {
+                Id=2,
+                Name = "Apartado",
+                Id_department = 1
+            },
+            new {
+                Id=3,
+                Name = "Arboletes",
+                Id_department = 1
+            },
+            new {
+                Id=4,
+                Name = "Rio negro",
+                Id_department = 1
+            }
+        );
     }
-    
 }

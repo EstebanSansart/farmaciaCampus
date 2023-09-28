@@ -23,6 +23,17 @@ namespace Persistence.Data.Configuration{
                 .HasColumnName("Description")
                 .IsRequired()
                 .HasMaxLength(50);
+            
+            builder.HasData(
+                new{
+                    Id =1,
+                    Description = "Natural"
+                },
+                new{
+                    Id = 2,
+                    Description = "Juridica"
+                }
+            );
         }
     }
 

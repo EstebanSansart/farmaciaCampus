@@ -21,5 +21,11 @@ public class PresentationConfiguration : IEntityTypeConfiguration<Presentation>
         builder.Property(x => x.Name)
             .HasMaxLength(200)
             .IsRequired();
+
+              builder.HasData(
+            new Presentation { Id = 1, Name = "Tableta" },
+            new Presentation { Id = 2, Name = "Cápsula" },
+            new Presentation { Id = 3, Name = "Jarabe" }
+        );
     }
 }

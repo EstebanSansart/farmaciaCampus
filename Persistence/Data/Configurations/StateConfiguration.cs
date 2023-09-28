@@ -23,5 +23,33 @@ public class StateConfiguration : IEntityTypeConfiguration<State>
             .HasColumnName("Name")
             .HasMaxLength(60)
             .IsRequired();
+        
+        builder.HasData(
+            new{
+                Id = 1,
+                Description = "default",
+                Name="prueba"
+            },
+            new{
+                Id = 2,
+                Description = "expired",
+                Name="prueba"
+            },
+            new{
+                Id = 3,
+                Description = "damaged",
+                Name="prueba"
+            },
+            new{
+                Id = 4,
+                Description = "Sold",
+                Name="prueba"
+            },
+            new{
+                Id = 5,
+                Description = "Returned",
+                Name="prueba"
+            }
+        );
     }
 }

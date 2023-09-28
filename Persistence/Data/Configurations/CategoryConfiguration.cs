@@ -23,5 +23,15 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
             .HasColumnName("Name")
             .HasMaxLength(60)
             .IsRequired();
+        
+        builder.HasData(
+            new Category { Id = 1, Name = "A" },
+            new Category { Id = 2, Name = "B" },
+            new Category { Id = 3, Name = "C" },
+            new Category { Id = 4, Name = "D" }
+
+        );
+
+
     }
 } 

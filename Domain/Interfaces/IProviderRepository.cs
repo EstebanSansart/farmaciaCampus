@@ -5,5 +5,5 @@ namespace Domain.Interfaces;
 
 public interface IProviderRepository : IGenericRepositoryA<Provider>
 {
-   // Task<IEnumerable<Provider>> GetTotalStockPurchasedByProvider();
+   //Task<IEnumerable<Provider>> GetTotalStockPurchasedByProvider();
 }

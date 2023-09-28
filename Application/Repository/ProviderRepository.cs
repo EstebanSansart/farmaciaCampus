@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Application.Repository.Generics.GenericsId;
 using Domain.Entities;
 using Domain.Interfaces;
@@ -10,7 +11,26 @@ public sealed class ProviderRepository : GenericRepositoryA<Provider>, IProvider
     public ProviderRepository(PharmacyContext context) : base(context){
         _context = context;
     }
-/*     public async Task<IEnumerable<Provider>> GetMedicineCountByProviderAsync()
+    protected override async Task<IEnumerable<Provider>> GetAll(Expression<Func<Provider, bool>> expression = null)
+    {
+        if (expression is not null)
+        {
+            return await _Entities
+                .Include(x => x.Type_Provider)        
+                .Include(x => x.Person)        
+                .Include(x => x.Buys)
+                .Where(expression).ToListAsync();
+        }
+        return await _Entities
+                .Include(x => x.Type_Provider)        
+                .Include(x => x.Person)        
+                .Include(x => x.Buys)
+            .ToListAsync();
+    }
+
+
+
+   /*  public async Task<IEnumerable<Provider>> GetMedicineCountByProviderAsync()
     {
     var query = from provider in _context.Providers
                 join Buy in _context.Buys on provider.Id equals buy.Id
@@ -20,12 +40,10 @@ public sealed class ProviderRepository : GenericRepositoryA<Provider>, IProvider
                 select new Provider
                 {
                     Id = g.Key.Id,
-                    Name = g.Key.Name,
+                    Name = g.Key.Name
                      = g.Count()
                 };
 
-    return await query.ToListAsync();
 } */
-
 
 }

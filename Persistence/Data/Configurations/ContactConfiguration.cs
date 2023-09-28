@@ -36,9 +36,29 @@ public class ContactConfiguration : IEntityTypeConfiguration<Contact>
             .WithMany(x => x.Contacts)
             .HasForeignKey(x => x.Id_contact_category);   
 
-
-            
-
+        builder.HasData(
+            new{
+                Id=1,          
+                Description = "contacto@proveedor_A.com",
+                Id_person = 2,
+                Id_contact_type = 2,
+                Id_contact_category = 1
+            },
+            new{
+                Id=2,                 
+                Description = "contacto@proveedor_B.com",
+                Id_person = 3,
+                Id_contact_type = 2,
+                Id_contact_category = 1
+            },
+            new{
+                Id=3,              
+                Description = "contacto@proveedor_C.com",
+                Id_person = 4,
+                Id_contact_type = 2,
+                Id_contact_category = 1
+            }
+        );
     }
     
 }

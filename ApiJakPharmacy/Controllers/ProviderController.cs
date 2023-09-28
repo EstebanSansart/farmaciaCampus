@@ -95,11 +95,11 @@ public class ProviderController : BaseApiController{
        await _UnitOfWork.SaveChanges();
        return NoContent();
     }
-    [HttpGet]
+   /*  [HttpGet]
     [MapToApiVersion("1.2")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<Pager<ProviderDto>>> Get12([FromQuery] Params conf)
+    public async Task<ActionResult<Pager<ProviderDto>>> Get13([FromQuery] Params conf)
     {
         var param = new Param(conf);
         var records = await _UnitOfWork.Providers.GetAllAsync(param);
@@ -113,10 +113,10 @@ public class ProviderController : BaseApiController{
         return Ok(pager);
     }
     [HttpGet]
-    [MapToApiVersion("1.2")]
+    [MapToApiVersion("1.3")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<Pager<ProviderDto>>> Get12([FromQuery] Params conf)
+    public async Task<ActionResult<Pager<ProviderDto>>> Get14([FromQuery] Params conf)
     {
         var param = new Param(conf);
         var records = await _UnitOfWork.Providers.GetAllAsync(param);
@@ -124,6 +124,9 @@ public class ProviderController : BaseApiController{
 
         // Llamar a la función GetTotalStockPurchasedByProviderAsync para obtener el total de stock comprado por proveedor
         var totalStockPurchasedByProvider = await GetTotalStockPurchasedByProviderAsync();
+
+
+        
 
         // Puedes hacer algo con la variable totalStockPurchasedByProvider, como agregarla al pager o devolverla en otro formato.
 
@@ -136,5 +139,5 @@ public class ProviderController : BaseApiController{
 
         IPager<ProviderDto> pager = new Pager<ProviderDto>(recordDtos, records?.Count(), param);
         return Ok(pager);
-    }
+    }  */
 }

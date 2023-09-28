@@ -22,5 +22,20 @@ public class DocumentTypeConfiguration : IEntityTypeConfiguration<Document_type>
             .HasColumnName("Description")
             .HasMaxLength(60)
             .IsRequired();
+
+        builder.HasData(                
+            new{
+                Id=1,
+                Description = "CC"
+            },
+            new{
+                Id=2,
+                Description = "TI"
+            },
+            new{
+                Id=3,
+                Description = "NIT"
+            }
+        );
     }
 }
