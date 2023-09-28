@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "base jwt",
-        "base web api"
+        "base web api",
+        "pre inicio front"
     ]
 }
