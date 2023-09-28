@@ -65,17 +65,17 @@ public sealed class MedicineRepository : GenericRepositoryA<Medicine>, IMedicine
             return await Task.FromResult(new[] { query });     
         }
 
-        public async Task<IEnumerable<Medicine>> GetProviderA()
-        {
-        string providerName = "Provider A"; 
+public async Task<IEnumerable<Medicine>> GetProviderA()
+{
+    string providerName = "ProviderA";
 
-        var medicamentosProveedorA = await _context.Medicines
-                .Where(medicina => medicina.Detail_Buys
-                .Any(detalle => detalle.Buy.Provider.Name == providerName))
-                .ToListAsync();
+    var medicamentosProveedorA = await _context.Medicines
+        .Where(medicina => medicina.Detail_Buys
+            .Any(detalle => detalle.Buy.Provider.Name == providerName))
+        .ToListAsync();
 
-        return medicamentosProveedorA;
-        }
+    return medicamentosProveedorA;
+}
 
         public async Task<IEnumerable<Medicine>> GetMedicinesExpiringBefore2024()
         {

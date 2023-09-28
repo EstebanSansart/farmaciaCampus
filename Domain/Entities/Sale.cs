@@ -14,6 +14,9 @@ public class Sale : BaseEntityA
     public ICollection<Order> Orders {get;set;}
     public ICollection<Medicine> Medicines {get; set;} = new HashSet<Medicine>();
     public ICollection<Detail_sale> Detail_Sales {get;set;}
-   
-    
+
+    public static explicit operator double(Sale v)
+    {
+        throw new NotImplementedException();
+    }
 }

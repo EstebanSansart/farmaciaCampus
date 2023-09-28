@@ -32,14 +32,20 @@ public sealed class SaleRepository : GenericRepositoryA<Sale>, ISaleRepository{
     }
 
 
-         public async Task<double> GetPromedioVenta()
-    {
-        var average = await _context.Sales
-            .Select(sale => sale.Medicines.Count()) 
-            .DefaultIfEmpty(0) 
-            .AverageAsync();
-        return average;
-    }
+public async Task<double> GetPromedioVenta()
+{
+    var saleMedicineCounts = await _context.Sales
+        .Select(sale => sale.Medicines.Count())
+        .ToListAsync();
+
+    var average = saleMedicineCounts.Any() ? saleMedicineCounts.Average() : 0;
+
+    return average;
+}
+
+
+
+
 
 public async Task<IEnumerable<object>> GetSalesByEmploye()
 {
