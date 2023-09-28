@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ApiJakPharmacy.Controllers;
 [ApiVersion("1.0")]
+[ApiVersion("1.1")]
+[ApiVersion("1.2")]
+
 public class MedicineInfoController : BaseApiController{
     private readonly IUnitOfWork _UnitOfWork;
     private readonly IMapper _Mapper;
@@ -94,5 +97,28 @@ public class MedicineInfoController : BaseApiController{
        _UnitOfWork.Medicine_Infos.Remove(record);
        await _UnitOfWork.SaveChanges();
        return NoContent();
+    }
+
+    [HttpGet]
+    [MapToApiVersion("1.2")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<Pager<MedicineInfoDto>>> Get12([FromQuery] Params conf)
+    {
+        var param = new Param(conf);
+        
+        var averageMedicinesForSale = await _UnitOfWork.Medicine_Infos.GetPersonsBoughtParacetamol();
+
+        var records = await _UnitOfWork.Medicine_Infos.GetAllAsync(param);
+        var recordDtos = _Mapper.Map<List<MedicineInfoDto>>(records);
+        IPager<MedicineInfoDto> pager = new Pager<MedicineInfoDto>(recordDtos, records?.Count(), param);
+
+        var response = new
+        {
+            Pager = pager,
+            averageMedicinesForSale = averageMedicinesForSale
+        };
+
+        return Ok(response);
     }
 }

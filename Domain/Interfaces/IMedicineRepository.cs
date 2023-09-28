@@ -6,7 +6,8 @@ namespace Domain.Interfaces;
 
 public interface IMedicineRepository : IGenericRepositoryA<Medicine>
 {
-    public Task <IEnumerable<Medicine>> GetProviderA();
-    public Task<IEnumerable<object>>  GetProviderMedicineContact();
+    Task <IEnumerable<Medicine>> GetProviderA();
+    Task<IEnumerable<object>>  GetProviderMedicineContact();    
+    Task<IEnumerable<Medicine>> GetMedicinesExpiringBefore2024();
     
 }

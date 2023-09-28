@@ -79,23 +79,9 @@ public sealed class MedicineRepository : GenericRepositoryA<Medicine>, IMedicine
         return medicamentosProveedorA;
         }
 
-        public async Task<dynamic> GetPersonsBoughtParacetamol()
+        public async Task<IEnumerable<Medicine>> GetMedicinesExpiringBefore2024()
         {
-            int yearToFilter = 2023;
-            string medicineName = "Paracetamol";
-
-            return await _context.Persons
-                .Where(person =>
-                    person.Sales
-                        .Any(sale =>
-                            sale.Medicines
-                                .Any(medicine => medicine.Name_medicine.ToLower() == medicineName && sale.Sale_Date.Year == yearToFilter)))
-                .ToListAsync();
-        }
-
-        public async Task<List<Medicine>> GetMedicinesExpiringBefore2024()
-        {
-            DateTime dateToFilter = new DateTime(2024, 1, 1);
+            DateTime dateToFilter = new(2024, 1, 1);
 
             return await _context.Medicines
                 .Where(medicine => medicine.Date_expiration <= dateToFilter)

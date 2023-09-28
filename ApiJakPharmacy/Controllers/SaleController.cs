@@ -10,6 +10,10 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ApiJakPharmacy.Controllers;
 [ApiVersion("1.0")]
+[ApiVersion("1.1")]
+[ApiVersion("1.2")]
+[ApiVersion("1.3")]
+
 public class SaleController : BaseApiController{
     private readonly IUnitOfWork _UnitOfWork;
     private readonly IMapper _Mapper;
@@ -95,4 +99,59 @@ public class SaleController : BaseApiController{
        await _UnitOfWork.SaveChanges();
        return NoContent();
     }
+
+    //consulta promedio medicamentos por venta
+
+
+[HttpGet]
+[MapToApiVersion("1.2")]
+[ProducesResponseType(StatusCodes.Status200OK)]
+[ProducesResponseType(StatusCodes.Status400BadRequest)]
+public async Task<ActionResult<Pager<SaleDto>>> Get12([FromQuery] Params conf)
+{
+    var param = new Param(conf);
+    var records = await _UnitOfWork.Sales.GetAllAsync(param);
+    var recordDtos = _Mapper.Map<List<SaleDto>>(records);
+    IPager<SaleDto> pager = new Pager<SaleDto>(recordDtos, records?.Count(), param);
+
+    var promedioMedicamentosPorVenta = await _UnitOfWork.Sales.GetPromedioVenta();
+
+    var response = new
+    {
+        Pager = pager,
+        PromedioMedicamentosPorVenta = promedioMedicamentosPorVenta
+    };
+
+    return Ok(response);
+}
+
+//consulta ventas por empleado
+
+[HttpGet]
+[MapToApiVersion("1.3")]
+[ProducesResponseType(StatusCodes.Status200OK)]
+[ProducesResponseType(StatusCodes.Status400BadRequest)]
+public async Task<ActionResult<Pager<SaleDto>>> Get13([FromQuery] Params conf)
+{
+    var param = new Param(conf);
+    
+    var salesByEmployee = await _UnitOfWork.Sales.GetSalesByEmploye();
+
+    var records = await _UnitOfWork.Sales.GetAllAsync(param);
+    var recordDtos = _Mapper.Map<List<SaleDto>>(records);
+    IPager<SaleDto> pager = new Pager<SaleDto>(recordDtos, records?.Count(), param);
+
+    var response = new
+    {
+        Pager = pager,
+        SalesByEmployee = salesByEmployee
+    };
+
+    return Ok(response);
+}
+
+
+
+
+
 }

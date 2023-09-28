@@ -7,7 +7,10 @@ using Persistence;
 
 namespace Application.Repository;
 public sealed class AddressRepository : GenericRepositoryA<Address>, IAddressRepository{
-    public AddressRepository(PharmacyContext context) : base(context){}
+    public readonly PharmacyContext _context;
+    public AddressRepository(PharmacyContext context) : base(context){
+        _context = context;
+    }
     
     protected override async Task<IEnumerable<Address>> GetAll(Expression<Func<Address, bool>> expression = null)
     {

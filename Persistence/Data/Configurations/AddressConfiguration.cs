@@ -33,6 +33,25 @@ public class CityConfiguAddressConfiguration : IEntityTypeConfiguration<Address>
         builder.HasOne(x => x.Person)
             .WithMany(x => x.Addresses)
             .HasForeignKey(x => x.Id_person);
+
+
+            builder.HasData(
+    new Address
+    {
+        Id = 1,
+        Description = "Bello comuna 13",
+        Id_City = 1, 
+        Id_person = 1, 
+    },
+    new Address
+    {
+        Id = 2,
+        Description = "Caldas comuna 80",
+        Id_City = 2, 
+        Id_person = 2, 
+    }
+ 
+);
     }
 
 }

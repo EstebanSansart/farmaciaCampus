@@ -36,7 +36,24 @@ public class MedicineConfiguration : IEntityTypeConfiguration<Medicine>
         
         builder.HasOne(x => x.State)
             .WithMany(x => x.Medicines)
-            .HasForeignKey(x => x.Id_state);
-        
+            .HasForeignKey(x => x.Id_state); 
+              
+        builder.HasData(MedicineGenerator(200));
+    }
+
+    private static List<Medicine> MedicineGenerator(int NumberOfMedicines){
+        var data = new List<Medicine>();
+        Random random = new();
+        for (int i = 0; i < NumberOfMedicines; i++){
+            var medicine = new Medicine{
+                Id = i + 1,
+                Date_creation = new DateTime(2023,03,2).AddDays(random.Next(1,365)),
+                Date_expiration = new DateTime(2025,12,2).AddDays(random.Next(1,365)),
+                Id_Inventory = random.Next(1,10),
+                Id_state = random.Next(1,5)
+            };      
+            data.Add(medicine);
+        }
+        return data;
     }
 }

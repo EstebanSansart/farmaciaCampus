@@ -20,5 +20,20 @@ public class TypeEpsConfiguration : IEntityTypeConfiguration<Type_eps>{
             .IsRequired()
             .HasColumnName("Name")
             .HasMaxLength(50);
+
+
+             builder.HasData(
+              
+                new Type_eps
+                {
+                    Id = 1,
+                    Name = "Salud Total"
+                },
+                new Type_eps
+                {
+                    Id = 2,
+                    Name = "Sura"
+                }
+            );
     }
 }

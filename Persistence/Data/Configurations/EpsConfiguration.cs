@@ -27,6 +27,23 @@ public class EpsConfiguration : IEntityTypeConfiguration<Eps>
         builder.HasOne(x => x.Person)
             .WithMany(x => x.Epss)
             .HasForeignKey(x => x.Id_Person); 
+
+
+             builder.HasData(
+                
+                new Eps
+                {
+                    Id = 1,
+                    Id_type_eps = 1,
+                    Id_Person = 1
+                },
+                new Eps
+                {
+                    Id = 2,
+                    Id_type_eps = 2,
+                    Id_Person = 2
+                }
+            );
     }
     
 }

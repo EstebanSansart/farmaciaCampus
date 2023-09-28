@@ -40,6 +40,30 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
         builder.HasOne(x => x.Eps)
             .WithMany(x => x.Orders)
             .HasForeignKey(x => x.EpsId);    
+
+             builder.HasData(
+              
+                new Order
+                {
+                    Id = 1,
+                    Order_Date = new DateTime(2022, 5, 1),
+                    Detail = "Order detail 1",
+                    Date_expiration = new DateTime(2023, 5, 15),
+                    Id_sale = 1,
+                    EpsId = 1
+                },
+                new Order
+                {
+                    Id = 2,
+                    Order_Date = new DateTime(2023, 5, 3),
+                    Detail = "Order detail 2",
+                    Date_expiration = new DateTime(2023, 5, 20),
+                    Id_sale = 2,
+                    EpsId = 2
+                }
+            );
     }
+
+    
     
 }

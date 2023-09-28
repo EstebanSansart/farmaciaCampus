@@ -6,6 +6,6 @@ namespace Domain.Interfaces;
 
 public interface IMedicine_infoRepository : IGenericRepositoryA<Medicine_info>
 {
-    
+    Task<dynamic> GetPersonsBoughtParacetamol();
 }
 

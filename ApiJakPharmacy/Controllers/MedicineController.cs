@@ -107,5 +107,32 @@ public class MedicineController : BaseApiController{
        _UnitOfWork.Medicines.Remove(record);
        await _UnitOfWork.SaveChanges();
        return NoContent();
+
     }
+
+
+
+[HttpGet]
+[MapToApiVersion("1.2")]
+[ProducesResponseType(StatusCodes.Status200OK)]
+[ProducesResponseType(StatusCodes.Status400BadRequest)]
+public async Task<ActionResult<Pager<MedicineDto>>> Get12([FromQuery] Params conf)
+{
+    var param = new Param(conf);
+    var records = await _UnitOfWork.Medicines.GetAllAsync(param);
+    var recordDtos = _Mapper.Map<List<MedicineDto>>(records);
+    IPager<MedicineDto> pager = new Pager<MedicineDto>(recordDtos, records?.Count(), param);
+
+    var expiracionmedicina = await _UnitOfWork.Medicines.GetMedicinesExpiringBefore2024();
+
+    var response = new
+    {
+        Pager = pager,
+        expiracion = expiracionmedicina
+    };
+
+    return Ok(response);
+}
+
+
 }

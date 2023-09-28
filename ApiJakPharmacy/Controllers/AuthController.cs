@@ -25,20 +25,30 @@ public class AuthController:BaseApiController{
         _TokenManager = new TokenManager(PasswordHasher,conf);
     }
     
-   [HttpPost("register")]
+    [HttpPost("register")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult> RegisterAsync(UserSignup model){        
         var user = _TokenManager.CreateUser(model);
+        
+            User existingUser = null;    
+            Person existingPerson = null;
+        try{
+            existingUser = await _UnitOfWork.Users.GetUserByName(model.Username);
+            existingPerson = await _UnitOfWork.Persons.FindFirst(x => x.Id == model.DocumentNumber);
+        }catch (Exception ex){
+            Console.WriteLine(ex.Message);
+        }        
 
-        var existingUser = await _UnitOfWork.Users.GetUserByName(model.Username!);
-        if (existingUser != null){
+        if (existingUser != null && existingPerson != null){
             return BadRequest($"El usuario {model.Username} ya se encuentra registrado.");
         }
         
-        var defaultRol =  (await _UnitOfWork.Roles.GetRoleByRoleName( UserRoles.Employee ))!;        
+            Role defaultRol =  await _UnitOfWork.Roles.GetRoleByRoleName( UserRoles.Employee );        
         try{
             user.Roles.Add(defaultRol);
+            user.Person = existingPerson;
+            user.PersonId = model.DocumentNumber;
             _UnitOfWork.Users.Add(user);
             await _UnitOfWork.SaveChanges();
             return Ok($"El usuario  {model.Username} ha sido registrado exitosamente");
