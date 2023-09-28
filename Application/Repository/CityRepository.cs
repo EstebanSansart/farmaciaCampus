@@ -8,7 +8,7 @@ using Persistence;
 namespace Application.Repository;
 public sealed class CityRepository : GenericRepositoryA<City>, ICityRepository{
     public CityRepository(PharmacyContext context) : base(context){}
-     protected override async Task<IEnumerable<City>> GetAll(Expression<Func<City, bool>> expression = null)
+    protected override async Task<IEnumerable<City>> GetAll(Expression<Func<City, bool>> expression = null)
     {
         if (expression is not null)
         {
@@ -22,7 +22,4 @@ public sealed class CityRepository : GenericRepositoryA<City>, ICityRepository{
             .Include(x => x.Addresses)
             .ToListAsync();
     }
-
-   
-
 }

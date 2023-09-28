@@ -17,7 +17,4 @@ public class Medicine : BaseEntityA
     public ICollection<Detail_sale> Detail_Sales {get;set;}
     public ICollection<Buy> Buys {get; set;} = new HashSet<Buy>();
     public ICollection<Detail_buy> Detail_Buys {get;set;}
-
-
-    
 }

@@ -10,135 +10,114 @@ public class MappingProfiles : Profile
 
         CreateMap<AddressDto, Address>()
             .ReverseMap();
-        CreateMap<AddressFullDto, Address>()
-
+        CreateMap<AddressFullDto, Address>();
 
         CreateMap<BuyDto, Buy>()
             .ReverseMap();
-        CreateMap<BuyFullDto, Buy>()
+        CreateMap<BuyFullDto, Buy>();
 
         CreateMap<CategoryDto, Category>()
             .ReverseMap();
-        CreateMap<CategoryFullDto, Category>()
+        CreateMap<CategoryFullDto, Category>();
 
         CreateMap<CityDto, City>()
             .ReverseMap();
-        CreateMap<CityFullDto, City>()
+        CreateMap<CityFullDto, City>();
 
         CreateMap<ContactCategoryDto, Contact_category>()
             .ReverseMap();
-        CreateMap<ContactCategoryFullDto, Contact_category>()
+        CreateMap<ContactCategoryFullDto, Contact_category>();
 
         CreateMap<ContactDto, Contact>()
             .ReverseMap();
-        CreateMap<ContactFullDto, Contact>()
+        CreateMap<ContactFullDto, Contact>();
 
-        CreateMap<ContactTypeDto, ContactType>()
+        CreateMap<ContactTypeDto, Contact_Type>()
             .ReverseMap();
-        CreateMap<ContactTypeFullDto, Contact_Type>()
+        CreateMap<ContactTypeFullDto, Contact_Type>();
 
-
-         CreateMap<CountryDto, Country>()
+        CreateMap<CountryDto, Country>()
             .ReverseMap();
-        CreateMap<CountryFullDto, Country>()
+        CreateMap<CountryFullDto, Country>();
 
-         CreateMap<DepartmentDto, Department>()
+        CreateMap<DepartmentDto, Department>()
             .ReverseMap();
-        CreateMap<DepartmentFullDto, Department>()
-
+        CreateMap<DepartmentFullDto, Department>();
 
         CreateMap<DocumentTypeDto, Document_type>()
             .ReverseMap();
-        CreateMap<DocumentTypeFullDto, DocumentType>()
+        CreateMap<DocumentTypeFullDto, Document_type>();
 
-
-         CreateMap<EmployeeDto, Employee>()
+        CreateMap<EmployeeDto, Employee>()
             .ReverseMap();
-        CreateMap<EmployeeFullDto, Employee>()
+        CreateMap<EmployeeFullDto, Employee>();
 
-         CreateMap<EpsDto, Eps>()
+        CreateMap<EpsDto, Eps>()
             .ReverseMap();
-        CreateMap<EpsFullDto, Eps>()
+        CreateMap<EpsFullDto, Eps>();
 
-         CreateMap<EpsTypeDto, Type_eps>()
+        CreateMap<EpsTypeDto, Type_eps>()
             .ReverseMap();
-        CreateMap<EpsTypeFullDto, Type_eps>()
-
+        CreateMap<EpsTypeFullDto, Type_eps>();
 
         CreateMap<InventoryDto, Inventory>()
             .ReverseMap();
-        CreateMap<InventoryFullDto, Inventory>()
+        CreateMap<InventoryFullDto, Inventory>();
 
-
-         CreateMap<MedicineBrandDto, Medicine_brand>()
+        CreateMap<MedicineBrandDto, Medicine_brand>()
             .ReverseMap();
-        CreateMap<MedicineBrandFullDto, Medicine_brand>()
+        CreateMap<MedicineBrandFullDto, Medicine_brand>();
 
-
-         CreateMap<MedicineDto, Medicine>()
+        CreateMap<MedicineDto, Medicine>()
             .ReverseMap();
-        CreateMap<MedicineFullDto, Medicine>()
-
+        CreateMap<MedicineFullDto, Medicine>();
 
         CreateMap<MedicineInfoDto, Medicine_info>()
             .ReverseMap();
-        CreateMap<MedicineInfoFullDto, Medicine_info>()
+        CreateMap<MedicineInfoFullDto, Medicine_info>();
 
-         CreateMap<OrderDto, Order>()
+        CreateMap<OrderDto, Order>()
             .ReverseMap();
-        CreateMap<OrderFullDto, Order>()
+        CreateMap<OrderFullDto, Order>();
 
-
-         CreateMap<PersonDto, Person>()
+        CreateMap<PersonDto, Person>()
             .ReverseMap();
-        CreateMap<PersonFullDto, Person>()
+        CreateMap<PersonFullDto, Person>();
 
-
-         CreateMap<PersonTypeDto, Type_person>()
+        CreateMap<PersonTypeDto, Type_person>()
             .ReverseMap();
-        CreateMap<PersonTypeFullDto, Type_person>()
+        CreateMap<PersonTypeFullDto, Type_person>();
 
-
-
-         CreateMap<PositionDto, Position>()
+        CreateMap<PositionDto, Position>()
             .ReverseMap();
-        CreateMap<PositionFullDto, Position>()
+        CreateMap<PositionFullDto, Position>();
 
-
-
-         CreateMap<PresentationDto, Presentation>()
+        CreateMap<PresentationDto, Presentation>()
             .ReverseMap();
-        CreateMap<PresentationFullDto, Presentation>()
+        CreateMap<PresentationFullDto, Presentation>();
 
-
-
-         CreateMap<ProviderDto, Provider>()
+        CreateMap<ProviderDto, Provider>()
             .ReverseMap();
-        CreateMap<ProviderFullDto, Provider>()
+        CreateMap<ProviderFullDto, Provider>();
 
-          CreateMap<ProviderTypeDto, Type_provider>()
+        CreateMap<ProviderTypeDto, Type_provider>()
             .ReverseMap();
-        CreateMap<StateFullDto, Type_provider>()
-
+        CreateMap<StateFullDto, Type_provider>();
 
         CreateMap<RoleDto, Role>()
             .ReverseMap();
-        CreateMap<RoleFullDto, Role>()
-
+        CreateMap<RoleFullDto, Role>();
 
         CreateMap<SaleDto, Sale>()
             .ReverseMap();
-        CreateMap<SaleFullDto, Sale>()
-
+        CreateMap<SaleFullDto, Sale>();
 
         CreateMap<StateDto, State>()
             .ReverseMap();
-        CreateMap<StateFullDto, State>()
-
-
+        CreateMap<StateFullDto, State>();
 
         CreateMap<UserDto, User>()
             .ReverseMap();
-        CreateMap<UserFullDto, User>()
+        CreateMap<UserFullDto, User>();
     }
 }

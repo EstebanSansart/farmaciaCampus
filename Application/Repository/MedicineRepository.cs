@@ -55,5 +55,49 @@ public sealed class MedicineRepository : GenericRepositoryA<Medicine>, IMedicine
         return medicamentosProveedorA;
         }
 
+        public async Task<dynamic> GetPersonsBoughtParacetamol()
+        {
+            int yearToFilter = 2023;
+            string medicineName = "Paracetamol";
+
+            return await _context.Persons
+                .Where(person =>
+                    person.Sales
+                        .Any(sale =>
+                            sale.Medicines
+                                .Any(medicine => medicine.Name_medicine.ToLower() == medicineName && sale.Sale_Date.Year == yearToFilter)))
+                .ToListAsync();
+        }
+
+        public async Task<List<Medicine>> GetMedicinesExpiringBefore2024()
+        {
+            DateTime dateToFilter = new DateTime(2024, 1, 1);
+
+            return await _context.Medicines
+                .Where(medicine => medicine.Date_expiration <= dateToFilter)
+                .ToListAsync();
+        }
+
+        /*public async Task<Provider> GetProviderWithTotalMedicinesSold(int providerId)
+        {
+            return await _context.Providers
+                .Where(provider => provider.Id == providerId)
+                .Select(provider => new Provider
+                {
+                    Id = provider.Id,
+                    Name = provider.Name,
+                    TotalMedicinesSold = provider.Buys.SelectMany(buy => buy.Medicines).Count()
+                })
+                .FirstOrDefaultAsync();
+        }*/
+
+        /*public async Task<decimal> GetTotalMoneyRevenue()
+        {
+            return await _context.Sales
+                .Select(sale => sale.Total)
+                .SumAsync();
+        }*/
+
+        
 
 }
