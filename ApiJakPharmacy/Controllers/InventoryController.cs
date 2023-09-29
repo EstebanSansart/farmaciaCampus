@@ -108,12 +108,12 @@ public class InventoryController : BaseApiController{
 [MapToApiVersion("1.2")]
 [ProducesResponseType(StatusCodes.Status200OK)]
 [ProducesResponseType(StatusCodes.Status400BadRequest)]
-public async Task<ActionResult<IEnumerable<MedicineDto>>> GetMedicinaStockMenos50()
+public async Task<ActionResult<IEnumerable<Inventory>>> GetMedicinaStockMenos50()
 {
         try
         {
         var medicinesWithStockLessThan50 = await _UnitOfWork.Inventories.GetMedicinaStockMenos50();
-        var medicineDtos = _Mapper.Map<List<MedicineDto>>(medicinesWithStockLessThan50);
+        var medicineDtos = _Mapper.Map<List<InventoryDto>>(medicinesWithStockLessThan50);
         return Ok(medicineDtos);
     }
     catch (Exception)
