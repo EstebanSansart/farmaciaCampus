@@ -218,59 +218,60 @@ public class CustomQueriesManager : ICustomQueriesManager
                 TotalStock = _Context.Set<Medicine>().  Where(x => x.Inventory.Medicine_info.Name == medicineItem.Name && x.Id_state == 1).Count()
             }).ToListAsync();        
     }
+  public async Task<IEnumerable<object>> PurchasedByProvider (MedicineInfoProviderModel data ){
+        var medicines =  await(from detail in _Context.Set<Detail_buy>()
+            join supplier in _Context.Set<Provider>() on detail.Buy.Provider_Id equals supplier.Id
+            join person in _Context.Set<Person>() on supplier.PersonId equals person.Id
+            join shopping in _Context.Set<Buy>() on detail.Buy_Id equals shopping.Id
+            let medicineInfo = detail.Medicine.Inventory.Medicine_info
+            let Price = medicineInfo.Price - (medicineInfo.Price * (medicineInfo.Discount / 100))
 
-public async Task<IEnumerable<object>> PurchasedByProvider(MedicineInfoProviderModel data)
-{
-    var details = await _Context.Set<Detail_buy>()
-        .Include(detail => detail.Buy)
-        .ThenInclude(buy => buy.Provider)
-        .Include(detail => detail.Medicine.Inventory.Medicine_info)
-        .Where(detail => detail.Medicine != null && detail.Medicine.Inventory != null && detail.Medicine.Inventory.Medicine_info != null)
-        .ToListAsync();
-
-    var medicines = details.Select(detail => new
-    {
-        Date = detail.Buy.BuyDate,
-        Supplier = detail.Buy.Provider.Person.Name,
-        MedicineName = detail.Medicine.Inventory.Medicine_info.Name,
-        Price = detail.Medicine.Inventory.Medicine_info.Price - (detail.Medicine.Inventory.Medicine_info.Price * (detail.Medicine.Inventory.Medicine_info.Discount / 100))
-    }).ToList();
-
-    if (data?.InitialDate != null)
-    {
-        if (data?.FinalDate != null && data.FinalDate < data.InitialDate)
-        {
-            medicines = medicines.Where(x =>
-                x.Date >= (data.HasCoincidence ? data.InitialDate : data.FinalDate) &&
-                x.Date <= (data.HasCoincidence ? data.FinalDate : data.InitialDate)
-            ).ToList();
+            select new {
+                Date = shopping.BuyDate,
+                Supplier = person.Name,
+                medicineInfo.Name,
+                Price                
+            }).ToListAsync();
+            if (data != null && data.InitialDate != null){            
+            if (data.FinalDate != null && data.FinalDate < data.InitialDate){
+                medicines = medicines.Where(x => 
+                    x.Date >= (
+                        data.HasCoincidence
+                            ?data.InitialDate 
+                            :data.FinalDate) && 
+                    x.Date <= (
+                        data.HasCoincidence
+                            ?data.FinalDate 
+                            :data.InitialDate) 
+                ).ToList();
+            }else{
+                medicines = medicines.Where(x => 
+                    data.HasCoincidence
+                        ? x.Date >= data.InitialDate
+                        : x.Date <= data.InitialDate
+                ).ToList();
+            }
         }
-        else
-        {
-            medicines = medicines.Where(x =>
-                data.HasCoincidence ? x.Date >= data.InitialDate : x.Date <= data.InitialDate
-            ).ToList();
+        var res = from medicine in medicines
+            group medicine by medicine.Supplier into medicineGroup
+            let Total = medicineGroup.Sum(x => x.Price)
+            let Units = medicineGroup.Count()
+            select new {
+                medicineGroup.First().Supplier,
+                Total,
+                Units
+            };
+
+        if (data?.ProviderName != null){
+            return res.Where(x => 
+                data.HasCoincidence
+                    ?x.Supplier == data.ProviderName
+                    :x.Supplier != data.ProviderName
+            );            
         }
-    }
-
-    var res = medicines.GroupBy(medicine => medicine.Supplier)
-        .Select(medicineGroup => new
-        {
-            Supplier = medicineGroup.Key,
-            Total = medicineGroup.Sum(x => x.Price),
-            Units = medicineGroup.Count()
-        });
-
-    if (data?.ProviderName != null)
-    {
-        return res.Where(x =>
-            data.HasCoincidence ? x.Supplier == data.ProviderName : x.Supplier != data.ProviderName
-        );
-    }
-
-    return res;
-}
-
+        return res;
+    } 
+    
 
 
 public async Task<IEnumerable<MedicineDetailTotalModel>> TotalDrugSales(string MedicineName){

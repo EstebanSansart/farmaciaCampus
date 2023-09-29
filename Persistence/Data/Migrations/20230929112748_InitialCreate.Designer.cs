@@ -12,7 +12,7 @@ using Persistence;
 namespace Persistence.Data.Migrations
 {
     [DbContext(typeof(PharmacyContext))]
-    [Migration("20230928122443_InitialCreate")]
+    [Migration("20230929112748_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -98,113 +98,113 @@ namespace Persistence.Data.Migrations
                         new
                         {
                             Id = 1,
-                            BuyDate = new DateTime(2023, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Employee_Id = 1,
-                            Provider_Id = 2
+                            BuyDate = new DateTime(2023, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Employee_Id = 3,
+                            Provider_Id = 1
                         },
                         new
                         {
                             Id = 2,
-                            BuyDate = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Employee_Id = 2,
-                            Provider_Id = 2
+                            BuyDate = new DateTime(2023, 6, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Employee_Id = 1,
+                            Provider_Id = 1
                         },
                         new
                         {
                             Id = 3,
-                            BuyDate = new DateTime(2024, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Employee_Id = 2,
-                            Provider_Id = 2
+                            BuyDate = new DateTime(2023, 7, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Employee_Id = 3,
+                            Provider_Id = 1
                         },
                         new
                         {
                             Id = 4,
-                            BuyDate = new DateTime(2023, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            BuyDate = new DateTime(2023, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Employee_Id = 1,
-                            Provider_Id = 2
+                            Provider_Id = 1
                         },
                         new
                         {
                             Id = 5,
-                            BuyDate = new DateTime(2023, 11, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            BuyDate = new DateTime(2023, 6, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Employee_Id = 1,
                             Provider_Id = 2
                         },
                         new
                         {
                             Id = 6,
-                            BuyDate = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Employee_Id = 3,
-                            Provider_Id = 1
-                        },
-                        new
-                        {
-                            Id = 7,
-                            BuyDate = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Employee_Id = 1,
-                            Provider_Id = 2
-                        },
-                        new
-                        {
-                            Id = 8,
-                            BuyDate = new DateTime(2023, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Employee_Id = 2,
-                            Provider_Id = 1
-                        },
-                        new
-                        {
-                            Id = 9,
-                            BuyDate = new DateTime(2023, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Employee_Id = 3,
-                            Provider_Id = 1
-                        },
-                        new
-                        {
-                            Id = 10,
-                            BuyDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Employee_Id = 1,
-                            Provider_Id = 1
-                        },
-                        new
-                        {
-                            Id = 11,
-                            BuyDate = new DateTime(2024, 4, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Employee_Id = 3,
-                            Provider_Id = 1
-                        },
-                        new
-                        {
-                            Id = 12,
-                            BuyDate = new DateTime(2024, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Employee_Id = 3,
-                            Provider_Id = 1
-                        },
-                        new
-                        {
-                            Id = 13,
                             BuyDate = new DateTime(2023, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Employee_Id = 1,
                             Provider_Id = 1
                         },
                         new
                         {
-                            Id = 14,
-                            BuyDate = new DateTime(2024, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 7,
+                            BuyDate = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Employee_Id = 1,
+                            Provider_Id = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            BuyDate = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Employee_Id = 1,
                             Provider_Id = 1
                         },
                         new
                         {
-                            Id = 15,
-                            BuyDate = new DateTime(2024, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 9,
+                            BuyDate = new DateTime(2023, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Employee_Id = 2,
+                            Provider_Id = 1
+                        },
+                        new
+                        {
+                            Id = 10,
+                            BuyDate = new DateTime(2024, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Employee_Id = 3,
+                            Provider_Id = 1
+                        },
+                        new
+                        {
+                            Id = 11,
+                            BuyDate = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Employee_Id = 2,
+                            Provider_Id = 2
+                        },
+                        new
+                        {
+                            Id = 12,
+                            BuyDate = new DateTime(2023, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Employee_Id = 1,
+                            Provider_Id = 2
+                        },
+                        new
+                        {
+                            Id = 13,
+                            BuyDate = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Employee_Id = 1,
+                            Provider_Id = 2
+                        },
+                        new
+                        {
+                            Id = 14,
+                            BuyDate = new DateTime(2023, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Employee_Id = 2,
+                            Provider_Id = 2
+                        },
+                        new
+                        {
+                            Id = 15,
+                            BuyDate = new DateTime(2023, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Employee_Id = 1,
                             Provider_Id = 2
                         },
                         new
                         {
                             Id = 16,
-                            BuyDate = new DateTime(2023, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Employee_Id = 2,
+                            BuyDate = new DateTime(2024, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Employee_Id = 1,
                             Provider_Id = 2
                         });
                 });
@@ -510,217 +510,217 @@ namespace Persistence.Data.Migrations
                         new
                         {
                             MedicineId = 101,
-                            Buy_Id = 15,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 102,
-                            Buy_Id = 8,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 103,
-                            Buy_Id = 1,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 104,
-                            Buy_Id = 14,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 105,
-                            Buy_Id = 1,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 106,
-                            Buy_Id = 6,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 107,
-                            Buy_Id = 4,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 108,
-                            Buy_Id = 3,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 109,
-                            Buy_Id = 15,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 110,
-                            Buy_Id = 8,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 111,
-                            Buy_Id = 4,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 112,
-                            Buy_Id = 10,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 113,
-                            Buy_Id = 3,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 114,
-                            Buy_Id = 13,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 115,
                             Buy_Id = 5,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 116,
-                            Buy_Id = 3,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 117,
-                            Buy_Id = 9,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 118,
+                            MedicineId = 102,
                             Buy_Id = 10,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 119,
-                            Buy_Id = 9,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 120,
-                            Buy_Id = 15,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 121,
-                            Buy_Id = 11,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 122,
-                            Buy_Id = 6,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 123,
-                            Buy_Id = 14,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 124,
-                            Buy_Id = 3,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 125,
-                            Buy_Id = 8,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 126,
-                            Buy_Id = 4,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 127,
-                            Buy_Id = 3,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 128,
-                            Buy_Id = 9,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 129,
-                            Buy_Id = 14,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 130,
-                            Buy_Id = 2,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 131,
+                            MedicineId = 103,
                             Buy_Id = 13,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 132,
-                            Buy_Id = 6,
+                            MedicineId = 104,
+                            Buy_Id = 13,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 133,
-                            Buy_Id = 8,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 134,
+                            MedicineId = 105,
                             Buy_Id = 4,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 135,
+                            MedicineId = 106,
                             Buy_Id = 2,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 136,
+                            MedicineId = 107,
+                            Buy_Id = 13,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 108,
+                            Buy_Id = 8,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 109,
+                            Buy_Id = 4,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 110,
+                            Buy_Id = 14,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 111,
+                            Buy_Id = 15,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 112,
+                            Buy_Id = 3,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 113,
                             Buy_Id = 1,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 114,
+                            Buy_Id = 11,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 115,
+                            Buy_Id = 11,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 116,
+                            Buy_Id = 2,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 117,
+                            Buy_Id = 15,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 118,
+                            Buy_Id = 7,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 119,
+                            Buy_Id = 5,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 120,
+                            Buy_Id = 6,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 121,
+                            Buy_Id = 12,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 122,
+                            Buy_Id = 13,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 123,
+                            Buy_Id = 7,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 124,
+                            Buy_Id = 11,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 125,
+                            Buy_Id = 2,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 126,
+                            Buy_Id = 7,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 127,
+                            Buy_Id = 2,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 128,
+                            Buy_Id = 11,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 129,
+                            Buy_Id = 1,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 130,
+                            Buy_Id = 7,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 131,
+                            Buy_Id = 11,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 132,
+                            Buy_Id = 10,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 133,
+                            Buy_Id = 12,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 134,
+                            Buy_Id = 6,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 135,
+                            Buy_Id = 12,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 136,
+                            Buy_Id = 15,
                             Id = 0
                         },
                         new
@@ -732,7 +732,7 @@ namespace Persistence.Data.Migrations
                         new
                         {
                             MedicineId = 138,
-                            Buy_Id = 8,
+                            Buy_Id = 10,
                             Id = 0
                         },
                         new
@@ -744,103 +744,103 @@ namespace Persistence.Data.Migrations
                         new
                         {
                             MedicineId = 140,
-                            Buy_Id = 5,
+                            Buy_Id = 4,
                             Id = 0
                         },
                         new
                         {
                             MedicineId = 141,
-                            Buy_Id = 7,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 142,
-                            Buy_Id = 1,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 143,
-                            Buy_Id = 4,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 144,
                             Buy_Id = 10,
                             Id = 0
                         },
                         new
                         {
+                            MedicineId = 142,
+                            Buy_Id = 10,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 143,
+                            Buy_Id = 5,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 144,
+                            Buy_Id = 14,
+                            Id = 0
+                        },
+                        new
+                        {
                             MedicineId = 145,
-                            Buy_Id = 9,
+                            Buy_Id = 11,
                             Id = 0
                         },
                         new
                         {
                             MedicineId = 146,
-                            Buy_Id = 9,
+                            Buy_Id = 10,
                             Id = 0
                         },
                         new
                         {
                             MedicineId = 147,
-                            Buy_Id = 8,
+                            Buy_Id = 3,
                             Id = 0
                         },
                         new
                         {
                             MedicineId = 148,
-                            Buy_Id = 7,
+                            Buy_Id = 2,
                             Id = 0
                         },
                         new
                         {
                             MedicineId = 149,
-                            Buy_Id = 1,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 150,
-                            Buy_Id = 7,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 151,
-                            Buy_Id = 6,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 152,
-                            Buy_Id = 4,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 153,
-                            Buy_Id = 9,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 154,
-                            Buy_Id = 9,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 155,
                             Buy_Id = 8,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 156,
+                            MedicineId = 150,
+                            Buy_Id = 2,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 151,
+                            Buy_Id = 9,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 152,
                             Buy_Id = 6,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 153,
+                            Buy_Id = 1,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 154,
+                            Buy_Id = 12,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 155,
+                            Buy_Id = 5,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 156,
+                            Buy_Id = 11,
                             Id = 0
                         },
                         new
@@ -852,43 +852,43 @@ namespace Persistence.Data.Migrations
                         new
                         {
                             MedicineId = 158,
-                            Buy_Id = 14,
+                            Buy_Id = 10,
                             Id = 0
                         },
                         new
                         {
                             MedicineId = 159,
-                            Buy_Id = 14,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 160,
                             Buy_Id = 12,
                             Id = 0
                         },
                         new
                         {
+                            MedicineId = 160,
+                            Buy_Id = 14,
+                            Id = 0
+                        },
+                        new
+                        {
                             MedicineId = 161,
-                            Buy_Id = 4,
+                            Buy_Id = 8,
                             Id = 0
                         },
                         new
                         {
                             MedicineId = 162,
-                            Buy_Id = 11,
+                            Buy_Id = 9,
                             Id = 0
                         },
                         new
                         {
                             MedicineId = 163,
-                            Buy_Id = 4,
+                            Buy_Id = 12,
                             Id = 0
                         },
                         new
                         {
                             MedicineId = 164,
-                            Buy_Id = 6,
+                            Buy_Id = 4,
                             Id = 0
                         },
                         new
@@ -900,31 +900,31 @@ namespace Persistence.Data.Migrations
                         new
                         {
                             MedicineId = 166,
-                            Buy_Id = 5,
+                            Buy_Id = 1,
                             Id = 0
                         },
                         new
                         {
                             MedicineId = 167,
-                            Buy_Id = 12,
+                            Buy_Id = 7,
                             Id = 0
                         },
                         new
                         {
                             MedicineId = 168,
-                            Buy_Id = 13,
+                            Buy_Id = 15,
                             Id = 0
                         },
                         new
                         {
                             MedicineId = 169,
-                            Buy_Id = 14,
+                            Buy_Id = 2,
                             Id = 0
                         },
                         new
                         {
                             MedicineId = 170,
-                            Buy_Id = 2,
+                            Buy_Id = 5,
                             Id = 0
                         },
                         new
@@ -936,169 +936,169 @@ namespace Persistence.Data.Migrations
                         new
                         {
                             MedicineId = 172,
-                            Buy_Id = 6,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 173,
-                            Buy_Id = 1,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 174,
-                            Buy_Id = 8,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 175,
-                            Buy_Id = 10,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 176,
-                            Buy_Id = 6,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 177,
-                            Buy_Id = 13,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 178,
-                            Buy_Id = 10,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 179,
-                            Buy_Id = 6,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 180,
-                            Buy_Id = 14,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 181,
-                            Buy_Id = 14,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 182,
-                            Buy_Id = 6,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 183,
                             Buy_Id = 11,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 184,
-                            Buy_Id = 14,
+                            MedicineId = 173,
+                            Buy_Id = 8,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 185,
-                            Buy_Id = 2,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 186,
+                            MedicineId = 174,
                             Buy_Id = 12,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 187,
-                            Buy_Id = 12,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 188,
+                            MedicineId = 175,
                             Buy_Id = 13,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 189,
-                            Buy_Id = 2,
+                            MedicineId = 176,
+                            Buy_Id = 1,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 190,
-                            Buy_Id = 15,
-                            Id = 0
-                        },
-                        new
-                        {
-                            MedicineId = 191,
+                            MedicineId = 177,
                             Buy_Id = 10,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 192,
+                            MedicineId = 178,
                             Buy_Id = 2,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 193,
-                            Buy_Id = 5,
+                            MedicineId = 179,
+                            Buy_Id = 7,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 194,
-                            Buy_Id = 5,
+                            MedicineId = 180,
+                            Buy_Id = 7,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 195,
+                            MedicineId = 181,
+                            Buy_Id = 11,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 182,
                             Buy_Id = 9,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 196,
+                            MedicineId = 183,
+                            Buy_Id = 8,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 184,
+                            Buy_Id = 6,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 185,
+                            Buy_Id = 7,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 186,
+                            Buy_Id = 15,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 187,
+                            Buy_Id = 13,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 188,
                             Buy_Id = 14,
                             Id = 0
                         },
                         new
                         {
-                            MedicineId = 197,
+                            MedicineId = 189,
+                            Buy_Id = 15,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 190,
+                            Buy_Id = 13,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 191,
+                            Buy_Id = 13,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 192,
+                            Buy_Id = 10,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 193,
+                            Buy_Id = 8,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 194,
+                            Buy_Id = 11,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 195,
                             Buy_Id = 2,
                             Id = 0
                         },
                         new
                         {
+                            MedicineId = 196,
+                            Buy_Id = 8,
+                            Id = 0
+                        },
+                        new
+                        {
+                            MedicineId = 197,
+                            Buy_Id = 8,
+                            Id = 0
+                        },
+                        new
+                        {
                             MedicineId = 198,
-                            Buy_Id = 9,
+                            Buy_Id = 5,
                             Id = 0
                         },
                         new
                         {
                             MedicineId = 199,
-                            Buy_Id = 12,
+                            Buy_Id = 1,
                             Id = 0
                         });
                 });
@@ -1396,1601 +1396,1601 @@ namespace Persistence.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Date_creation = new DateTime(2023, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
+                            Date_creation = new DateTime(2023, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 3,
                             Id_state = 4
                         },
                         new
                         {
                             Id = 2,
-                            Date_creation = new DateTime(2023, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
+                            Date_creation = new DateTime(2023, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
                             Id_state = 3
                         },
                         new
                         {
                             Id = 3,
-                            Date_creation = new DateTime(2023, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 4
+                            Date_creation = new DateTime(2023, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 3
                         },
                         new
                         {
                             Id = 4,
-                            Date_creation = new DateTime(2023, 11, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Date_creation = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_creation = new DateTime(2023, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 1,
                             Id_state = 4
                         },
                         new
                         {
-                            Id = 6,
-                            Date_creation = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Date_creation = new DateTime(2023, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
+                            Id = 5,
+                            Date_creation = new DateTime(2023, 12, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 7,
                             Id_state = 2
                         },
                         new
                         {
-                            Id = 8,
-                            Date_creation = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 6,
+                            Date_creation = new DateTime(2024, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Date_creation = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 6,
                             Id_state = 2
                         },
                         new
                         {
-                            Id = 9,
-                            Date_creation = new DateTime(2024, 2, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
+                            Id = 8,
+                            Date_creation = new DateTime(2023, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
                             Id_state = 2
                         },
                         new
                         {
-                            Id = 10,
-                            Date_creation = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
+                            Id = 9,
+                            Date_creation = new DateTime(2023, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
                             Id_state = 3
                         },
                         new
                         {
+                            Id = 10,
+                            Date_creation = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 3,
+                            Id_state = 4
+                        },
+                        new
+                        {
                             Id = 11,
-                            Date_creation = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_creation = new DateTime(2023, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 9,
                             Id_state = 3
                         },
                         new
                         {
                             Id = 12,
-                            Date_creation = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 1
+                            Date_creation = new DateTime(2023, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 8,
+                            Id_state = 3
                         },
                         new
                         {
                             Id = 13,
-                            Date_creation = new DateTime(2023, 4, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 1
+                            Date_creation = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 2
                         },
                         new
                         {
                             Id = 14,
-                            Date_creation = new DateTime(2023, 4, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
+                            Date_creation = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
                             Id_state = 1
                         },
                         new
                         {
                             Id = 15,
-                            Date_creation = new DateTime(2023, 4, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 6,
+                            Date_creation = new DateTime(2023, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 4, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 8,
                             Id_state = 1
                         },
                         new
                         {
                             Id = 16,
-                            Date_creation = new DateTime(2024, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 6, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
+                            Date_creation = new DateTime(2024, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 7,
                             Id_state = 4
                         },
                         new
                         {
                             Id = 17,
-                            Date_creation = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
-                            Id_state = 1
+                            Date_creation = new DateTime(2023, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
+                            Id_state = 3
                         },
                         new
                         {
                             Id = 18,
-                            Date_creation = new DateTime(2023, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
-                            Id_state = 2
+                            Date_creation = new DateTime(2024, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
+                            Id_state = 1
                         },
                         new
                         {
                             Id = 19,
-                            Date_creation = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
+                            Date_creation = new DateTime(2023, 6, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
                             Id_state = 1
                         },
                         new
                         {
                             Id = 20,
-                            Date_creation = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2025, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
-                            Id_state = 4
+                            Date_creation = new DateTime(2023, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 7,
+                            Id_state = 1
                         },
                         new
                         {
                             Id = 21,
-                            Date_creation = new DateTime(2023, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 6,
+                            Date_creation = new DateTime(2023, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 3,
                             Id_state = 1
                         },
                         new
                         {
                             Id = 22,
-                            Date_creation = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 6,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Date_creation = new DateTime(2023, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 4, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Date_creation = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
+                            Date_creation = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 7,
                             Id_state = 1
                         },
                         new
                         {
+                            Id = 23,
+                            Date_creation = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Date_creation = new DateTime(2023, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 2
+                        },
+                        new
+                        {
                             Id = 25,
-                            Date_creation = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
+                            Date_creation = new DateTime(2023, 6, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 3,
                             Id_state = 2
                         },
                         new
                         {
                             Id = 26,
-                            Date_creation = new DateTime(2023, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 4, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 3
+                            Date_creation = new DateTime(2023, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 2
                         },
                         new
                         {
                             Id = 27,
-                            Date_creation = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 4
+                            Date_creation = new DateTime(2024, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 8,
+                            Id_state = 2
                         },
                         new
                         {
                             Id = 28,
-                            Date_creation = new DateTime(2023, 7, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
+                            Date_creation = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 3,
                             Id_state = 3
                         },
                         new
                         {
                             Id = 29,
-                            Date_creation = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
-                            Id_state = 4
+                            Date_creation = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
+                            Id_state = 2
                         },
                         new
                         {
                             Id = 30,
-                            Date_creation = new DateTime(2023, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 6,
+                            Date_creation = new DateTime(2023, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
                             Id_state = 1
                         },
                         new
                         {
                             Id = 31,
-                            Date_creation = new DateTime(2023, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
-                            Id_state = 3
+                            Date_creation = new DateTime(2023, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 2
                         },
                         new
                         {
                             Id = 32,
-                            Date_creation = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 1
+                            Date_creation = new DateTime(2023, 7, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 5, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 2
                         },
                         new
                         {
                             Id = 33,
-                            Date_creation = new DateTime(2023, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 6,
-                            Id_state = 4
+                            Date_creation = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
+                            Id_state = 3
                         },
                         new
                         {
                             Id = 34,
-                            Date_creation = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
-                            Id_state = 3
+                            Date_creation = new DateTime(2023, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
+                            Id_state = 2
                         },
                         new
                         {
                             Id = 35,
                             Date_creation = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 4
+                            Date_expiration = new DateTime(2026, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
+                            Id_state = 2
                         },
                         new
                         {
                             Id = 36,
-                            Date_creation = new DateTime(2023, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2025, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
+                            Date_creation = new DateTime(2023, 4, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
                             Id_state = 2
                         },
                         new
                         {
                             Id = 37,
-                            Date_creation = new DateTime(2023, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
+                            Date_creation = new DateTime(2023, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
                             Id_state = 2
                         },
                         new
                         {
                             Id = 38,
-                            Date_creation = new DateTime(2023, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 39,
-                            Date_creation = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
+                            Date_creation = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
                             Id_state = 2
                         },
                         new
                         {
-                            Id = 40,
-                            Date_creation = new DateTime(2023, 6, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
+                            Id = 39,
+                            Date_creation = new DateTime(2023, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 7,
                             Id_state = 1
                         },
                         new
                         {
-                            Id = 41,
-                            Date_creation = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 40,
+                            Date_creation = new DateTime(2023, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 3,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 41,
+                            Date_creation = new DateTime(2023, 7, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
                             Id_state = 1
                         },
                         new
                         {
                             Id = 42,
-                            Date_creation = new DateTime(2024, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2025, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 43,
-                            Date_creation = new DateTime(2023, 12, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 7,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 44,
-                            Date_creation = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 6, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 45,
-                            Date_creation = new DateTime(2023, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 46,
-                            Date_creation = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 47,
-                            Date_creation = new DateTime(2023, 11, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 48,
-                            Date_creation = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 4, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 49,
-                            Date_creation = new DateTime(2023, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 50,
-                            Date_creation = new DateTime(2023, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 51,
-                            Date_creation = new DateTime(2023, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 52,
-                            Date_creation = new DateTime(2023, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 7,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 53,
-                            Date_creation = new DateTime(2023, 12, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 54,
-                            Date_creation = new DateTime(2023, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 55,
-                            Date_creation = new DateTime(2024, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 4, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 56,
-                            Date_creation = new DateTime(2024, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 57,
-                            Date_creation = new DateTime(2023, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 58,
-                            Date_creation = new DateTime(2023, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 59,
-                            Date_creation = new DateTime(2023, 8, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 60,
-                            Date_creation = new DateTime(2023, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 4, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 61,
-                            Date_creation = new DateTime(2023, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_creation = new DateTime(2023, 8, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 8,
                             Id_state = 3
                         },
                         new
                         {
+                            Id = 43,
+                            Date_creation = new DateTime(2023, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 7,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Date_creation = new DateTime(2023, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 7,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 45,
+                            Date_creation = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 46,
+                            Date_creation = new DateTime(2023, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 3,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 47,
+                            Date_creation = new DateTime(2023, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 48,
+                            Date_creation = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 49,
+                            Date_creation = new DateTime(2023, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 50,
+                            Date_creation = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 51,
+                            Date_creation = new DateTime(2023, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 52,
+                            Date_creation = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 2, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 53,
+                            Date_creation = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 54,
+                            Date_creation = new DateTime(2023, 7, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 55,
+                            Date_creation = new DateTime(2023, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 7,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 56,
+                            Date_creation = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 57,
+                            Date_creation = new DateTime(2023, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 58,
+                            Date_creation = new DateTime(2023, 4, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 59,
+                            Date_creation = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 60,
+                            Date_creation = new DateTime(2023, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 61,
+                            Date_creation = new DateTime(2024, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 3
+                        },
+                        new
+                        {
                             Id = 62,
-                            Date_creation = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 5, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_creation = new DateTime(2023, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 2,
                             Id_state = 1
                         },
                         new
                         {
                             Id = 63,
-                            Date_creation = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 2
+                            Date_creation = new DateTime(2023, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
+                            Id_state = 4
                         },
                         new
                         {
                             Id = 64,
-                            Date_creation = new DateTime(2023, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 5, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 65,
-                            Date_creation = new DateTime(2024, 1, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 7,
+                            Date_creation = new DateTime(2023, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
                             Id_state = 3
                         },
                         new
                         {
+                            Id = 65,
+                            Date_creation = new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 8,
+                            Id_state = 1
+                        },
+                        new
+                        {
                             Id = 66,
-                            Date_creation = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_creation = new DateTime(2023, 5, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 9,
                             Id_state = 2
                         },
                         new
                         {
                             Id = 67,
-                            Date_creation = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
-                            Id_state = 2
+                            Date_creation = new DateTime(2023, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 3
                         },
                         new
                         {
                             Id = 68,
-                            Date_creation = new DateTime(2023, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 7,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 69,
-                            Date_creation = new DateTime(2023, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 70,
-                            Date_creation = new DateTime(2023, 6, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 6, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 71,
-                            Date_creation = new DateTime(2023, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 7,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 72,
-                            Date_creation = new DateTime(2023, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_creation = new DateTime(2023, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 7,
                             Id_state = 1
                         },
                         new
                         {
-                            Id = 73,
-                            Date_creation = new DateTime(2023, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2025, 12, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
+                            Id = 69,
+                            Date_creation = new DateTime(2023, 12, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
                             Id_state = 4
                         },
                         new
                         {
+                            Id = 70,
+                            Date_creation = new DateTime(2023, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 71,
+                            Date_creation = new DateTime(2023, 5, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 72,
+                            Date_creation = new DateTime(2023, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 3,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 73,
+                            Date_creation = new DateTime(2023, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 1
+                        },
+                        new
+                        {
                             Id = 74,
-                            Date_creation = new DateTime(2023, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
+                            Date_creation = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 3,
                             Id_state = 4
                         },
                         new
                         {
                             Id = 75,
-                            Date_creation = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_creation = new DateTime(2024, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 4,
-                            Id_state = 3
+                            Id_state = 4
                         },
                         new
                         {
                             Id = 76,
-                            Date_creation = new DateTime(2023, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
-                            Id_state = 2
+                            Date_creation = new DateTime(2023, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 3
                         },
                         new
                         {
                             Id = 77,
-                            Date_creation = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
+                            Date_creation = new DateTime(2023, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
                             Id_state = 4
                         },
                         new
                         {
                             Id = 78,
-                            Date_creation = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
-                            Id_state = 4
+                            Date_creation = new DateTime(2023, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 7,
+                            Id_state = 3
                         },
                         new
                         {
                             Id = 79,
-                            Date_creation = new DateTime(2023, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
+                            Date_creation = new DateTime(2023, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
                             Id_state = 4
                         },
                         new
                         {
                             Id = 80,
-                            Date_creation = new DateTime(2024, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2025, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
+                            Date_creation = new DateTime(2023, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 4, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
                             Id_state = 2
                         },
                         new
                         {
                             Id = 81,
-                            Date_creation = new DateTime(2023, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
+                            Date_creation = new DateTime(2023, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
                             Id_state = 4
                         },
                         new
                         {
                             Id = 82,
-                            Date_creation = new DateTime(2023, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
+                            Date_creation = new DateTime(2023, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
                             Id_state = 2
                         },
                         new
                         {
                             Id = 83,
-                            Date_creation = new DateTime(2024, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_creation = new DateTime(2023, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date_expiration = new DateTime(2026, 11, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 3
+                            Id_Inventory = 6,
+                            Id_state = 2
                         },
                         new
                         {
                             Id = 84,
-                            Date_creation = new DateTime(2023, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
+                            Date_creation = new DateTime(2024, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 3,
                             Id_state = 3
                         },
                         new
                         {
                             Id = 85,
-                            Date_creation = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
+                            Date_creation = new DateTime(2023, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
                             Id_state = 3
                         },
                         new
                         {
                             Id = 86,
-                            Date_creation = new DateTime(2024, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
+                            Date_creation = new DateTime(2023, 5, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
                             Id_state = 1
                         },
                         new
                         {
                             Id = 87,
-                            Date_creation = new DateTime(2023, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 4
+                            Date_creation = new DateTime(2023, 5, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 1
                         },
                         new
                         {
                             Id = 88,
-                            Date_creation = new DateTime(2023, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 2
+                            Date_creation = new DateTime(2023, 11, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 3
                         },
                         new
                         {
                             Id = 89,
-                            Date_creation = new DateTime(2024, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
-                            Id_state = 1
+                            Date_creation = new DateTime(2023, 9, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
+                            Id_state = 3
                         },
                         new
                         {
                             Id = 90,
-                            Date_creation = new DateTime(2023, 12, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_creation = new DateTime(2023, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 4, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 4,
-                            Id_state = 1
+                            Id_state = 4
                         },
                         new
                         {
                             Id = 91,
-                            Date_creation = new DateTime(2023, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 7,
-                            Id_state = 4
+                            Date_creation = new DateTime(2023, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 1
                         },
                         new
                         {
                             Id = 92,
-                            Date_creation = new DateTime(2023, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 2
+                            Date_creation = new DateTime(2023, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 3
                         },
                         new
                         {
                             Id = 93,
-                            Date_creation = new DateTime(2023, 6, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 3
+                            Date_creation = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
+                            Id_state = 2
                         },
                         new
                         {
                             Id = 94,
-                            Date_creation = new DateTime(2023, 7, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2025, 12, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 4
+                            Date_creation = new DateTime(2023, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 8,
+                            Id_state = 2
                         },
                         new
                         {
                             Id = 95,
-                            Date_creation = new DateTime(2023, 8, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
-                            Id_state = 1
+                            Date_creation = new DateTime(2024, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 3,
+                            Id_state = 2
                         },
                         new
                         {
                             Id = 96,
-                            Date_creation = new DateTime(2023, 4, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 1
+                            Date_creation = new DateTime(2023, 6, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
+                            Id_state = 3
                         },
                         new
                         {
                             Id = 97,
-                            Date_creation = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 2
+                            Date_creation = new DateTime(2023, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 8,
+                            Id_state = 4
                         },
                         new
                         {
                             Id = 98,
-                            Date_creation = new DateTime(2024, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 1
+                            Date_creation = new DateTime(2023, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 3
                         },
                         new
                         {
                             Id = 99,
-                            Date_creation = new DateTime(2023, 8, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 5, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 7,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 100,
-                            Date_creation = new DateTime(2023, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 7,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 101,
-                            Date_creation = new DateTime(2024, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 6,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 102,
-                            Date_creation = new DateTime(2023, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 103,
                             Date_creation = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 104,
-                            Date_creation = new DateTime(2024, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 105,
-                            Date_creation = new DateTime(2023, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 6,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 106,
-                            Date_creation = new DateTime(2024, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 107,
-                            Date_creation = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 108,
-                            Date_creation = new DateTime(2023, 12, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 109,
-                            Date_creation = new DateTime(2023, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 110,
-                            Date_creation = new DateTime(2023, 11, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 111,
-                            Date_creation = new DateTime(2023, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 6,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 112,
-                            Date_creation = new DateTime(2024, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 113,
-                            Date_creation = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 114,
-                            Date_creation = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 5, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 115,
-                            Date_creation = new DateTime(2023, 6, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 6,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 116,
-                            Date_creation = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 117,
-                            Date_creation = new DateTime(2023, 12, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 118,
-                            Date_creation = new DateTime(2023, 9, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 119,
-                            Date_creation = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 120,
-                            Date_creation = new DateTime(2023, 10, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 121,
-                            Date_creation = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 7,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 122,
-                            Date_creation = new DateTime(2023, 11, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 123,
-                            Date_creation = new DateTime(2023, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 124,
-                            Date_creation = new DateTime(2023, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 125,
-                            Date_creation = new DateTime(2023, 7, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 126,
-                            Date_creation = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 127,
-                            Date_creation = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 128,
-                            Date_creation = new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 129,
-                            Date_creation = new DateTime(2023, 5, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 130,
-                            Date_creation = new DateTime(2023, 10, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 131,
-                            Date_creation = new DateTime(2023, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2025, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 132,
-                            Date_creation = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 133,
-                            Date_creation = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 134,
-                            Date_creation = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 135,
-                            Date_creation = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 136,
-                            Date_creation = new DateTime(2024, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 137,
-                            Date_creation = new DateTime(2023, 11, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 6,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 138,
-                            Date_creation = new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 6,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 139,
-                            Date_creation = new DateTime(2024, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 7,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 140,
-                            Date_creation = new DateTime(2023, 12, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 141,
-                            Date_creation = new DateTime(2023, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 6,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 142,
-                            Date_creation = new DateTime(2023, 9, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 143,
-                            Date_creation = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 144,
-                            Date_creation = new DateTime(2023, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 145,
-                            Date_creation = new DateTime(2023, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 146,
-                            Date_creation = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 147,
-                            Date_creation = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 148,
-                            Date_creation = new DateTime(2023, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 149,
-                            Date_creation = new DateTime(2023, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 150,
-                            Date_creation = new DateTime(2024, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 151,
-                            Date_creation = new DateTime(2023, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 152,
-                            Date_creation = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 153,
-                            Date_creation = new DateTime(2023, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 7,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 154,
-                            Date_creation = new DateTime(2023, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 155,
-                            Date_creation = new DateTime(2024, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 6,
-                            Id_state = 3
-                        },
-                        new
-                        {
-                            Id = 156,
-                            Date_creation = new DateTime(2024, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date_expiration = new DateTime(2026, 6, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 4,
                             Id_state = 3
                         },
                         new
                         {
-                            Id = 157,
-                            Date_creation = new DateTime(2023, 9, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
+                            Id = 100,
+                            Date_creation = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 8,
                             Id_state = 3
                         },
                         new
                         {
-                            Id = 158,
-                            Date_creation = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
+                            Id = 101,
+                            Date_creation = new DateTime(2023, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
                             Id_state = 4
                         },
                         new
                         {
-                            Id = 159,
-                            Date_creation = new DateTime(2023, 8, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
+                            Id = 102,
+                            Date_creation = new DateTime(2023, 12, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 7,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 103,
+                            Date_creation = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 8,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 104,
+                            Date_creation = new DateTime(2023, 9, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 105,
+                            Date_creation = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 106,
+                            Date_creation = new DateTime(2023, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 8,
                             Id_state = 2
                         },
                         new
                         {
-                            Id = 160,
-                            Date_creation = new DateTime(2023, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 107,
+                            Date_creation = new DateTime(2023, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 8,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 108,
+                            Date_creation = new DateTime(2023, 8, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 8,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 109,
+                            Date_creation = new DateTime(2023, 10, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 110,
+                            Date_creation = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 111,
+                            Date_creation = new DateTime(2023, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 8,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 112,
+                            Date_creation = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 8,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 113,
+                            Date_creation = new DateTime(2024, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 114,
+                            Date_creation = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 3,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 115,
+                            Date_creation = new DateTime(2023, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 9,
                             Id_state = 1
                         },
                         new
                         {
-                            Id = 161,
-                            Date_creation = new DateTime(2023, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 116,
+                            Date_creation = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 4, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 117,
+                            Date_creation = new DateTime(2023, 4, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 118,
+                            Date_creation = new DateTime(2023, 5, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 119,
+                            Date_creation = new DateTime(2023, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 120,
+                            Date_creation = new DateTime(2024, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 121,
+                            Date_creation = new DateTime(2024, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 1,
                             Id_state = 2
                         },
                         new
                         {
-                            Id = 162,
-                            Date_creation = new DateTime(2024, 1, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 122,
+                            Date_creation = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 123,
+                            Date_creation = new DateTime(2023, 10, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 124,
+                            Date_creation = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 125,
+                            Date_creation = new DateTime(2023, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 126,
+                            Date_creation = new DateTime(2023, 4, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 127,
+                            Date_creation = new DateTime(2023, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 128,
+                            Date_creation = new DateTime(2023, 5, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 7,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 129,
+                            Date_creation = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 130,
+                            Date_creation = new DateTime(2023, 9, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 131,
+                            Date_creation = new DateTime(2023, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date_expiration = new DateTime(2026, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 4
+                            Id_Inventory = 3,
+                            Id_state = 3
                         },
                         new
                         {
-                            Id = 163,
-                            Date_creation = new DateTime(2023, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 6,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 164,
+                            Id = 132,
                             Date_creation = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 2,
-                            Id_state = 1
+                            Id_state = 2
                         },
                         new
                         {
-                            Id = 165,
-                            Date_creation = new DateTime(2023, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 133,
+                            Date_creation = new DateTime(2024, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 6,
                             Id_state = 4
                         },
                         new
                         {
-                            Id = 166,
-                            Date_creation = new DateTime(2023, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2025, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
+                            Id = 134,
+                            Date_creation = new DateTime(2023, 10, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
                             Id_state = 4
                         },
                         new
                         {
-                            Id = 167,
-                            Date_creation = new DateTime(2024, 2, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 135,
+                            Date_creation = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 136,
+                            Date_creation = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 5, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 137,
+                            Date_creation = new DateTime(2023, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 138,
+                            Date_creation = new DateTime(2023, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 139,
+                            Date_creation = new DateTime(2023, 12, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 7,
                             Id_state = 1
                         },
                         new
                         {
-                            Id = 168,
-                            Date_creation = new DateTime(2023, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
+                            Id = 140,
+                            Date_creation = new DateTime(2023, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 141,
+                            Date_creation = new DateTime(2024, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
                             Id_state = 3
                         },
                         new
                         {
-                            Id = 169,
-                            Date_creation = new DateTime(2023, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 142,
+                            Date_creation = new DateTime(2023, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 143,
+                            Date_creation = new DateTime(2023, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date_expiration = new DateTime(2026, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 144,
+                            Date_creation = new DateTime(2023, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 145,
+                            Date_creation = new DateTime(2024, 2, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 8,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 146,
+                            Date_creation = new DateTime(2023, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 147,
+                            Date_creation = new DateTime(2023, 5, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 148,
+                            Date_creation = new DateTime(2023, 7, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 149,
+                            Date_creation = new DateTime(2024, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 150,
+                            Date_creation = new DateTime(2023, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 151,
+                            Date_creation = new DateTime(2023, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 7,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 152,
+                            Date_creation = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 153,
+                            Date_creation = new DateTime(2023, 12, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 154,
+                            Date_creation = new DateTime(2023, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 7,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 155,
+                            Date_creation = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 156,
+                            Date_creation = new DateTime(2023, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 157,
+                            Date_creation = new DateTime(2023, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 158,
+                            Date_creation = new DateTime(2023, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 4, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 159,
+                            Date_creation = new DateTime(2023, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 160,
+                            Date_creation = new DateTime(2023, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 161,
+                            Date_creation = new DateTime(2023, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 7,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 162,
+                            Date_creation = new DateTime(2023, 7, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 3,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 163,
+                            Date_creation = new DateTime(2023, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 164,
+                            Date_creation = new DateTime(2023, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 165,
+                            Date_creation = new DateTime(2023, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 7,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 166,
+                            Date_creation = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 167,
+                            Date_creation = new DateTime(2023, 3, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 168,
+                            Date_creation = new DateTime(2023, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 169,
+                            Date_creation = new DateTime(2023, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 1, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 2,
                             Id_state = 4
                         },
                         new
                         {
                             Id = 170,
-                            Date_creation = new DateTime(2023, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
+                            Date_creation = new DateTime(2023, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 3,
                             Id_state = 4
                         },
                         new
                         {
                             Id = 171,
-                            Date_creation = new DateTime(2023, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 172,
-                            Date_creation = new DateTime(2023, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 6,
+                            Date_creation = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
                             Id_state = 3
                         },
                         new
                         {
-                            Id = 173,
-                            Date_creation = new DateTime(2024, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 172,
+                            Date_creation = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 3,
-                            Id_state = 2
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 173,
+                            Date_creation = new DateTime(2023, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 1
                         },
                         new
                         {
                             Id = 174,
-                            Date_creation = new DateTime(2023, 9, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 1
+                            Date_creation = new DateTime(2023, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 3
                         },
                         new
                         {
                             Id = 175,
-                            Date_creation = new DateTime(2023, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 8,
-                            Id_state = 1
+                            Date_creation = new DateTime(2023, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 4
                         },
                         new
                         {
                             Id = 176,
-                            Date_creation = new DateTime(2023, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
+                            Date_creation = new DateTime(2023, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
                             Id_state = 3
                         },
                         new
                         {
                             Id = 177,
-                            Date_creation = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 5,
-                            Id_state = 2
+                            Date_creation = new DateTime(2023, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 7, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 4
                         },
                         new
                         {
                             Id = 178,
-                            Date_creation = new DateTime(2024, 1, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2025, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 179,
-                            Date_creation = new DateTime(2023, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
+                            Date_creation = new DateTime(2023, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2025, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 6,
                             Id_state = 1
                         },
                         new
                         {
+                            Id = 179,
+                            Date_creation = new DateTime(2023, 8, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 3
+                        },
+                        new
+                        {
                             Id = 180,
-                            Date_creation = new DateTime(2024, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2025, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_creation = new DateTime(2023, 11, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 7,
                             Id_state = 4
                         },
                         new
                         {
                             Id = 181,
-                            Date_creation = new DateTime(2023, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
+                            Date_creation = new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
                             Id_state = 2
                         },
                         new
                         {
                             Id = 182,
-                            Date_creation = new DateTime(2023, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 4
+                            Date_creation = new DateTime(2023, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 1
                         },
                         new
                         {
                             Id = 183,
-                            Date_creation = new DateTime(2023, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_creation = new DateTime(2024, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 184,
+                            Date_creation = new DateTime(2023, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 5,
                             Id_state = 3
                         },
                         new
                         {
-                            Id = 184,
-                            Date_creation = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 1
-                        },
-                        new
-                        {
                             Id = 185,
-                            Date_creation = new DateTime(2024, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 4,
+                            Date_creation = new DateTime(2023, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 4, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
                             Id_state = 1
                         },
                         new
                         {
                             Id = 186,
-                            Date_creation = new DateTime(2023, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 1
+                            Date_creation = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 8,
+                            Id_state = 2
                         },
                         new
                         {
                             Id = 187,
-                            Date_creation = new DateTime(2023, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
+                            Date_creation = new DateTime(2023, 12, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
                             Id_state = 4
                         },
                         new
                         {
                             Id = 188,
-                            Date_creation = new DateTime(2023, 9, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 7,
-                            Id_state = 1
+                            Date_creation = new DateTime(2023, 10, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 4
                         },
                         new
                         {
                             Id = 189,
-                            Date_creation = new DateTime(2023, 8, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 8, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 190,
-                            Date_creation = new DateTime(2023, 8, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 191,
-                            Date_creation = new DateTime(2023, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_creation = new DateTime(2023, 9, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 1,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 192,
-                            Date_creation = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 7,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 193,
-                            Date_creation = new DateTime(2023, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2025, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 7,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 194,
-                            Date_creation = new DateTime(2023, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 2,
                             Id_state = 3
                         },
                         new
                         {
-                            Id = 195,
-                            Date_creation = new DateTime(2023, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 9,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 196,
-                            Date_creation = new DateTime(2023, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 4
-                        },
-                        new
-                        {
-                            Id = 197,
-                            Date_creation = new DateTime(2023, 4, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 1,
-                            Id_state = 2
-                        },
-                        new
-                        {
-                            Id = 198,
-                            Date_creation = new DateTime(2023, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Id_Inventory = 3,
-                            Id_state = 1
-                        },
-                        new
-                        {
-                            Id = 199,
-                            Date_creation = new DateTime(2024, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2025, 12, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 190,
+                            Date_creation = new DateTime(2024, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 6,
                             Id_state = 2
                         },
                         new
                         {
-                            Id = 200,
-                            Date_creation = new DateTime(2023, 8, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date_expiration = new DateTime(2026, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 191,
+                            Date_creation = new DateTime(2023, 10, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 9,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 192,
+                            Date_creation = new DateTime(2023, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Id_Inventory = 1,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 193,
+                            Date_creation = new DateTime(2023, 8, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 194,
+                            Date_creation = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 195,
+                            Date_creation = new DateTime(2023, 8, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 5,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 196,
+                            Date_creation = new DateTime(2023, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 4
+                        },
+                        new
+                        {
+                            Id = 197,
+                            Date_creation = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 2,
+                            Id_state = 1
+                        },
+                        new
+                        {
+                            Id = 198,
+                            Date_creation = new DateTime(2023, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 1,
+                            Id_state = 3
+                        },
+                        new
+                        {
+                            Id = 199,
+                            Date_creation = new DateTime(2023, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 4,
+                            Id_state = 2
+                        },
+                        new
+                        {
+                            Id = 200,
+                            Date_creation = new DateTime(2023, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date_expiration = new DateTime(2026, 5, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id_Inventory = 3,
                             Id_state = 2
                         });
                 });
@@ -3322,38 +3322,38 @@ namespace Persistence.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Birth_date = new DateTime(2023, 9, 28, 7, 24, 42, 835, DateTimeKind.Local).AddTicks(6830),
+                            Birth_date = new DateTime(2023, 9, 29, 6, 27, 48, 62, DateTimeKind.Local).AddTicks(100),
                             Id_Document_type = 3,
                             Id_Type_Person = 1,
                             Name = "root",
-                            Register_date = new DateTime(2023, 9, 28, 7, 24, 42, 835, DateTimeKind.Local).AddTicks(6818)
+                            Register_date = new DateTime(2023, 9, 29, 6, 27, 48, 62, DateTimeKind.Local).AddTicks(83)
                         },
                         new
                         {
                             Id = 2,
-                            Birth_date = new DateTime(2023, 9, 28, 7, 24, 42, 835, DateTimeKind.Local).AddTicks(6831),
+                            Birth_date = new DateTime(2023, 9, 29, 6, 27, 48, 62, DateTimeKind.Local).AddTicks(102),
                             Id_Document_type = 3,
                             Id_Type_Person = 2,
                             Name = "ProveedorA",
-                            Register_date = new DateTime(2023, 9, 28, 7, 24, 42, 835, DateTimeKind.Local).AddTicks(6831)
+                            Register_date = new DateTime(2023, 9, 29, 6, 27, 48, 62, DateTimeKind.Local).AddTicks(101)
                         },
                         new
                         {
                             Id = 3,
-                            Birth_date = new DateTime(2023, 9, 28, 7, 24, 42, 835, DateTimeKind.Local).AddTicks(6863),
+                            Birth_date = new DateTime(2023, 9, 29, 6, 27, 48, 62, DateTimeKind.Local).AddTicks(103),
                             Id_Document_type = 3,
                             Id_Type_Person = 2,
                             Name = "ProveedorB",
-                            Register_date = new DateTime(2023, 9, 28, 7, 24, 42, 835, DateTimeKind.Local).AddTicks(6863)
+                            Register_date = new DateTime(2023, 9, 29, 6, 27, 48, 62, DateTimeKind.Local).AddTicks(103)
                         },
                         new
                         {
                             Id = 4,
-                            Birth_date = new DateTime(2023, 9, 28, 7, 24, 42, 835, DateTimeKind.Local).AddTicks(6864),
+                            Birth_date = new DateTime(2023, 9, 29, 6, 27, 48, 62, DateTimeKind.Local).AddTicks(104),
                             Id_Document_type = 3,
                             Id_Type_Person = 2,
                             Name = "ProveedorC",
-                            Register_date = new DateTime(2023, 9, 28, 7, 24, 42, 835, DateTimeKind.Local).AddTicks(6864)
+                            Register_date = new DateTime(2023, 9, 29, 6, 27, 48, 62, DateTimeKind.Local).AddTicks(104)
                         },
                         new
                         {
@@ -3362,7 +3362,7 @@ namespace Persistence.Data.Migrations
                             Id_Document_type = 1,
                             Id_Type_Person = 1,
                             Name = "Juan Paco",
-                            Register_date = new DateTime(2023, 9, 28, 7, 24, 42, 835, DateTimeKind.Local).AddTicks(6865)
+                            Register_date = new DateTime(2023, 9, 29, 6, 27, 48, 62, DateTimeKind.Local).AddTicks(105)
                         },
                         new
                         {
@@ -3380,7 +3380,7 @@ namespace Persistence.Data.Migrations
                             Id_Document_type = 2,
                             Id_Type_Person = 1,
                             Name = "Maria Db",
-                            Register_date = new DateTime(2023, 9, 28, 7, 24, 42, 835, DateTimeKind.Local).AddTicks(6869)
+                            Register_date = new DateTime(2023, 9, 29, 6, 27, 48, 62, DateTimeKind.Local).AddTicks(115)
                         },
                         new
                         {
@@ -3625,114 +3625,114 @@ namespace Persistence.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Id_Employe = 3,
-                            Id_person = 2,
-                            Sale_Date = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id_Employe = 1,
+                            Id_person = 1,
+                            Sale_Date = new DateTime(2023, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
-                            Id_Employe = 1,
-                            Id_person = 3,
-                            Sale_Date = new DateTime(2023, 5, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id_Employe = 3,
+                            Id_person = 2,
+                            Sale_Date = new DateTime(2023, 9, 7, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
-                            Id_Employe = 1,
-                            Id_person = 2,
-                            Sale_Date = new DateTime(2023, 9, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id_Employe = 2,
+                            Id_person = 3,
+                            Sale_Date = new DateTime(2023, 7, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 4,
-                            Id_Employe = 3,
-                            Id_person = 1,
-                            Sale_Date = new DateTime(2023, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id_Employe = 1,
+                            Id_person = 3,
+                            Sale_Date = new DateTime(2023, 9, 27, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 5,
-                            Id_Employe = 2,
-                            Id_person = 3,
-                            Sale_Date = new DateTime(2024, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id_Employe = 1,
+                            Id_person = 1,
+                            Sale_Date = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 6,
-                            Id_Employe = 1,
+                            Id_Employe = 3,
                             Id_person = 2,
-                            Sale_Date = new DateTime(2023, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Sale_Date = new DateTime(2023, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 7,
                             Id_Employe = 2,
                             Id_person = 2,
-                            Sale_Date = new DateTime(2024, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Sale_Date = new DateTime(2024, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 8,
                             Id_Employe = 1,
-                            Id_person = 1,
-                            Sale_Date = new DateTime(2023, 10, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id_person = 3,
+                            Sale_Date = new DateTime(2023, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 9,
                             Id_Employe = 1,
                             Id_person = 1,
-                            Sale_Date = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Sale_Date = new DateTime(2023, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 10,
-                            Id_Employe = 3,
-                            Id_person = 1,
-                            Sale_Date = new DateTime(2023, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id_Employe = 2,
+                            Id_person = 3,
+                            Sale_Date = new DateTime(2024, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 11,
-                            Id_Employe = 3,
+                            Id_Employe = 1,
                             Id_person = 1,
-                            Sale_Date = new DateTime(2024, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Sale_Date = new DateTime(2023, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 12,
                             Id_Employe = 3,
-                            Id_person = 3,
-                            Sale_Date = new DateTime(2023, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id_person = 1,
+                            Sale_Date = new DateTime(2023, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 13,
-                            Id_Employe = 3,
+                            Id_Employe = 2,
                             Id_person = 3,
-                            Sale_Date = new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Sale_Date = new DateTime(2024, 2, 27, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 14,
-                            Id_Employe = 2,
+                            Id_Employe = 3,
                             Id_person = 2,
-                            Sale_Date = new DateTime(2023, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Sale_Date = new DateTime(2023, 10, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 15,
-                            Id_Employe = 2,
+                            Id_Employe = 3,
                             Id_person = 3,
-                            Sale_Date = new DateTime(2024, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Sale_Date = new DateTime(2023, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 16,
                             Id_Employe = 1,
-                            Id_person = 2,
-                            Sale_Date = new DateTime(2024, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id_person = 1,
+                            Sale_Date = new DateTime(2023, 7, 13, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -3743,6 +3743,9 @@ namespace Persistence.Data.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Id_State")
                         .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -3758,26 +3761,31 @@ namespace Persistence.Data.Migrations
                         new
                         {
                             Id = 1,
+                            Description = "default",
                             Name = "prueba"
                         },
                         new
                         {
                             Id = 2,
+                            Description = "expired",
                             Name = "prueba"
                         },
                         new
                         {
                             Id = 3,
+                            Description = "damaged",
                             Name = "prueba"
                         },
                         new
                         {
                             Id = 4,
+                            Description = "Sold",
                             Name = "prueba"
                         },
                         new
                         {
                             Id = 5,
+                            Description = "Returned",
                             Name = "prueba"
                         });
                 });

@@ -58,7 +58,6 @@ public class CustomQueriesController : BaseApiController{
    //*11 Número de medicamentos por proveedor.
    //*13 Proveedores que no han vendido medicamentos en el último año.
    [HttpGet("PurchasedByProvider")]
-   //falla
    //[Authorize]
    [MapToApiVersion("1.0")]
    [ProducesResponseType(StatusCodes.Status200OK)]
@@ -67,7 +66,6 @@ public class CustomQueriesController : BaseApiController{
       return await _UnitOfWork.CustomQueries.PurchasedByProvider(data);
    }
    //* fin de la consulta 
-
    //*29. Proveedores de los medicamentos con menos de 50 unidades en stock.
    //*38. Medicamentos con un precio mayor a 50 y un stock menor a 100.
   [HttpGet("MedicinesByPriceAndStock")]
@@ -215,14 +213,14 @@ public class CustomQueriesController : BaseApiController{
       return await _UnitOfWork.CustomQueries.AllSaleCustomer(year);
    }
    //*35. Proveedores que han suministrado al menos 5 medicamentos diferentes en 2023.
-   [HttpGet("ProvidersWhoHaveProvidedDifferentMedications")]
+   /* [HttpGet("ProvidersWhoHaveProvidedDifferentMedications")]
    [MapToApiVersion("1.0")]
    [ProducesResponseType(StatusCodes.Status200OK)]
    [ProducesResponseType(StatusCodes.Status400BadRequest)]
    public async Task<object> ProvidersWhoHaveProvidedDifferentMedications(){
       return await _UnitOfWork.CustomQueries.ProvidersWhoHaveProvidedDifferentMedications();
    }
-   
+    */
 
    //*15 Obtener el medicamento menos vendido en 2023
    //*17 Promedio de medicamentos comprados por venta.
