@@ -21,6 +21,9 @@ public interface ICustomQueriesManager{
     Task<object> GetSaleParacetamol(String medicineInput, int Year);
     Task<IEnumerable<object>> TotalMedicinesProvider();
     Task<IEnumerable<object>> ProfitsPerProvider(ProfitsPerProviderModel data = null);
+    
+
+
 
     
 
