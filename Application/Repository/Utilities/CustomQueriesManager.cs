@@ -6,7 +6,8 @@ using Persistence;
 
 namespace Application.Repository.Utilities;
 
-public class CustomQueriesManager : ICustomQueriesManager{
+public class CustomQueriesManager : ICustomQueriesManager
+{
     private static PharmacyContext _Context;
     public CustomQueriesManager(PharmacyContext context)=> _Context = context;
     public async Task<IEnumerable<object>> ProvidersWhoHaveProvidedDifferentMedications(ProvidersWhoHaveProvidedDifferentMedicationsModel data = null){
@@ -68,6 +69,7 @@ public class CustomQueriesManager : ICustomQueriesManager{
                 medicine_Info.Name,
                 medicine_Info.Price                
             }).ToListAsync();
+
         
         var res = from medicine in medicines
             group medicine by medicine.Name into medicineGroups
@@ -125,6 +127,7 @@ public class CustomQueriesManager : ICustomQueriesManager{
                 buy.BuyDate,
                 Price,
             }).ToListAsync();
+
 
         if(data?.InitialDate != null ){
             if( data?.FinalDate != null && data.InitialDate < data.FinalDate){
@@ -207,68 +210,69 @@ public class CustomQueriesManager : ICustomQueriesManager{
                     medicineItem.Name,
                     medicineItem.Price,
                     medicineItem.Discount,
-                    medicineItem.Image,
                     medicineItem.Need_order,
                     MedicineBrand = medicineItem.Medicine_brand.Name,
                     MedicinePresentation = medicineItem.Presentation.Name,
                     MedicineCategory = medicineItem.Category.Name
                 },
-                TotalStock = _Context.Set<Medicine>().Where(x => x.Inventory.Medicine_info.Name == medicineItem.Name && x.Id_state == 1).Count()
+                TotalStock = _Context.Set<Medicine>().  Where(x => x.Inventory.Medicine_info.Name == medicineItem.Name && x.Id_state == 1).Count()
             }).ToListAsync();        
     }
-    public async Task<IEnumerable<object>> PurchasedByProvider (MedicineInfoProviderModel data ){
-        var medicines =  await(from detail in _Context.Set<Detail_buy>()
-            join provider in _Context.Set<Provider>() on detail.Buy.Provider_Id equals provider.Id
-            join person in _Context.Set<Person>() on provider.PersonId equals person.Id
-            join buy in _Context.Set<Buy>() on detail.Buy_Id equals buy.Id
-            let medicineInfo = detail.Medicine.Inventory.Medicine_info
-            let Price = medicineInfo.Price - (medicineInfo.Price * (medicineInfo.Discount / 100))
 
-            select new {
-                Date = buy.BuyDate,
-                Supplier = person.Name,
-                medicineInfo.Name,
-                Price                
-            }).ToListAsync();
-            if (data.InitialDate != null){            
-            if (data.FinalDate != null && data.FinalDate < data.InitialDate){
-                medicines = medicines.Where(x => 
-                    x.Date >= (
-                        data.HasCoincidence
-                            ?data.InitialDate 
-                            :data.FinalDate) && 
-                    x.Date <= (
-                        data.HasCoincidence
-                            ?data.FinalDate 
-                            :data.InitialDate) 
-                ).ToList();
-            }else{
-                medicines = medicines.Where(x => 
-                    data.HasCoincidence
-                        ? x.Date >= data.InitialDate
-                        : x.Date <= data.InitialDate
-                ).ToList();
-            }
-        }
-        var res = from medicine in medicines
-            group medicine by medicine.Supplier into medicineGroup
-            let Total = medicineGroup.Sum(x => x.Price)
-            let Units = medicineGroup.Count()
-            select new {
-                medicineGroup.First().Supplier,
-                Total,
-                Units
-            };
+public async Task<IEnumerable<object>> PurchasedByProvider(MedicineInfoProviderModel data)
+{
+    var details = await _Context.Set<Detail_buy>()
+        .Include(detail => detail.Buy)
+        .ThenInclude(buy => buy.Provider)
+        .Include(detail => detail.Medicine.Inventory.Medicine_info)
+        .Where(detail => detail.Medicine != null && detail.Medicine.Inventory != null && detail.Medicine.Inventory.Medicine_info != null)
+        .ToListAsync();
 
-        if (data.SupplierName != null){
-            return res.Where(x => 
-                data.HasCoincidence
-                    ?x.Supplier == data.SupplierName
-                    :x.Supplier != data.SupplierName
-            );            
+    var medicines = details.Select(detail => new
+    {
+        Date = detail.Buy.BuyDate,
+        Supplier = detail.Buy.Provider.Person.Name,
+        MedicineName = detail.Medicine.Inventory.Medicine_info.Name,
+        Price = detail.Medicine.Inventory.Medicine_info.Price - (detail.Medicine.Inventory.Medicine_info.Price * (detail.Medicine.Inventory.Medicine_info.Discount / 100))
+    }).ToList();
+
+    if (data?.InitialDate != null)
+    {
+        if (data?.FinalDate != null && data.FinalDate < data.InitialDate)
+        {
+            medicines = medicines.Where(x =>
+                x.Date >= (data.HasCoincidence ? data.InitialDate : data.FinalDate) &&
+                x.Date <= (data.HasCoincidence ? data.FinalDate : data.InitialDate)
+            ).ToList();
         }
-        return res;
-    } 
+        else
+        {
+            medicines = medicines.Where(x =>
+                data.HasCoincidence ? x.Date >= data.InitialDate : x.Date <= data.InitialDate
+            ).ToList();
+        }
+    }
+
+    var res = medicines.GroupBy(medicine => medicine.Supplier)
+        .Select(medicineGroup => new
+        {
+            Supplier = medicineGroup.Key,
+            Total = medicineGroup.Sum(x => x.Price),
+            Units = medicineGroup.Count()
+        });
+
+    if (data?.ProviderName != null)
+    {
+        return res.Where(x =>
+            data.HasCoincidence ? x.Supplier == data.ProviderName : x.Supplier != data.ProviderName
+        );
+    }
+
+    return res;
+}
+
+
+
 public async Task<IEnumerable<MedicineDetailTotalModel>> TotalDrugSales(string MedicineName){
         var data  = await (from detail in _Context.Set<Detail_sale>()
                 join state in _Context.Set<State>() on detail.Medicine.Id_state equals state.Id
@@ -290,7 +294,6 @@ public async Task<IEnumerable<MedicineDetailTotalModel>> TotalDrugSales(string M
                     medicineInfo.Name,
                     Price = medicineInfo.Price - (medicineInfo.Price * (medicineInfo.Discount / 100)),
                     medicineInfo.Description,
-                    medicineInfo.Image,
                     Supplier = Person.Name
                 }).ToListAsync();
         return from medicine in medicines 
@@ -332,7 +335,6 @@ public async Task<IEnumerable<MedicineDetailTotalModel>> TotalDrugSales(string M
                 sale.Sale_Date,                
                 medicine.Name,
                 medicine.Description,
-                medicine.Image,
                 Price
             }).ToListAsync();
         if (conditions != null && conditions?.InitialDate != null){            
@@ -372,7 +374,6 @@ public async Task<IEnumerable<MedicineDetailTotalModel>> TotalDrugSales(string M
                 Patient = person.Name,
                 medicine.Name,
                 medicine.Description,
-                medicine.Image,
                 Price
             }).ToListAsync();
 
@@ -391,27 +392,31 @@ public async Task<IEnumerable<MedicineDetailTotalModel>> TotalDrugSales(string M
         }
         return res;
     }
-    public async Task<IEnumerable<object>> MedicationsThatHaveNotBeenSold(int? year){
-        year ??= DateTime.Now.Year;
-        var medicines =  await (from medicine in _Context.Set<Medicine>()
-            join info in _Context.Set<Medicine_info>() on medicine.Inventory.Medicine_info.Id 
-            equals info.Id
-            join state in _Context.Set<State>() on medicine.Id_state equals state.Id
-            where !medicine.Sales.Any() && state.Description == "default" && medicine.Date_creation.Year == year
-            select new {
-                medicine.Id,
-                info.Name,
-                medicine.Date_expiration,
-                medicine.Date_creation,
-            }).ToListAsync();
-        return from medicine in medicines
-            group medicine by medicine.Name into medicineGroup
-            let units = medicineGroup.Count()
-            select new {
-                Name = medicineGroup.First().Name,
-                TotalUnits = units
-            };
-    }
+    public async Task<IEnumerable<object>> MedicationsThatHaveNotBeenSold(int? year)
+{
+    year ??= DateTime.Now.Year;
+    var medicines = await (from medicine in _Context.Set<Medicine>()
+                            join info in _Context.Set<Medicine_info>() on medicine.Inventory.Medicine_info.Id equals info.Id
+                            join state in _Context.Set<State>() on medicine.Id_state equals state.Id
+                            where !medicine.Sales.Any() && state.Description == "default" && medicine.Date_creation.Year == year
+                            select new
+                            {
+                                medicine.Id,
+                                info.Name,
+                                medicine.Date_expiration,
+                                medicine.Date_creation,
+                            }).ToListAsync();
+
+    return from medicine in medicines
+           group medicine by medicine.Name into medicineGroup
+           let units = medicineGroup.Count()
+           select new
+           {
+               Name = medicineGroup.First().Name,
+               TotalUnits = units
+           };
+}
+
 
     private static IEnumerable<MedicineDetailTotalModel> MovementDetail(IEnumerable<Medicine_info> data){
         var medicines =(from detail in data             
@@ -419,7 +424,6 @@ public async Task<IEnumerable<MedicineDetailTotalModel>> TotalDrugSales(string M
                 Name = detail?.Name,
                 Price = detail.Price - (detail.Price * (detail.Discount / 100)),
                 Description = detail?.Description,
-                Image = detail?.Image,
             }).ToList();
 
         return from medicine in medicines
@@ -445,18 +449,108 @@ public async Task<IEnumerable<MedicineDetailTotalModel>> TotalDrugSales(string M
     }
 
     public async Task<IEnumerable<object>> MedicineExpireInYear(int year){
-            return await (
-                from medicineInfo in _Context.Set<Medicine_info>()
-                    join inventory in _Context.Set<Inventory>() on medicineInfo.Id equals inventory.Id_MedicineInfo
-                    join medicine in _Context.Set<Medicine>() on inventory.Id equals medicine.Id_Inventory
-                    where medicine.Date_expiration.Year == year
-                    select new
-                    {
-                        id = medicine.Id,
-                        Medicine = medicineInfo.Name,
-                        Expiration = medicine.Date_expiration
-                    }).ToListAsync();            
+        return await (
+            from medicineInfo in _Context.Set<Medicine_info>()
+                join inventory in _Context.Set<Inventory>() on medicineInfo.Id equals inventory.Id_MedicineInfo
+                join medicine in _Context.Set<Medicine>() on inventory.Id equals medicine.Id_Inventory
+                where medicine.Date_expiration.Year == year
+                select new
+                {
+                    id = medicine.Id,
+                    Medicine = medicineInfo.Name,
+                    Expiration = medicine.Date_expiration
+                }).ToListAsync();            
+    }
+
+    public async Task<object> GetSaleParacetamol(string medicineInput, int year)
+        {
+            string capitalizedMedicineInput = char.ToUpper(medicineInput[0]) + medicineInput.Substring(1);
+            var query = (
+                    from person in _Context.Set<Person>()
+                    join sale in _Context.Set<Sale>() on person.Id equals sale.Id_person
+                    join saleDetail in _Context.Set<Detail_sale>() on sale.Id equals saleDetail.Id_sale
+                    join medicine in _Context.Set<Medicine>() on saleDetail.Id_medicine equals medicine.Id
+                    join inventory in _Context.Set<Inventory>() on medicine.Id equals inventory.Id_MedicineInfo
+                    join medicineInfo in _Context.Set<Medicine_info>() on inventory.Id_MedicineInfo equals medicineInfo.Id
+                    where medicineInfo.Name == medicineInput && sale.Sale_Date.Year == year
+                                    select new
+                                    {
+                                        PersonId = person.Id,
+                                        person.Name,
+                                        MedicineName = medicineInfo.Name,
+                                        Price = medicineInfo.Price,
+                                        DateSale = sale.Sale_Date
+                                    }).ToListAsync();
+            return await query;
         }
+    public async Task<IEnumerable<object>> TotalMedicinesProvider()
+    {
+    var medicines = await _Context.Set<Detail_buy>()
+        .Join(_Context.Set<Provider>(), detail => detail.Buy.Provider_Id, provider => provider.Id, (detail, provider) => new { detail, provider })
+        .Join(_Context.Set<Person>(), combined => combined.provider.PersonId, person => person.Id, (combined, person) => new { combined.detail, combined.provider,person })
+        .Select(result => new
+        {
+            Name = result.detail.Medicine.Inventory.Medicine_info.Name,
+            Price = result.detail.Medicine.Inventory.Medicine_info.Price - (result.detail.Medicine.Inventory.Medicine_info.Price * (result.detail.Medicine.Inventory.Medicine_info.Discount / 100)),
+            result.detail.Medicine.Inventory.Medicine_info.Description,
+            Provider = result.person.Name
+        })
+        .ToListAsync();
+
+    var groupedMedicines = medicines.GroupBy(medicine => medicine.Provider)
+        .Select(medicineGroup => new
+        {
+            Provider = medicineGroup.First().Provider,
+            TotalSold = medicineGroup.Sum(x => x.Price).ToString("c"),
+            TotalUnits = medicineGroup.Count()
+        });
+
+    return groupedMedicines;
+    }
+    public async Task<IEnumerable<object>> ProfitsPerProvider(ProfitsPerProviderModel data = null){
+
+        var medicines =  await (
+            from detail in _Context.Set<Detail_buy>()
+            join medicine in _Context.Set<Medicine>() on detail.MedicineId equals medicine.Id
+            join inventory in _Context.Set<Inventory>() on medicine.Id_Inventory equals inventory.Id
+            join info in _Context.Set<Medicine_info>() on  inventory.Medicine_info equals info.Id
+            join buy in _Context.Set<Buy>() on detail.Buy_Id equals buy.Id
+            join provider in _Context.Set<Provider>() on buy.Provider_Id equals provider.Id
+            join person in _Context.Set<Person>() on provider.PersonId equals person.Id
+            let Price = info.Price - (info.Price * (info.Discount / 100))
+            select new {
+                person.Name,
+                Price,
+                Date = buy.BuyDate
+            }
+        ).ToListAsync();
+
+        if(data?.InitialDate != null ){
+            if( data?.FinalDate != null && data.InitialDate < data.FinalDate){
+                medicines = medicines.Where(x => 
+                    x.Date <= data.FinalDate  && 
+                    x.Date >= data.InitialDate
+                ).ToList();
+            }else {
+                medicines = medicines.Where(x => x.Date >= data.InitialDate ).ToList();
+            } 
+        }
+
+        var res =  from supplier in medicines
+            group supplier by supplier.Name into supplierGroup
+            let Units = supplierGroup.Count()
+            let Total = supplierGroup.Sum(x => x.Price)
+            select new {
+                supplierGroup.First().Name,
+                Units,
+                Total = Total.ToString("c")
+            };
+
+        if(data?.ProviderName != null){
+            return res.Where(x => x.Name.Trim().ToLower() == data.ProviderName.Trim().ToLower() );
+        }
+        return res;
+    }
 
     
 }

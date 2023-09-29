@@ -32,6 +32,7 @@ public class CustomQueriesController : BaseApiController{
    public async Task<IEnumerable<object>> MinStock(int minStock){
       return await _UnitOfWork.CustomQueries.MedicineWithMinStock(minStock);                                                       
    }
+   
    //*Fin de la consulta 1
 
    //Obtener Fecha Expiración por año
@@ -57,6 +58,7 @@ public class CustomQueriesController : BaseApiController{
    //*11 Número de medicamentos por proveedor.
    //*13 Proveedores que no han vendido medicamentos en el último año.
    [HttpGet("PurchasedByProvider")]
+   //falla
    //[Authorize]
    [MapToApiVersion("1.0")]
    [ProducesResponseType(StatusCodes.Status200OK)]
@@ -68,7 +70,7 @@ public class CustomQueriesController : BaseApiController{
 
    //*29. Proveedores de los medicamentos con menos de 50 unidades en stock.
    //*38. Medicamentos con un precio mayor a 50 y un stock menor a 100.
-   [HttpGet("MedicinesByPriceAndStock")]
+  [HttpGet("MedicinesByPriceAndStock")]
    //[Authorize]
    [MapToApiVersion("1.0")]
    [ProducesResponseType(StatusCodes.Status200OK)]
@@ -79,9 +81,8 @@ public class CustomQueriesController : BaseApiController{
    //* fin de la consultas
 
    //*32. Empleado que ha vendido la mayor cantidad de medicamentos distintos en 2023. 
-   //!--PENDIENTE
-
    //*35. Proveedores que han suministrado al menos 5 medicamentos diferentes en 2023.
+   //falla
    [HttpGet("ProvidersWhoHaveProvidedDifferentMedications")]
    //[Authorize]
    [MapToApiVersion("1.0")]
@@ -95,6 +96,7 @@ public class CustomQueriesController : BaseApiController{
    /*
    *28. Número total de proveedores que suministraron medicamentos en 2023.
    *24. Proveedor que ha suministrado más medicamentos en 2023.*/
+   //fallas
    [HttpGet("ProvidersWhoHaveProviderMedications")]
    //[Authorize]
    [MapToApiVersion("1.0")]
@@ -141,6 +143,14 @@ public class CustomQueriesController : BaseApiController{
       return await _UnitOfWork.CustomQueries.TotalMedicationsSoldByProvider();
    }
    //* fin de la consulta
+   //*7 Total de medicamentos vendidos por cada proveedor.
+   [HttpGet("TotalMedicinesProvider")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> TotalMedicinesProvider(){
+      return await _UnitOfWork.CustomQueries.TotalMedicinesProvider();
+   }
 
    //*8 Cantidad total de dinero recaudado por las ventas de medicamentos.
    [HttpGet("MoneyRaisedFromSales/{medicineName?}")]
@@ -156,6 +166,7 @@ public class CustomQueriesController : BaseApiController{
    //*9 Medicamentos que no han sido vendidos
    //*34 Medicamentos que no han sido vendidos en 2023.
    //*21 Medicamentos que no han sido vendidos nunca.   
+   //falla 
    [HttpGet("MedicationsThatHaveNotBeenSold/{year?}")]
    [MapToApiVersion("1.0")]
    [ProducesResponseType(StatusCodes.Status200OK)]
@@ -163,6 +174,15 @@ public class CustomQueriesController : BaseApiController{
    public async Task<IEnumerable<object>> MedicationsThatHaveNotBeenSold(int? year = null){
       return await _UnitOfWork.CustomQueries.MedicationsThatHaveNotBeenSold(year);
    }
+   //*16 Ganancia total por proveedor en 2023 (asumiendo un campo precioCompra en Compras).
+   [HttpGet("ProfitsPerProvider")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> ProfitsPerProvider(){
+      return await _UnitOfWork.CustomQueries.ProfitsPerProvider();
+   }
+   
    
 
 
@@ -202,8 +222,17 @@ public class CustomQueriesController : BaseApiController{
    public async Task<IEnumerable<object>> PatientsWhoHaveAcquiredParacetamol([FromQuery] string Patients = null ){
       return await _UnitOfWork.CustomQueries.PatientsWhoHaveAcquiredParacetamol(Patients);
    }
-   //* fin de la consulta
-  
-    
+   //*25 Pacientes que compraron el medicamento “Paracetamol” en 2023.
+   [HttpGet("SaleMedicine/{medidineInput}/{year}")]
+    //[Authorize] 
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<object> GetSaleParacetamol([FromQuery]string medidineInput,int year){
+      return await _UnitOfWork.CustomQueries.GetSaleParacetamol(medidineInput,year);
+   }
+
+
+   //* fin de la consulta ..
 }
  

@@ -43,10 +43,6 @@ public async Task<double> GetPromedioVenta()
     return average;
 }
 
-
-
-
-
 public async Task<IEnumerable<object>> GetSalesByEmploye()
 {
     int yearToFilter = 2023;
