@@ -88,7 +88,7 @@ public class CustomQueriesController : BaseApiController{
    [MapToApiVersion("1.0")]
    [ProducesResponseType(StatusCodes.Status200OK)]
    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-   public async Task<IEnumerable<object>> ProvidersWhoHaveProvidedDifferentMedications([FromBody] ProvidersWhoHaveProvidedDifferentMedicationsModel data = null){
+   public async Task<IEnumerable<object>> ProvidersWhoHaveProvidedDifferentMedications([FromBody] WhoHaveProvidedDifferentMedicationsModel data = null){
       return await _UnitOfWork.CustomQueries.ProvidersWhoHaveProvidedDifferentMedications(data);
    }
    //* fin de la consultas
@@ -191,12 +191,12 @@ public class CustomQueriesController : BaseApiController{
       return await _UnitOfWork.CustomQueries.VipBuyer();
    }
    //*30. Pacientes que no han comprado ningún medicamento en 2023. 
-   [HttpGet("VipBuyer")]
+   [HttpGet("VipBuyer/{year}")]
    [MapToApiVersion("1.0")]
    [ProducesResponseType(StatusCodes.Status200OK)]
    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-   public async Task<IEnumerable<object>> PersonNoPurchasedYear(){
-      return await _UnitOfWork.CustomQueries.PersonNoPurchasedYear();
+   public async Task<IEnumerable<object>> PersonNoPurchasedYear(int year){
+      return await _UnitOfWork.CustomQueries.PersonNoPurchasedYear(year);
    }
    //*32. Empleado que ha vendido la mayor cantidad de medicamentos distintos en 2023. 
    [HttpGet("VipBuyer")]
@@ -207,12 +207,12 @@ public class CustomQueriesController : BaseApiController{
       return await _UnitOfWork.CustomQueries.EmployeesWhoHaveProvidedDifferentMedications();
    }
    //*33. Total gastado por cada paciente en 2023.
-   [HttpGet("VipBuyer")]
+   [HttpGet("VipBuyer/{year}")]
    [MapToApiVersion("1.0")]
    [ProducesResponseType(StatusCodes.Status200OK)]
    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-   public async Task<object> AllSaleCustomer(){
-      return await _UnitOfWork.CustomQueries.AllSaleCustomer();
+   public async Task<object> AllSaleCustomer(int year){
+      return await _UnitOfWork.CustomQueries.AllSaleCustomer(year);
    }
    //*35. Proveedores que han suministrado al menos 5 medicamentos diferentes en 2023.
    [HttpGet("ProvidersWhoHaveProvidedDifferentMedications")]

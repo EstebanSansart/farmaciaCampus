@@ -507,13 +507,13 @@ public async Task<IEnumerable<MedicineDetailTotalModel>> TotalDrugSales(string M
 
     return groupedMedicines;
     }
-    public async Task<IEnumerable<object>> ProfitsPerProvider(ProfitsPerSupplierModel data = null){
+    public async Task<IEnumerable<object>> ProfitsPerProvider(ProfitsPerProviderModel data = null){
 
         var medicines =  await (
             from detail in _Context.Set<Detail_buy>()
             join medicine in _Context.Set<Medicine>() on detail.MedicineId equals medicine.Id
             join inventory in _Context.Set<Inventory>() on medicine.Id_Inventory equals inventory.Id
-            join info in _Context.Set<Medicine_info>() on  inventory.Medicine_info equals info.Id
+            join info in _Context.Set<Medicine_info>() on  inventory.Id_MedicineInfo equals info.Id
             join buy in _Context.Set<Buy>() on detail.Buy_Id equals buy.Id
             join provider in _Context.Set<Provider>() on buy.Provider_Id equals provider.Id
             join person in _Context.Set<Person>() on provider.PersonId equals person.Id
@@ -573,7 +573,7 @@ public async Task<IEnumerable<MedicineDetailTotalModel>> TotalDrugSales(string M
     public async Task<IEnumerable<object>> PersonNoPurchasedYear(int year)
     {
         var listSales = _Context.Set<Sale>();
-
+ 
         var query = (
             from person in _Context.Set<Person>()
             join sale in listSales on person.Id equals sale.Id_person
@@ -601,7 +601,7 @@ public async Task<IEnumerable<MedicineDetailTotalModel>> TotalDrugSales(string M
             join person in _Context.Set<Person>() on employee.PersonId equals person.Id
             join medicine in _Context.Set<Medicine>() on detail.Id_medicine equals medicine.Id
             join inventory in _Context.Set<Inventory>() on medicine.Id_Inventory equals inventory.Id
-            join info in _Context.Set<Medicine_info>() on inventory.Medicine_info equals info.Id
+            join info in _Context.Set<Medicine_info>() on inventory.Id_MedicineInfo equals info.Id
             select new {
                 Employee = person.Name,
                 info.Name,                
@@ -615,7 +615,7 @@ public async Task<IEnumerable<MedicineDetailTotalModel>> TotalDrugSales(string M
                     x.Sale_Date >= data.InitialDate
                 ).ToList();
             }else {
-                medicines = medicines.Where(x => x.SaleDate >= data.InitialDate ).ToList();
+                medicines = medicines.Where(x => x.Sale_Date >= data.InitialDate ).ToList();
             } 
         }
 
