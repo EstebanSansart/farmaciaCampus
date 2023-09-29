@@ -1,6 +1,6 @@
 namespace Domain.Models;
 
-public class MedicineTotalModel
+public class MedicineTotalSoldModel
 {
     public DateTime? InitialDate { get; set; } = null;
     public DateTime? FinalDate { get; set; } = null;

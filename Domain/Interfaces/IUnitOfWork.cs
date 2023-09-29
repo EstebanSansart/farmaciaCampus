@@ -27,5 +27,6 @@ public interface IUnitOfWork{
     IType_personRepository Type_Persons {get;}
     IType_providerRepository Type_Providers {get;}
     IUserRepository Users {get;}
+    ICustomQueriesManager CustomQueries { get; }  
     Task<int> SaveChanges();
 }

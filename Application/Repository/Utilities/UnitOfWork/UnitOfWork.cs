@@ -1,4 +1,5 @@
 using Application.Repository;
+using Application.Repository.Utilities;
 using Domain.Interfaces;
 using Persistence;
 
@@ -34,11 +35,14 @@ public sealed class UnitOfWork : IUnitOfWork, IDisposable{
     private IType_personRepository _Type_person;
     private IType_providerRepository _Type_provider;
     private IUserRepository _User;
+    private ICustomQueriesManager _Custom;
 
     public UnitOfWork(PharmacyContext context)=>_Context = context;
 
     //-Singletons
 
+
+    public ICustomQueriesManager CustomQueries => _Custom ??= new CustomQueriesManager(_Context);
     public IPositionRepository Positions => _Position ??= new PositionRepository(_Context);
     public IAddressRepository Addresses => _Address ??= new AddressRepository(_Context);
     public IBuyRepository Buys => _Buy ??=  new BuyRepository(_Context);
