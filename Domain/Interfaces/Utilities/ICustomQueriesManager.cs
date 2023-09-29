@@ -12,7 +12,7 @@ public interface ICustomQueriesManager{
     Task<IEnumerable<object>> TotalMedicineSold(MedicineTotalSoldModel data = null);        
     Task<IEnumerable<object>> EmployeesWhoHaveMadeSales(EmployeesWhoHaveMadeSalesModel data = null); 
     Task<IEnumerable<object>> ProvidersWhoHaveProviderMedications(ProvidersWhoHaveProviderMedications data = null);
-    Task<IEnumerable<object>> ProvidersWhoHaveProvidedDifferentMedications(ProvidersWhoHaveProvidedDifferentMedicationsModel data = null);
+
     Task<IEnumerable<object>> MedicinesByPriceAndStock(MedicinesByPriceAndStockModel data = null);
     Task<IEnumerable<object>> PatientsWhoHaveAcquiredParacetamol(string Patients = null);      
     Task<IEnumerable<object>> MedicineExpireBeforeYear(int year);
@@ -20,7 +20,12 @@ public interface ICustomQueriesManager{
     Task<IEnumerable<object>> MedicineExpireInYear(int year);
     Task<object> GetSaleParacetamol(String medicineInput, int Year);
     Task<IEnumerable<object>> TotalMedicinesProvider();
-    Task<IEnumerable<object>> ProfitsPerProvider(ProfitsPerProviderModel data = null);
+    Task<IEnumerable<object>> ProfitsPerProvider(ProfitsPerSupplierModel data = null);
+    Task<object> VipBuyer();
+    Task<IEnumerable<object>> PersonNoPurchasedYear();
+    Task<IEnumerable<object>> EmployeesWhoHaveProvidedDifferentMedications(WhoHaveProvidedDifferentMedicationsModel data = null);
+    Task<IEnumerable<object>> AllSaleCustomer();
+    Task<IEnumerable<object>> ProvidersWhoHaveProvidedDifferentMedications(WhoHaveProvidedDifferentMedicationsModel data = null);
     
 
 

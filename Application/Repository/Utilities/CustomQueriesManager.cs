@@ -507,7 +507,7 @@ public async Task<IEnumerable<MedicineDetailTotalModel>> TotalDrugSales(string M
 
     return groupedMedicines;
     }
-    public async Task<IEnumerable<object>> ProfitsPerProvider(ProfitsPerProviderModel data = null){
+    public async Task<IEnumerable<object>> ProfitsPerProvider(ProfitsPerSupplierModel data = null){
 
         var medicines =  await (
             from detail in _Context.Set<Detail_buy>()
@@ -551,7 +551,161 @@ public async Task<IEnumerable<MedicineDetailTotalModel>> TotalDrugSales(string M
         }
         return res;
     }
+    public async Task<object> VipBuyer(){
 
-    
+        var query = await (from person in _Context.Set<Person>()
+            join sale in _Context.Set<Sale>() on person.Id equals sale.Id_person
+            join saleDetail in _Context.Set<Detail_sale>() on sale.Id equals saleDetail.Id_sale
+            join medicine in _Context.Set<Medicine>() on saleDetail.Id_medicine equals medicine.Id
+            join inventory in _Context.Set<Inventory>() on medicine.Id equals inventory.Id_MedicineInfo
+            join medicineInfo in _Context.Set<Medicine_info>() on inventory.Id_MedicineInfo equals medicineInfo.Id
+            group medicineInfo.Price by new { person.Id, person.Name } into g
+            orderby g.Sum() descending
+            select new
+            {
+                IdPk = g.Key.Id,
+                g.Key.Name,
+                TotalPrice = g.Sum()
+            }).ToListAsync();
+
+        return query.FirstOrDefault();
+    }
+    public async Task<IEnumerable<object>> PersonNoPurchasedYear(int year)
+    {
+        var listSales = _Context.Set<Sale>();
+
+        var query = (
+            from person in _Context.Set<Person>()
+            join sale in listSales on person.Id equals sale.Id_person
+            join saleDetail in _Context.Set<Detail_sale>() on sale.Id equals saleDetail.Id_sale
+            join medicine in _Context.Set<Medicine>() on saleDetail.Id_medicine equals medicine.Id
+            join inventory in _Context.Set<Inventory>() on medicine.Id equals inventory.Id_MedicineInfo
+            join medicineInfo in _Context.Set<Medicine_info>() on inventory.Id_MedicineInfo equals medicineInfo.Id
+            where !listSales.Any(s => s.Id_person == person.Id && s.Sale_Date.Year == year)
+                                    select new
+                                    {
+                                        PersonId = person.Id,
+                                        person.Name
+                                        
+                                    }).ToListAsync();
+
+        return await query;
+    }
+    public async Task<IEnumerable<object>> EmployeesWhoHaveProvidedDifferentMedications(WhoHaveProvidedDifferentMedicationsModel data = null){
+        data ??= new(){
+                MinimumNumberOfDifferentMedications = 0
+            }; 
+          var medicines =  await (from detail in _Context.Set<Detail_sale>()
+            join sale in _Context.Set<Sale>() on detail.Id_sale equals sale.Id
+            join employee in _Context.Set<Employee>() on sale.Id_Employe equals employee.Id
+            join person in _Context.Set<Person>() on employee.PersonId equals person.Id
+            join medicine in _Context.Set<Medicine>() on detail.Id_medicine equals medicine.Id
+            join inventory in _Context.Set<Inventory>() on medicine.Id_Inventory equals inventory.Id
+            join info in _Context.Set<Medicine_info>() on inventory.Medicine_info equals info.Id
+            select new {
+                Employee = person.Name,
+                info.Name,                
+                sale.Sale_Date
+            }).ToListAsync();
+
+        if(data?.InitialDate != null ){
+            if( data?.FinalDate != null && data.InitialDate < data.FinalDate){
+                medicines = medicines.Where(x => 
+                    x.Sale_Date <= data.FinalDate  && 
+                    x.Sale_Date >= data.InitialDate
+                ).ToList();
+            }else {
+                medicines = medicines.Where(x => x.SaleDate >= data.InitialDate ).ToList();
+            } 
+        }
+
+        return from medicine in medicines
+            group medicine by medicine.Employee into providerGrups
+            let medicineGroups = from providerGrup in providerGrups
+                group providerGrup by providerGrup.Name into medicineGroups
+                let TotalMedicines = medicineGroups.Count()
+                select new {
+                    medicineGroups.First().Name,
+                    TotalMedicines
+                }
+            let TotalMedications = medicineGroups.Sum(a => a.TotalMedicines)
+            let NumberOfDifferentMedications = medicineGroups.Count()
+            where NumberOfDifferentMedications >= data.MinimumNumberOfDifferentMedications
+            select new {
+                providerGrups.First().Employee,
+                TotalMedications,
+                NumberOfDifferentMedications,
+                Medications = medicineGroups
+            };
+    }
+    public async Task<IEnumerable<object>> AllSaleCustomer(int year){
+
+        var query = await (from person in _Context.Set<Person>()
+            join sale in _Context.Set<Sale>() on person.Id equals sale.Id_person
+            join saleDetail in _Context.Set<Detail_sale>() on sale.Id equals saleDetail.Id_sale
+            join medicine in _Context.Set<Medicine>() on saleDetail.Id_medicine equals medicine.Id
+            join inventory in _Context.Set<Inventory>() on medicine.Id equals inventory.Id_MedicineInfo
+            join medicineInfo in _Context.Set<Medicine_info>() on inventory.Id_MedicineInfo equals medicineInfo.Id
+            where sale.Sale_Date.Year == year
+            group medicineInfo.Price by new { person.Id, person.Name, sale.Sale_Date } into g
+            orderby g.Sum() descending
+            select new
+            {
+                Id = g.Key.Id,
+                g.Key.Name,
+                YearSales = g.Key.Sale_Date,
+                TotalPrice = g.Sum()
+
+            }).ToListAsync();
+
+            return query;
+        }
+    public async Task<IEnumerable<object>> ProvidersWhoHaveProvidedDifferentMedications(WhoHaveProvidedDifferentMedicationsModel data = null){
+        data ??= new(){
+                MinimumNumberOfDifferentMedications = 0
+            };
+        var medicines =  await (from detail in _Context.Set<Detail_buy>()
+            join buy in _Context.Set<Buy>() on detail.Buy_Id equals buy.Id
+            join provider in _Context.Set<Provider>() on buy.Provider_Id equals provider.Id
+            join person in _Context.Set<Person>() on provider.PersonId equals person.Id
+            join medicine in _Context.Set<Medicine>() on detail.MedicineId equals medicine.Id
+            join inventory in _Context.Set<Inventory>() on medicine.Id_Inventory equals inventory.Id
+            join info in _Context.Set<Medicine_info>() on inventory.Id_MedicineInfo equals info.Id
+            select new {
+                Provider = person.Name,
+                info.Name,                
+                buy.BuyDate,
+            }).ToListAsync();
+
+        if(data?.InitialDate != null ){
+            if( data?.FinalDate != null && data.InitialDate < data.FinalDate){
+                medicines = medicines.Where(x => 
+                    x.BuyDate <= data.FinalDate  && 
+                    x.BuyDate >= data.InitialDate
+                ).ToList();
+            }else {
+                medicines = medicines.Where(x => x.BuyDate >= data.InitialDate ).ToList();
+            } 
+        }
+
+        return from medicine in medicines
+            group medicine by medicine.Provider into providerGrups
+            let medicineGroups = from providerGrup in providerGrups
+                group providerGrup by providerGrup.Name into medicineGroups
+                let TotalMedicines = medicineGroups.Count()
+                select new {
+                    medicineGroups.First().Name,
+                    TotalMedicines
+                }
+            let TotalMedications = medicineGroups.Sum(a => a.TotalMedicines)
+            let NumberOfDifferentMedications = medicineGroups.Count()
+            where NumberOfDifferentMedications >= data.MinimumNumberOfDifferentMedications
+            select new {
+                providerGrups.First().Provider,
+                TotalMedications,
+                NumberOfDifferentMedications,
+                Medications = medicineGroups
+            };
+    }
 }
 

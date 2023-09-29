@@ -182,9 +182,47 @@ public class CustomQueriesController : BaseApiController{
    public async Task<IEnumerable<object>> ProfitsPerProvider(){
       return await _UnitOfWork.CustomQueries.ProfitsPerProvider();
    }
+   //* 22. Paciente que ha gastado más dinero en 2023.
+   [HttpGet("VipBuyer")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<object> VipBuyer(){
+      return await _UnitOfWork.CustomQueries.VipBuyer();
+   }
+   //*30. Pacientes que no han comprado ningún medicamento en 2023. 
+   [HttpGet("VipBuyer")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> PersonNoPurchasedYear(){
+      return await _UnitOfWork.CustomQueries.PersonNoPurchasedYear();
+   }
+   //*32. Empleado que ha vendido la mayor cantidad de medicamentos distintos en 2023. 
+   [HttpGet("VipBuyer")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<IEnumerable<object>> EmployeesWhoHaveProvidedDifferentMedications(){
+      return await _UnitOfWork.CustomQueries.EmployeesWhoHaveProvidedDifferentMedications();
+   }
+   //*33. Total gastado por cada paciente en 2023.
+   [HttpGet("VipBuyer")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<object> AllSaleCustomer(){
+      return await _UnitOfWork.CustomQueries.AllSaleCustomer();
+   }
+   //*35. Proveedores que han suministrado al menos 5 medicamentos diferentes en 2023.
+   [HttpGet("ProvidersWhoHaveProvidedDifferentMedications")]
+   [MapToApiVersion("1.0")]
+   [ProducesResponseType(StatusCodes.Status200OK)]
+   [ProducesResponseType(StatusCodes.Status400BadRequest)]
+   public async Task<object> ProvidersWhoHaveProvidedDifferentMedications(){
+      return await _UnitOfWork.CustomQueries.ProvidersWhoHaveProvidedDifferentMedications();
+   }
    
-   
-
 
    //*15 Obtener el medicamento menos vendido en 2023
    //*17 Promedio de medicamentos comprados por venta.
